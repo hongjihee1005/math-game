@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://hongjihee1005.github.io/math-game/</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/board/baduk.html</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/board/index.html</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/board/omok.html</loc></url>
 <url><loc>https://hongjihee1005.github.io/math-game/classgraph/graph.html</loc></url>
 <url><loc>https://hongjihee1005.github.io/math-game/classgraph/index.html</loc></url>
 <url><loc>https://hongjihee1005.github.io/math-game/classgraph/sheet.html</loc></url>
@@ -20,6 +23,13 @@
 <url><loc>https://hongjihee1005.github.io/math-game/creative/nonogram.html</loc></url>
 <url><loc>https://hongjihee1005.github.io/math-game/creative/pento.html</loc></url>
 <url><loc>https://hongjihee1005.github.io/math-game/creative/tangram.html</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/daily/g1.html</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/daily/g2.html</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/daily/g3.html</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/daily/g4.html</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/daily/g5.html</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/daily/g6.html</loc></url>
+<url><loc>https://hongjihee1005.github.io/math-game/daily/index.html</loc></url>
 <url><loc>https://hongjihee1005.github.io/math-game/escape/index.html</loc></url>
 <url><loc>https://hongjihee1005.github.io/math-game/escape/museum.html</loc></url>
 <url><loc>https://hongjihee1005.github.io/math-game/escape/space.html</loc></url>
