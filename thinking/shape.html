@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>성냥개비 식 고치기 · 창의 수학 · 초등 수학 게임 | 초등교사 홍지희</title>
-<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/creative/match.html"><meta property="og:title" content="성냥개비 식 고치기 · 창의 수학 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="틀린 성냥개비 식에서 성냥개비를 1~2개 옮겨 맞는 식으로 고치는 퍼즐"><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="틀린 성냥개비 식에서 성냥개비를 1~2개 옮겨 맞는 식으로 고치는 퍼즐">
-<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#C9463B;--ok:#2E9E5B;--bad:#D0453B;--cell:#FFFDF9;
+<title>도형과 공간 · 사고력 수학 · 초등 수학 게임 | 초등교사 홍지희</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/thinking/shape.html"><meta property="og:title" content="도형과 공간 · 사고력 수학 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="사고력 수학 도형과 공간 — 쉬움·보통·도전 15문제, 생각 열쇠와 풀이"><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="사고력 수학 도형과 공간 — 쉬움·보통·도전 15문제, 생각 열쇠와 풀이">
+<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#C2571A;--ok:#2E9E5B;--bad:#D0453B;--cell:#FFFDF9;
  --display:'Jua','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--body:'Gowun Dodum','Apple SD Gothic Neo','Malgun Gothic',sans-serif;box-sizing:border-box}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37;--cell:#2F2925}}
 :root[data-theme="dark"]{--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37;--cell:#2F2925}
@@ -56,26 +56,72 @@ button{font:inherit;color:inherit;cursor:pointer}
 @keyframes cr-pop{50%{transform:scale(1.08)}}
 @media (max-width:640px){.cr-levels{grid-template-columns:1fr}.cr-lv{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 8px}.cr-lv small{width:100%}}
 @media print{.cr-gnav,.cr-levels,.cr-nums,.cr-bar button,.cr-how,.creditbar,.hj-nav,.hj-navbar,#hj-home{display:none!important}}
-/* 성냥개비 식 고치기 */
-.mt-goal{margin:0;text-align:center;color:var(--soft)}
-.mt-goal b{color:var(--acc);font-size:1.15em}
-.mt-board{width:100%;max-width:720px;padding:14px 10px;border-radius:20px;background:#2F3B46}
-.mt-svg{display:block;width:100%;height:auto;max-height:42vh}
-.mt-wood{stroke:#F2D49B;stroke-width:7;stroke-linecap:round}
-.mt-head{fill:#E0503F}
-.mt-hit{stroke:transparent;stroke-width:18;stroke-linecap:round;cursor:pointer}
-.mt-slot{stroke:#6E7E8C;stroke-width:5;stroke-linecap:round;stroke-dasharray:4 5;opacity:.75}
-.mt-on.fixed .mt-wood{stroke:#C9B48C}.mt-on.fixed .mt-head{fill:#A8584E}.mt-on.fixed .mt-hit{cursor:default}
-.mt-on.held{transform:translateY(-5px)}.mt-on.held .mt-wood{stroke:#FFE9A6;filter:drop-shadow(0 0 4px #FFD24D)}
-.mt-on.hfrom .mt-wood{animation:mt-blink 1s infinite}
-.mt-off:hover .mt-slot{stroke:#B9C7D3;opacity:1}
-.mt-off.hto .mt-slot{stroke:#4BD48A;opacity:1;animation:mt-blink 1s infinite}
-@keyframes mt-blink{50%{opacity:.35}}
-.mt-board.win{background:#24533E}
-.mt-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;font-size:18px;color:var(--soft)}
-.mt-bar b{font-family:var(--display);font-weight:400;font-size:1.3em;color:var(--ink)}
-.mt-bar .ok{color:var(--ok);font-weight:800}.mt-bar .no{color:var(--bad);font-weight:800}
-.mt-tip{margin:0;font-size:15px;color:var(--soft);text-align:center}
+/* 사고력 수학 */
+.th-card{width:100%;max-width:820px;display:flex;flex-direction:column;gap:14px}
+.th-q{font-size:clamp(19px,2.1vw,23px);line-height:1.75;color:var(--ink)}
+.th-seq{display:inline-block;margin:6px 0;padding:4px 16px;border-radius:12px;background:color-mix(in srgb,var(--acc) 10%,var(--paper));font-family:var(--display);font-weight:400;font-size:1.25em;letter-spacing:.02em}
+.th-figbox{display:flex;justify-content:center}
+.th-fig{width:100%;height:auto;overflow:visible}
+.th-ln line,.th-ln polygon,polygon.th-ln{stroke:var(--ink);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.th-dot{fill:var(--ink)}.th-faint{stroke:var(--line);stroke-width:2;stroke-dasharray:4 5}
+.th-cell{fill:color-mix(in srgb,var(--acc) 22%,var(--paper));stroke:var(--ink);stroke-width:2.5}
+.th-face{fill:var(--paper);stroke:var(--ink);stroke-width:3}.th-tick{stroke:var(--ink);stroke-width:2}
+.th-num{font-size:13px;font-weight:700;fill:var(--soft)}.th-hh{stroke:var(--ink);stroke-width:5.5;stroke-linecap:round}.th-mh{stroke:var(--acc);stroke-width:3.5;stroke-linecap:round}
+.th-t{font-size:13px;font-weight:700;fill:var(--soft)}.th-a{fill:var(--ok)}.th-b{fill:var(--bad)}
+.th-mt{stroke:#D9A35B;stroke-width:5;stroke-linecap:round}
+.th-answer{display:flex;justify-content:center}
+.th-answer.shk{animation:cr-shk .4s}
+.th-fields{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px}
+.th-field{display:flex;align-items:center;gap:8px}
+.th-fl{font-weight:800;color:var(--soft)}
+.th-in{width:5.2em;height:52px;padding:0 10px;border:3px solid var(--line);border-radius:14px;background:var(--cell);color:var(--ink);font-family:var(--display);font-size:28px;text-align:center}
+.th-in:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 22%,transparent)}
+.th-in.no{border-color:var(--bad);color:var(--bad)}
+.th-u{font-size:20px;color:var(--soft)}
+.th-ok{height:52px;padding:0 24px;border:0;border-radius:999px;background:var(--acc);color:#fff;font-family:var(--display);font-size:21px}
+.th-picks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.th-pick{min-width:64px;height:52px;padding:0 16px;border:3px solid var(--line);border-radius:14px;background:var(--paper);font-family:var(--display);font-size:22px}
+.th-pick:hover{border-color:var(--acc)}.th-pick.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.th-keys{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.th-keys li{padding:10px 14px;border-radius:14px;background:color-mix(in srgb,#F2B92C 14%,var(--paper));border:2px dashed color-mix(in srgb,#F2B92C 55%,var(--line));line-height:1.6}
+.th-keys li b{margin-right:6px;color:#A86F00}
+.th-sol{padding:14px 18px;border-radius:16px;background:color-mix(in srgb,var(--ok) 9%,var(--paper));border:2px solid color-mix(in srgb,var(--ok) 35%,var(--line));line-height:1.7}
+.th-sol p{margin:6px 0}.th-sh{font-family:var(--display);font-weight:400;font-size:20px;color:var(--ok)}
+.th-tag{display:inline-block;margin-left:6px;padding:1px 10px;border-radius:999px;background:var(--ok);color:#fff;font-family:var(--body);font-size:14px;font-weight:700;vertical-align:2px}
+.th-ans b{font-size:1.15em}
+.th-prints{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:4px}
+.th-pbtn{border:2px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 14px;font-size:15px}
+#thPrint{display:none}
+@page{size:A4;margin:15mm 16mm}
+#thPrint.th-measure{display:block;position:absolute;left:-10000px;top:0;width:178mm;visibility:hidden;color:#000;font-size:13pt;line-height:1.55;word-break:keep-all}
+#thPrint.th-measure .th-pspace{height:55mm}
+#thPrint .th-phead{border-bottom:2pt solid #000;padding-bottom:3mm;margin-bottom:5mm}
+#thPrint h1{font-size:17pt;margin:0}
+#thPrint .th-pname{display:flex;gap:4mm;margin:4mm 0 0;font-size:12pt}
+#thPrint .th-pname span{flex:0 0 22mm;border-bottom:1px solid #000;padding:0 0 1mm;text-align:right}
+#thPrint .th-pname .th-pnm{flex:1 1 auto;text-align:left}
+#thPrint .th-pq{border:1.2pt solid #555;border-radius:3mm;padding:4mm 5mm;margin:0 0 6mm;break-inside:avoid;page-break-inside:avoid}
+#thPrint .th-ppage{display:flex;flex-direction:column;height:262mm;break-after:page;page-break-after:always;overflow:hidden}
+#thPrint .th-ppage:last-child{break-after:auto;page-break-after:auto}
+#thPrint .th-ppage .th-pq{flex:1 1 0;display:flex;flex-direction:column;margin:0 0 5mm}#thPrint .th-ppage .th-pq:last-child{margin-bottom:0}
+#thPrint .th-ppage .th-phead{flex:none}
+#thPrint .th-ppage .th-pspace{flex:1 1 auto;height:auto;min-height:55mm}
+#thPrint .th-pqh{font-size:14pt;margin-bottom:1.5mm}
+#thPrint .th-q{font-size:13pt;color:#000}
+#thPrint .th-pfig{text-align:center;margin:2mm 0}#thPrint .th-fig{max-height:50mm;max-width:100%;width:auto}
+#thPrint .th-popts{margin:2mm 0}
+#thPrint .th-pspace{height:62mm;margin-top:3mm;border:1px dashed #888;border-radius:2mm;padding:2mm 3mm;font-size:10.5pt;color:#555;
+background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 9.5mm,#d4d4d4 9.5mm,#d4d4d4 10mm);background-position:0 7mm;background-origin:content-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+#thPrint .th-pa{display:flex;align-items:center;justify-content:flex-end;gap:3mm;margin-top:3mm;font-size:13pt;font-weight:700}
+#thPrint .th-pa i{display:block;width:60mm;height:12mm;border:1.2pt solid #000;border-radius:2mm}
+#thPrint .th-pqa{padding:3mm 5mm}
+#thPrint .th-sol{background:none;border:1px solid #888;margin-top:2mm}
+@media print{
+ html.th-printing,html.th-printing body{background:#fff!important;margin:0!important;padding:0!important}
+ html.th-printing body>*:not(#thPrint){display:none!important}
+ html.th-printing #thPrint{display:block;color:#000;font-size:13pt;line-height:1.55;word-break:keep-all}
+}
+
 
 </style><style id="hj-contact-css">.hj-contact{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:8px 0 0;padding:0}.hj-contact a{display:inline-flex;align-items:center;gap:6px;color:var(--ink,#1F2A44);text-decoration:none;font-size:15px;line-height:1.2;background:var(--paper,#fff);border:2px solid var(--line,#CAD6E4);border-radius:999px;padding:5px 12px;white-space:nowrap}.hj-contact a:hover,.hj-contact a:focus-visible{border-color:var(--ink,#1F2A44);outline:0}.hj-contact svg{flex:none}#ovNavMade+.hj-contact{margin:0 0 0 8px;flex:none;flex-wrap:nowrap;gap:6px}#ovNavMade+.hj-contact a{font-size:13px;padding:3px 9px}@media print{.hj-contact a{border:0;padding:0}}</style><style id="hjfoot-css">.hjfoot{display:block;width:100%;flex-basis:100%;margin:40px 0 0;padding:16px 0 4px;border:0;border-top:3px solid var(--line,#CAD6E4);text-align:center;color:var(--soft,#4F5B75);font-family:var(--body,inherit);font-size:17px;line-height:1.7;word-break:keep-all;opacity:1}.hjfoot p{margin:2px 0;padding:0;border:0;background:none;font-size:inherit;color:inherit;text-align:center}</style>
 <!--hj-ctheme--><style id="hj-ctheme">/* hj-ctheme · 수업 자료 페이지 공통: 글꼴을 Pretendard로, 바탕·글자색을 메뉴와 같은 밝고 따뜻한 톤으로 */
@@ -755,10 +801,10 @@ html body:not(.mix) .hj-contact,html body:not(.mix) .hj-contact.hj-cvc{display:n
 html body .frameline{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.3em;row-gap:.2em}html body .frameline input{max-width:100%;text-align:center}
 </style><!--/hj-ctheme--></head><body>
 <main>
-<nav class="cr-gnav" aria-label="다른 창의수학게임"><a href="magic.html">마방진</a><a href="tangram.html">칠교놀이</a><a href="kenken.html">계산 스도쿠</a><a href="hanoi.html">하노이 탑</a><a href="nonogram.html">네모 로직</a><a href="make.html">목표 수 만들기</a><a href="balance.html">저울 퍼즐</a><a href="match.html" aria-current="page">성냥개비 식 고치기</a><a href="pento.html">펜토미노 채우기</a><a href="nim.html">님 게임</a><a href="blocks.html">쌓기나무</a></nav>
-<h1>🔥 성냥개비 식 고치기</h1>
-<p class="sub">성냥개비로 만든 식이 틀렸어요! 성냥개비를 딱 정해진 개수만큼 옮겨서 맞는 식으로 고쳐 보세요. 숫자 모양을 바꾸는 생각이 필요해요.</p>
-<details class="cr-how"><summary>이렇게 해요</summary><ul><li>성냥개비를 <b>누르면 들리고</b>, 점선으로 된 <b>빈 자리</b>를 누르면 그리로 옮겨져요. 들린 성냥개비를 다시 누르면 내려놓아요.</li><li>숫자는 디지털시계 숫자 모양이에요. 성냥개비 하나로 6이 0이나 9가 되기도 하고, + 가 − 가 되기도 해요. <b>=</b> 는 움직이지 않아요.</li><li>정해진 개수만큼 옮겨서 맞는 식이 되면 성공! 아래에 ‘지금 식’이 나와요.</li><li>💡 실마리: 성냥개비 한 개를 빼면 다른 숫자가 되는 숫자(8→0·6·9, 9→3·5, 7→1 …)와 한 개를 더하면 되는 숫자를 떠올려 보세요. 모든 문제는 답이 딱 하나예요.</li></ul></details>
+<nav class="cr-gnav" aria-label="다른 영역"><a href="pattern.html">수와 규칙</a><a href="blank.html">벌레 먹은 셈</a><a href="logic.html">논리 추리</a><a href="count.html">경우의 수</a><a href="shape.html" aria-current="page">도형과 공간</a><a href="clock.html">시계와 달력</a><a href="strategy.html">문제 해결 전략</a></nav>
+<h1>📐 도형과 공간</h1>
+<p class="sub">그림 속 도형의 개수를 빠짐없이 세고, 입체를 머릿속으로 그려 봐요. 크기별로 나누어 세는 것이 비결이에요.</p>
+<details class="cr-how"><summary>이렇게 해요</summary><ul><li>문제를 읽고 답을 써서 <b>확인</b>을 눌러요(고르는 문제는 답을 누르면 돼요).</li><li>막히면 <b>💡 힌트</b>를 누를 때마다 <b>🔑 생각 열쇠</b>가 하나씩 열려요(모두 3개). 열쇠는 답이 아니라 생각할 길을 알려 줘요.</li><li>맞히면 <b>📝 풀이</b>가 나와요. 내 방법과 견주어 보고, 풀이에 붙은 <b>전략 이름</b>(거꾸로 풀기, 표 만들기 …)을 기억해 두세요.</li><li>🖨️ 이 단계 5문제를 학습지로 인쇄하거나, 정답과 풀이를 인쇄할 수 있어요.</li></ul></details>
 <div class="cr-levels" id="crLevels" role="tablist" aria-label="단계"></div>
 <div class="cr-nums" id="crNums" aria-label="문제 번호"></div>
 <section class="cr-play" id="crPlay" aria-live="polite">
@@ -768,94 +814,105 @@ html body .frameline{display:flex!important;flex-wrap:wrap;justify-content:cente
 <p class="cr-msg" id="crMsg"></p>
 <div class="cr-done" id="crDone" hidden><b>🎉 해냈어요!</b><span id="crDoneT"></span><button type="button" class="cr-btn go" id="crNext">이어서 풀기 →</button></div>
 </section>
-<div class="creditbar"><a class="tolist" href="../index.html">📋 자료 목록으로</a><footer class="hjfoot"><p>생각하는 힘을 기르는 창의수학게임 자료입니다.</p><p>만든 사람: 초등교사 홍지희</p><p class="hj-contact"><a href="mailto:hongjihee1005@gmail.com" aria-label="이메일 보내기: hongjihee1005@gmail.com"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>hongjihee1005@gmail.com</span></a><a href="https://www.youtube.com/@hongjihee1005" target="_blank" rel="noopener" aria-label="유튜브 채널 열기: @hongjihee1005"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E5484D"/><path d="M10 8.2v7.6l6.2-3.8z" fill="#fff"/></svg><span>유튜브 @hongjihee1005</span></a></p></footer></div>
+<div class="creditbar"><a class="tolist" href="../index.html">📋 자료 목록으로</a><footer class="hjfoot"><p>한 문제를 오래 생각하며 사고력을 기르는 사고력 수학 자료입니다.</p><p>만든 사람: 초등교사 홍지희</p><p class="hj-contact"><a href="mailto:hongjihee1005@gmail.com" aria-label="이메일 보내기: hongjihee1005@gmail.com"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>hongjihee1005@gmail.com</span></a><a href="https://www.youtube.com/@hongjihee1005" target="_blank" rel="noopener" aria-label="유튜브 채널 열기: @hongjihee1005"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E5484D"/><path d="M10 8.2v7.6l6.2-3.8z" fill="#fff"/></svg><span>유튜브 @hongjihee1005</span></a></p></footer></div>
 </main>
-<script>window.CR={"game":"match","levels":[{"id":"easy","nm":"쉬움","rec":"3~4학년","de":"한 자리 수 식, 성냥개비 1개 옮기기."},{"id":"normal","nm":"보통","rec":"4~5학년","de":"답이 두 자리 수일 수 있는 식, 성냥개비 1개 옮기기."},{"id":"hard","nm":"도전","rec":"5~6학년","de":"성냥개비 2개를 옮겨야 해요!"}],"data":{"easy":[{"q":"5+8=9","a":"9+0=9","k":1},{"q":"3+5=6","a":"3+3=6","k":1},{"q":"2-9=2","a":"2-0=2","k":1},{"q":"1-1=9","a":"1-1=0","k":1},{"q":"4-3=2","a":"4-2=2","k":1},{"q":"6-8=1","a":"9-8=1","k":1},{"q":"8-5=2","a":"8-5=3","k":1},{"q":"6+2=9","a":"6+3=9","k":1},{"q":"9-6=5","a":"9-6=3","k":1},{"q":"5-1=6","a":"6-1=5","k":1},{"q":"0-5=4","a":"9-5=4","k":1},{"q":"6-4=3","a":"6-4=2","k":1},{"q":"9+2=8","a":"6+2=8","k":1},{"q":"9+0=8","a":"8-0=8","k":1},{"q":"4-5=8","a":"4+5=9","k":1},{"q":"1-5=8","a":"1+5=6","k":1},{"q":"8-9=9","a":"0+9=9","k":1},{"q":"5+4=2","a":"6-4=2","k":1},{"q":"5+6=0","a":"6-6=0","k":1},{"q":"9-1=4","a":"3+1=4","k":1}],"normal":[{"q":"6-9=19","a":"6+9=15","k":1},{"q":"5+6=3","a":"9-6=3","k":1},{"q":"2-6=7","a":"2+5=7","k":1},{"q":"1-9=1","a":"1-0=1","k":1},{"q":"2+6=1","a":"2+5=7","k":1},{"q":"4+9=1","a":"4+3=7","k":1},{"q":"1+5=72","a":"7+5=12","k":1},{"q":"0+2=6","a":"8-2=6","k":1},{"q":"8-2=18","a":"8+2=10","k":1},{"q":"2+8=6","a":"2+6=8","k":1},{"q":"8+3=15","a":"6+9=15","k":1},{"q":"1-9=18","a":"1+9=10","k":1},{"q":"9+8=71","a":"9+8=17","k":1},{"q":"6+2=6","a":"8-2=6","k":1},{"q":"10-2=76","a":"18-2=16","k":1},{"q":"7+1=74","a":"7+7=14","k":1},{"q":"8-1=10","a":"9+1=10","k":1},{"q":"6+3=3","a":"0+3=3","k":1},{"q":"10-9=4","a":"10-6=4","k":1},{"q":"2+8=19","a":"2+8=10","k":1}],"hard":[{"q":"8-4=8","a":"9-9=0","k":2},{"q":"7+0=8","a":"3+0=3","k":2},{"q":"1+5=19","a":"7+5=12","k":2},{"q":"7-3=6","a":"1+5=6","k":2},{"q":"6-2=78","a":"8+2=10","k":2},{"q":"2+8=72","a":"2+8=10","k":2},{"q":"6+9=17","a":"5+9=14","k":2},{"q":"8-1=5","a":"5+1=6","k":2},{"q":"10+0=8","a":"16-8=8","k":2},{"q":"9-9=46","a":"9+9=18","k":2},{"q":"0+5=78","a":"9+9=18","k":2},{"q":"6-1=9","a":"5+1=6","k":2},{"q":"8+6=45","a":"8+8=16","k":2},{"q":"0-8=78","a":"8+8=16","k":2},{"q":"3+4=3","a":"9-4=5","k":2},{"q":"75-4=3","a":"13-4=9","k":2},{"q":"3-6=17","a":"5+6=11","k":2},{"q":"3+9=40","a":"9+9=18","k":2},{"q":"73-2=6","a":"13-8=5","k":2},{"q":"7+6=5","a":"7+2=9","k":2}]}};
-/* 창의수학게임 › 성냥개비 식 고치기: 성냥개비를 정해진 개수만큼 옮겨 맞는 식 만들기
-   성냥개비를 누르면 들리고, 빈 자리(점선)를 누르면 그리로 옮겨짐. = 는 움직이지 않음 */
+<script>window.CR={"game":"think-shape","levels":[{"id":"easy","nm":"쉬움","rec":"2~3학년","de":"차근차근 생각하면 풀 수 있는 문제 5개."},{"id":"normal","nm":"보통","rec":"3~4학년","de":"조건을 하나씩 따져야 하는 문제 5개."},{"id":"hard","nm":"도전","rec":"5~6학년","de":"오래 생각해야 하는 도전 문제 5개."}],"data":{"easy":[{"q":"그림에서 크고 작은 정사각형은 모두 몇 개일까요?","a":{"t":"num","v":5,"u":"개"},"k":["작은 정사각형부터 세어요.","작은 정사각형 4개","4칸을 다 합친 큰 정사각형도 있어요!"],"s":["작은 것 4개 + 큰 것 1개 = 5(개)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 112 112\" role=\"img\" aria-label=\"격자\" style=\"max-width:112px\"><g class=\"th-ln\"><line x1=\"6\" y1=\"6\" x2=\"6\" y2=\"106\"/><line x1=\"56\" y1=\"6\" x2=\"56\" y2=\"106\"/><line x1=\"106\" y1=\"6\" x2=\"106\" y2=\"106\"/><line x1=\"6\" y1=\"6\" x2=\"106\" y2=\"6\"/><line x1=\"6\" y1=\"56\" x2=\"106\" y2=\"56\"/><line x1=\"6\" y1=\"106\" x2=\"106\" y2=\"106\"/></g></svg>","tag":"크기별로 세기"},{"q":"그림에서 크고 작은 직사각형은 모두 몇 개일까요? (정사각형도 직사각형이에요)","a":{"t":"num","v":6,"u":"개"},"k":["한 칸짜리: 3개","두 칸짜리: 2개","세 칸짜리: 1개"],"s":["한 칸 3개 + 두 칸 2개 + 세 칸 1개 = 6(개)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 162 62\" role=\"img\" aria-label=\"격자\" style=\"max-width:162px\"><g class=\"th-ln\"><line x1=\"6\" y1=\"6\" x2=\"6\" y2=\"56\"/><line x1=\"56\" y1=\"6\" x2=\"56\" y2=\"56\"/><line x1=\"106\" y1=\"6\" x2=\"106\" y2=\"56\"/><line x1=\"156\" y1=\"6\" x2=\"156\" y2=\"56\"/><line x1=\"6\" y1=\"6\" x2=\"156\" y2=\"6\"/><line x1=\"6\" y1=\"56\" x2=\"156\" y2=\"56\"/></g></svg>","tag":"크기별로 세기"},{"q":"삼각형의 꼭짓점에서 밑변으로 선을 하나 그었어요. 그림에서 크고 작은 삼각형은 모두 몇 개일까요?","a":{"t":"num","v":3,"u":"개"},"k":["작은 삼각형이 몇 개 보이나요?","작은 삼각형 2개","둘을 합친 큰 삼각형도 세요."],"s":["작은 삼각형 2개 + 큰 삼각형 1개 = 3(개)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 240 150\" role=\"img\" aria-label=\"선 1개를 그은 삼각형\" style=\"max-width:240px\"><g class=\"th-ln\"><polygon points=\"120.0,10 10,140 230,140\" fill=\"none\"/><line x1=\"120.0\" y1=\"10\" x2=\"120.0\" y2=\"140\"/></g></svg>","tag":null},{"q":"정사각형의 네 꼭짓점에 점이 하나씩 있어요. 두 점을 이어 그을 수 있는 선분은 모두 몇 개일까요?","a":{"t":"num","v":6,"u":"개"},"k":["정사각형의 변이 몇 개인가요?","변 4개","대각선도 있어요!"],"s":["변 4개 + 대각선 2개 = 6(개)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 138 138\" role=\"img\" aria-label=\"정사각형 꼭짓점 위의 점 4개\" style=\"max-width:138px\"><circle cx=\"14\" cy=\"14\" r=\"6\" class=\"th-dot\"/><circle cx=\"124\" cy=\"14\" r=\"6\" class=\"th-dot\"/><circle cx=\"124\" cy=\"124\" r=\"6\" class=\"th-dot\"/><circle cx=\"14\" cy=\"124\" r=\"6\" class=\"th-dot\"/></svg>","tag":null},{"q":"주사위처럼 생긴 정육면체에는 꼭짓점이 몇 개 있을까요?","a":{"t":"num","v":8,"u":"개"},"k":["위쪽 면에 꼭짓점이 몇 개 있나요?","위쪽 면 4개","아래쪽 면에도 4개"],"s":["위쪽 4개 + 아래쪽 4개 = 8(개)"],"fig":null,"tag":null}],"normal":[{"q":"그림에서 크고 작은 정사각형은 모두 몇 개일까요?","a":{"t":"num","v":14,"u":"개"},"k":["1칸짜리 정사각형: 9개","2칸×2칸 정사각형: 4개","3칸×3칸 정사각형: 1개"],"s":["1칸 9개 + 4칸(2×2) 4개 + 9칸(3×3) 1개 = 14(개)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 144 144\" role=\"img\" aria-label=\"격자\" style=\"max-width:144px\"><g class=\"th-ln\"><line x1=\"6\" y1=\"6\" x2=\"6\" y2=\"138\"/><line x1=\"50\" y1=\"6\" x2=\"50\" y2=\"138\"/><line x1=\"94\" y1=\"6\" x2=\"94\" y2=\"138\"/><line x1=\"138\" y1=\"6\" x2=\"138\" y2=\"138\"/><line x1=\"6\" y1=\"6\" x2=\"138\" y2=\"6\"/><line x1=\"6\" y1=\"50\" x2=\"138\" y2=\"50\"/><line x1=\"6\" y1=\"94\" x2=\"138\" y2=\"94\"/><line x1=\"6\" y1=\"138\" x2=\"138\" y2=\"138\"/></g></svg>","tag":"크기별로 세기"},{"q":"그림에서 크고 작은 직사각형은 모두 몇 개일까요? (정사각형도 직사각형이에요)","a":{"t":"num","v":18,"u":"개"},"k":["가로줄만 보면 직사각형의 가로는 몇 가지로 정할 수 있나요?","가로 방향: 세로선 4개 중 2개를 고르는 방법 6가지","세로 방향: 가로선 3개 중 2개를 고르는 방법 3가지"],"s":["가로선 2개와 세로선 2개를 고르면 직사각형이 하나 생겨요. 세로선 4개 중 2개(6가지) × 가로선 3개 중 2개(3가지) = 18(개)","다른 방법: 크기별로 세기 — 1×1 6개, 2×1 4개, 3×1 2개, 1×2 3개, 2×2 2개, 3×2 1개 → 18개"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 144 100\" role=\"img\" aria-label=\"격자\" style=\"max-width:144px\"><g class=\"th-ln\"><line x1=\"6\" y1=\"6\" x2=\"6\" y2=\"94\"/><line x1=\"50\" y1=\"6\" x2=\"50\" y2=\"94\"/><line x1=\"94\" y1=\"6\" x2=\"94\" y2=\"94\"/><line x1=\"138\" y1=\"6\" x2=\"138\" y2=\"94\"/><line x1=\"6\" y1=\"6\" x2=\"138\" y2=\"6\"/><line x1=\"6\" y1=\"50\" x2=\"138\" y2=\"50\"/><line x1=\"6\" y1=\"94\" x2=\"138\" y2=\"94\"/></g></svg>","tag":"크기별로 세기"},{"q":"삼각형의 꼭짓점에서 밑변으로 선을 두 개 그었어요. 그림에서 크고 작은 삼각형은 모두 몇 개일까요?","a":{"t":"num","v":6,"u":"개"},"k":["작은 삼각형: 3개","두 개를 합친 삼각형: 2개","전체 큰 삼각형: 1개"],"s":["1칸 3개 + 2칸 2개 + 3칸 1개 = 6(개)","다른 방법: 꼭짓점에서 나온 선 4개 중 2개를 고르면 삼각형 하나 → 6가지"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 240 150\" role=\"img\" aria-label=\"선 2개를 그은 삼각형\" style=\"max-width:240px\"><g class=\"th-ln\"><polygon points=\"120.0,10 10,140 230,140\" fill=\"none\"/><line x1=\"120.0\" y1=\"10\" x2=\"83.33333333333333\" y2=\"140\"/><line x1=\"120.0\" y1=\"10\" x2=\"156.66666666666666\" y2=\"140\"/></g></svg>","tag":"크기별로 세기"},{"q":"직육면체의 모서리는 몇 개일까요?","a":{"t":"num","v":12,"u":"개"},"k":["위쪽 면의 테두리 모서리: 4개","아래쪽 면의 테두리: 4개","위와 아래를 잇는 세로 모서리도 있어요."],"s":["위 4개 + 아래 4개 + 세로 4개 = 12(개)"],"fig":null,"tag":null},{"q":"한 변이 1cm인 정사각형 5개를 이어 붙여 십자 모양을 만들었어요. 십자 모양의 둘레는 몇 cm일까요?","a":{"t":"num","v":12,"u":"cm"},"k":["둘레를 따라 한 칸 길이(1cm)짜리 선이 몇 개인지 세어 보세요.","가운데 칸은 바깥에 드러난 변이 없어요.","바깥쪽 정사각형 4개는 변이 3개씩 드러나요."],"s":["바깥쪽 정사각형 4개가 각각 3변씩 드러나요 → 3 × 4 = 12(cm)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 120 120\" role=\"img\" aria-label=\"정사각형 5개로 만든 십자 모양\" style=\"max-width:120px\"><rect x=\"42\" y=\"6\" width=\"36\" height=\"36\" class=\"th-cell\"/><rect x=\"6\" y=\"42\" width=\"36\" height=\"36\" class=\"th-cell\"/><rect x=\"42\" y=\"42\" width=\"36\" height=\"36\" class=\"th-cell\"/><rect x=\"78\" y=\"42\" width=\"36\" height=\"36\" class=\"th-cell\"/><rect x=\"42\" y=\"78\" width=\"36\" height=\"36\" class=\"th-cell\"/></svg>","tag":null}],"hard":[{"q":"한 변을 3칸으로 나눈 큰 삼각형이에요. 그림에서 크고 작은 삼각형은 모두 몇 개일까요?","a":{"t":"num","v":13,"u":"개"},"k":["위를 향한 삼각형과 아래를 향한 삼각형을 나누어 세요.","위를 향한 것: 작은 것 6개, 중간 3개, 큰 것 1개","아래를 향한 작은 삼각형도 있어요."],"s":["위를 향한 삼각형: 작은 6 + 중간 3 + 큰 1 = 10개, 아래를 향한 작은 삼각형 3개 → 13(개)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 232 203.06148721743872\" role=\"img\" aria-label=\"한 변을 3칸으로 나눈 삼각형\" style=\"max-width:232px\"><g class=\"th-ln\"><line x1=\"116.0\" y1=\"8.0\" x2=\"80.0\" y2=\"70.4\"/><line x1=\"116.0\" y1=\"8.0\" x2=\"152.0\" y2=\"70.4\"/><line x1=\"80.0\" y1=\"70.4\" x2=\"44.0\" y2=\"132.7\"/><line x1=\"80.0\" y1=\"70.4\" x2=\"116.0\" y2=\"132.7\"/><line x1=\"80.0\" y1=\"70.4\" x2=\"152.0\" y2=\"70.4\"/><line x1=\"152.0\" y1=\"70.4\" x2=\"116.0\" y2=\"132.7\"/><line x1=\"152.0\" y1=\"70.4\" x2=\"188.0\" y2=\"132.7\"/><line x1=\"44.0\" y1=\"132.7\" x2=\"8.0\" y2=\"195.1\"/><line x1=\"44.0\" y1=\"132.7\" x2=\"80.0\" y2=\"195.1\"/><line x1=\"44.0\" y1=\"132.7\" x2=\"116.0\" y2=\"132.7\"/><line x1=\"116.0\" y1=\"132.7\" x2=\"80.0\" y2=\"195.1\"/><line x1=\"116.0\" y1=\"132.7\" x2=\"152.0\" y2=\"195.1\"/><line x1=\"116.0\" y1=\"132.7\" x2=\"188.0\" y2=\"132.7\"/><line x1=\"188.0\" y1=\"132.7\" x2=\"152.0\" y2=\"195.1\"/><line x1=\"188.0\" y1=\"132.7\" x2=\"224.0\" y2=\"195.1\"/><line x1=\"8.0\" y1=\"195.1\" x2=\"80.0\" y2=\"195.1\"/><line x1=\"80.0\" y1=\"195.1\" x2=\"152.0\" y2=\"195.1\"/><line x1=\"152.0\" y1=\"195.1\" x2=\"224.0\" y2=\"195.1\"/></g></svg>","tag":"크기별로 세기"},{"q":"그림에서 크고 작은 정사각형은 모두 몇 개일까요?","a":{"t":"num","v":30,"u":"개"},"k":["크기별로 나누어 세요: 1×1, 2×2, 3×3, 4×4","1×1: 16개, 2×2: 9개","3×3: 4개, 4×4: 1개"],"s":["16 + 9 + 4 + 1 = 30(개) (1×1, 4×4 … 처럼 크기가 커질수록 개수가 4×4, 3×3, 2×2, 1×1로 줄어요)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 156 156\" role=\"img\" aria-label=\"격자\" style=\"max-width:156px\"><g class=\"th-ln\"><line x1=\"6\" y1=\"6\" x2=\"6\" y2=\"150\"/><line x1=\"42\" y1=\"6\" x2=\"42\" y2=\"150\"/><line x1=\"78\" y1=\"6\" x2=\"78\" y2=\"150\"/><line x1=\"114\" y1=\"6\" x2=\"114\" y2=\"150\"/><line x1=\"150\" y1=\"6\" x2=\"150\" y2=\"150\"/><line x1=\"6\" y1=\"6\" x2=\"150\" y2=\"6\"/><line x1=\"6\" y1=\"42\" x2=\"150\" y2=\"42\"/><line x1=\"6\" y1=\"78\" x2=\"150\" y2=\"78\"/><line x1=\"6\" y1=\"114\" x2=\"150\" y2=\"114\"/><line x1=\"6\" y1=\"150\" x2=\"150\" y2=\"150\"/></g></svg>","tag":"크기별로 세기"},{"q":"큰 정육면체의 겉면을 모두 빨간색으로 칠한 뒤, 가로·세로·높이를 각각 3칸으로 잘라 작은 정육면체 27개를 만들었어요. 두 면만 빨간색인 작은 정육면체는 몇 개일까요?","a":{"t":"num","v":12,"u":"개"},"k":["꼭짓점에 있는 작은 정육면체는 세 면이 칠해져 있어요.","두 면이 칠해진 것은 모서리 가운데에 있어요.","큰 정육면체의 모서리는 몇 개인가요?"],"s":["두 면만 칠해진 것은 큰 정육면체의 각 모서리 가운데에 하나씩 있어요. 모서리 12개 → 12(개) (세 면: 꼭짓점 8개, 한 면: 면 가운데 6개, 안 칠한 것: 한가운데 1개)"],"fig":null,"tag":null},{"q":"정육각형의 대각선은 모두 몇 개일까요?","a":{"t":"num","v":9,"u":"개"},"k":["한 꼭짓점에서 그을 수 있는 대각선은? (이웃한 꼭짓점과 자기 자신은 빼요)","한 꼭짓점에서 3개","6 × 3에서 같은 대각선을 두 번 셌어요."],"s":["한 꼭짓점에서 3개씩 → 6 × 3 = 18, 같은 대각선을 두 번 셌으니 18 ÷ 2 = 9(개)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 160 160\" role=\"img\" aria-label=\"정육각형\" style=\"max-width:160px\"><polygon points=\"140.6,115.0 80.0,150.0 19.4,115.0 19.4,45.0 80.0,10.0 140.6,45.0\" class=\"th-ln\" fill=\"none\"/></svg>","tag":"겹친 것 빼기"},{"q":"원 위에 점 5개가 있어요. 세 점을 이어 만들 수 있는 삼각형은 모두 몇 개일까요?","a":{"t":"num","v":10,"u":"개"},"k":["원 위의 세 점은 한 줄에 있지 않아서 언제나 삼각형이 돼요.","5개 중 3개를 고르는 방법을 세요.","고르지 않을 2개를 고르는 방법과 같아요."],"s":["5개 중 3개를 고르는 방법 = 남길 2개를 고르는 방법 = (5 × 4) ÷ 2 = 10(개)"],"fig":"<svg class=\"th-fig\" viewBox=\"0 0 168 168\" role=\"img\" aria-label=\"원 위의 점 5개\" style=\"max-width:168px\"><circle cx=\"84\" cy=\"84\" r=\"70\" class=\"th-faint\" fill=\"none\"/><circle cx=\"84.0\" cy=\"14.0\" r=\"6\" class=\"th-dot\"/><circle cx=\"150.6\" cy=\"62.4\" r=\"6\" class=\"th-dot\"/><circle cx=\"125.1\" cy=\"140.6\" r=\"6\" class=\"th-dot\"/><circle cx=\"42.9\" cy=\"140.6\" r=\"6\" class=\"th-dot\"/><circle cx=\"17.4\" cy=\"62.4\" r=\"6\" class=\"th-dot\"/></svg>","tag":null}]}};
+/* 사고력 수학: 한 문제씩 — 답 쓰기(수·고르기·여러 칸) · 🔑 생각 열쇠(공통 '힌트' 단추로 하나씩) · 📝 풀이 · 🖨️ 학습지/정답 인쇄 */
 (function () {
   'use strict';
-  var SEG = { '0': 'abcdef', '1': 'bc', '2': 'abdeg', '3': 'abcdg', '4': 'bcfg', '5': 'acdfg', '6': 'acdefg', '7': 'abc', '8': 'abcdefg', '9': 'abcdfg' }, OPS = { '+': 'hv', '-': 'h' };
-  var X0 = 8, X1 = 52, Y0 = 10, YM = 58, Y1 = 106, DW = 60, OW = 50, GAP = 8;
-  var DC = { a: [X0, Y0, X1, Y0], b: [X1, Y0, X1, YM], c: [X1, YM, X1, Y1], d: [X0, Y1, X1, Y1], e: [X0, YM, X0, Y1], f: [X0, Y0, X0, YM], g: [X0, YM, X1, YM] };
-  var OC = { h: [7, 58, 43, 58], v: [25, 40, 25, 76] };
-  var P, ctx, host, sl, start, sol, on, held, solved, hintPair = null;
-  function parse(eq) { return eq.split('').map(function (ch) { return { t: /\d/.test(ch) ? 'd' : ch === '=' ? 'e' : 'o', ch: ch } }) }
-  function setOf(eq) { var s = {}; parse(eq).forEach(function (x, i) { if (x.t === 'e') return; (x.t === 'd' ? SEG[x.ch] : OPS[x.ch]).split('').forEach(function (c) { s[i + ':' + c] = 1 }) }); return s }
-  function read() {
-    var out = '';
-    for (var i = 0; i < sl.length; i++) {
-      if (sl[i].t === 'e') { out += '='; continue }
-      var cs = (sl[i].t === 'd' ? 'abcdefg' : 'hv').split('').filter(function (c) { return on[i + ':' + c] }).join(''), hit = null, tb = sl[i].t === 'd' ? SEG : OPS;
-      Object.keys(tb).forEach(function (k) { if (tb[k] === cs) hit = k }); if (hit === null) return null; out += hit;
+  var P, ctx, host, opened, solved, tries;
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c] }) }
+  function ansHtml(a) {
+    if (a.t === 'pick') return '<div class="th-picks">' + a.o.map(function (o) { return '<button type="button" class="th-pick" data-v="' + esc(o) + '">' + esc(o) + (a.o.every(function (x) { return x.length === 1 }) && /[월화수목금토일]/.test(o) ? '요일' : '') + '</button>' }).join('') + '</div>';
+    var f = a.t === 'num' ? [{ l: '', v: a.v, u: a.u }] : a.f;
+    return '<div class="th-fields">' + f.map(function (x, i) {
+      return '<label class="th-field">' + (x.l ? '<span class="th-fl">' + esc(x.l) + '</span>' : '<span class="th-fl">답</span>') + '<input class="th-in" data-i="' + i + '" inputmode="decimal" autocomplete="off" aria-label="' + esc(x.l || '답') + '">' + (x.u ? '<span class="th-u">' + esc(x.u) + '</span>' : '') + '</label>';
+    }).join('') + '<button type="button" class="th-ok">확인</button></div>';
+  }
+  function answerText(a) {
+    if (a.t === 'pick') return a.v + (/^[월화수목금토일]$/.test(a.v) ? '요일' : '');
+    if (a.t === 'num') return a.v + (a.u || '');
+    return a.f.map(function (x) { return x.l + ' ' + x.v }).join(', ');
+  }
+  function solHtml(p) {
+    return '<div class="th-sol"><b class="th-sh">📝 풀이' + (p.tag ? ' <span class="th-tag">' + esc(p.tag) + '</span>' : '') + '</b>' + p.s.map(function (t) { return '<p>' + t + '</p>' }).join('') + '<p class="th-ans">정답: <b>' + esc(answerText(p.a)) + '</b></p></div>';
+  }
+  function num(v) { var s = String(v).replace(/[^0-9.\-]/g, ''); return s === '' ? NaN : parseFloat(s) }
+  function check(val) {
+    if (solved) return;
+    var a = P.a, ok;
+    if (a.t === 'pick') ok = val === a.v;
+    else {
+      var ins = host.querySelectorAll('.th-in'), vs = [].map.call(ins, function (e) { return num(e.value) });
+      if (vs.some(isNaN)) { ctx.msg('답을 모두 써 주세요.', 'bad'); return }
+      var want = a.t === 'num' ? [a.v] : a.f.map(function (x) { return x.v });
+      ok = vs.every(function (v, i) { return Math.abs(v - want[i]) < 1e-9 });
+      [].forEach.call(ins, function (e, i) { e.classList.toggle('no', Math.abs(vs[i] - want[i]) > 1e-9) });
     }
-    return out;
+    if (ok) return win('정답이에요! 풀이를 보며 내 생각과 견주어 보세요.');
+    tries++;
+    var box = host.querySelector('.th-answer'); box.classList.remove('shk'); void box.offsetWidth; box.classList.add('shk');
+    ctx.msg('다시 생각해 보세요.' + (opened < P.k.length ? ' 막히면 ‘💡 힌트’로 생각 열쇠를 열어 봐요.' : ''), 'bad');
   }
-  function isTrue(s) {
-    if (!s) return false; var lr = s.split('='), l = lr[0], r = lr[1], parts = l.split(/[+-]/).concat([r]);
-    if (parts.some(function (x) { return x.length > 1 && x[0] === '0' })) return false;
-    var a = parseInt(parts[0], 10), b = parseInt(parts[1], 10), c = parseInt(r, 10);
-    return l.indexOf('+') >= 0 ? a + b === c : a - b === c;
+  function win(t) {
+    solved = true; host.querySelector('.th-solbox').innerHTML = solHtml(P);
+    if (P.a.t === 'pick') host.querySelectorAll('.th-pick').forEach(function (b) { b.classList.toggle('on', b.dataset.v === P.a.v) });
+    ctx.done(t);
   }
-  function moved() { var n = 0; Object.keys(start).forEach(function (k) { if (!on[k]) n++ }); return n }
-  function layout() { var x = 0; sl.forEach(function (s) { s.x = x; x += (s.t === 'd' ? DW : OW) + GAP }); return x - GAP }
-  function stick(k, x1, y1, x2, y2, cls) {
-    var dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L, a = [x1 + ux * 4, y1 + uy * 4], b = [x2 - ux * 4, y2 - uy * 4];
-    var line = 'x1="' + a[0] + '" y1="' + a[1] + '" x2="' + b[0] + '" y2="' + b[1] + '"';
-    if (cls === 'off') return '<g class="mt-off" data-k="' + k + '"><line ' + line + ' class="mt-slot"/><line ' + line + ' class="mt-hit"/></g>';
-    return '<g class="mt-on' + (cls ? ' ' + cls : '') + '" data-k="' + k + '"><line ' + line + ' class="mt-wood"/><circle cx="' + a[0] + '" cy="' + a[1] + '" r="5.2" class="mt-head"/><line ' + line + ' class="mt-hit"/></g>';
+  function keysHtml() {
+    var h = ''; for (var i = 0; i < opened; i++) h += '<li><b>🔑 생각 열쇠 ' + (i + 1) + '</b> ' + P.k[i] + '</li>'; return h;
   }
-  function draw() {
-    var W = layout(), h = '<svg class="mt-svg" viewBox="-6 0 ' + (W + 12) + ' 116" role="application" aria-label="성냥개비 식">';
-    sl.forEach(function (s, i) {
-      if (s.t === 'e') { h += stick('', s.x + 7, 48, s.x + 43, 48, 'fixed') + stick('', s.x + 7, 68, s.x + 43, 68, 'fixed'); return }
-      var C = s.t === 'd' ? DC : OC;
-      Object.keys(C).forEach(function (c) {
-        var k = i + ':' + c, q = C[c], cls = on[k] ? (held === k ? 'held' : '') + (hintPair && hintPair[0] === k ? ' hfrom' : '') : 'off';
-        if (cls === 'off' && hintPair && hintPair[1] === k) cls = 'off';
-        h += stick(k, s.x + q[0], q[1], s.x + q[2], q[3], cls);
-      });
+  function printSheet(withAns) {   // A4 · 여백 15mm(@page) · 학습지는 한 쪽에 2문제쯤(생각 칸이 넉넉하도록 쪽이 늘어남)
+    var D = window.CR, lv = ctx.level, list = D.data[lv.id] || [], old = document.getElementById('thPrint'); if (old) old.remove();
+    var area = esc(document.querySelector('h1').textContent.replace(/^\S+\s/, ''));
+    var h = '<div id="thPrint"><header class="th-phead"><h1>사고력 수학 · ' + area + ' — ' + esc(lv.nm) + (withAns ? ' 정답과 풀이' : ' 학습지') + '</h1>'
+      + (withAns ? '' : '<p class="th-pname"><span>학년</span><span>반</span><span>번</span><span class="th-pnm">이름</span></p>') + '</header>';
+    var secs = list.map(function (p, i) {
+      return '<section class="th-pq' + (withAns ? ' th-pqa' : '') + '"><div class="th-pqh"><b>' + (i + 1) + '번</b></div><div class="th-q">' + p.q + '</div>' + (p.fig ? '<div class="th-pfig">' + p.fig + '</div>' : '')
+        + (p.a.t === 'pick' ? '<p class="th-popts">' + p.a.o.map(function (o, j) { return '①②③④⑤⑥⑦'[j] + ' ' + esc(o) }).join('　') + '</p>' : '')
+        + (withAns ? solHtml(p) : '<div class="th-pspace"><span>생각한 과정 (그림·식·표로 써도 좋아요)</span></div><div class="th-pa"><span>답</span><i></i></div>') + '</section>';
     });
-    host.querySelector('.mt-board').innerHTML = h + '</svg>';
-    if (hintPair) { var t = host.querySelector('.mt-off[data-k="' + hintPair[1] + '"]'); if (t) t.classList.add('hto') }
-    var r = read(), m = moved();
-    host.querySelector('#mtCnt').innerHTML = '옮긴 성냥개비 <b>' + m + '</b> / ' + P.k + '개';
-    host.querySelector('#mtNow').innerHTML = '지금 식: <b>' + (r ? r.replace(/-/g, '−') : '?') + '</b>' + (r ? (isTrue(r) ? ' <span class="ok">맞음</span>' : ' <span class="no">틀림</span>') : ' <span class="no">숫자가 아닌 모양이 있어요</span>');
-  }
-  function after() {
-    var r = read(), m = moved();
-    if (m === P.k && isTrue(r)) { solved = true; held = null; draw(); host.querySelector('.mt-board').classList.add('win'); ctx.done('성냥개비 ' + P.k + '개를 옮겨 <b>' + r.replace(/-/g, '−') + '</b> 식을 만들었어요!'); return }
-    if (m > P.k) ctx.msg('성냥개비는 ' + P.k + '개만 옮길 수 있어요. 옮긴 성냥개비를 제자리로 돌려 보세요.', 'bad');
-    else if (m === P.k) ctx.msg('아직 맞는 식이 아니에요. 다른 성냥개비를 옮겨 보세요.', 'bad');
-    else ctx.msg('');
-  }
-  function tap(k, isOn) {
-    if (solved) return; hintPair = null;
-    if (isOn) { held = held === k ? null : k; draw(); return }
-    if (!held) { ctx.msg('먼저 옮길 성냥개비를 눌러요.', 'bad'); return }
-    delete on[held]; on[k] = 1; held = null; draw(); after();
+    if (withAns) h += secs.join('');
+    else {   // 한 쪽(쓸 수 있는 높이 약 262mm)에 들어갈 만큼 묶고, 남는 높이는 '생각한 과정' 칸이 나눠 가짐 — 칸마다 적어도 55mm
+      // 실제 높이를 잼: 인쇄 폭(178mm)으로 화면 밖에 그려 보고, 쓰는 칸은 가장 작은 55mm로 둔 높이
+      var mm = 96 / 25.4, box = document.createElement('div'); box.id = 'thPrint'; box.className = 'th-measure';
+      box.innerHTML = secs.join(''); document.body.appendChild(box);
+      var est = [].map.call(box.querySelectorAll('.th-pq'), function (el) { return el.getBoundingClientRect().height / mm + 5 });
+      box.remove();
+      var head = h.slice(h.indexOf('<header')); h = h.slice(0, h.indexOf('<header'));
+      var pages = [], cur = [], used = 24;   // 첫 쪽은 머리말 자리
+      est.forEach(function (e, i) { if (cur.length && used + e > 266) { pages.push(cur); cur = []; used = 0 } cur.push(i); used += e });
+      pages.push(cur);
+      h += pages.map(function (pg, k) { return '<div class="th-ppage">' + (k ? '' : head) + pg.map(function (i) { return secs[i] }).join('') + '</div>' }).join('');
+    }
+    document.body.insertAdjacentHTML('beforeend', h + '</div>');
+    document.documentElement.classList.add('th-printing');
+    setTimeout(function () { window.print(); setTimeout(function () { document.documentElement.classList.remove('th-printing') }, 500) }, 60);
   }
   window.CRG = {
     render: function (h, p, c) {
-      host = h; P = p; ctx = c; sl = parse(p.q); start = setOf(p.q); sol = setOf(p.a); on = Object.assign({}, start); held = null; solved = false; hintPair = null;
-      host.innerHTML = '<p class="mt-goal">성냥개비를 <b>' + p.k + '개</b> 옮겨서 맞는 식을 만들어요</p><div class="mt-board"></div>'
-        + '<div class="mt-bar"><span id="mtCnt"></span><span id="mtNow"></span></div>'
-        + '<p class="mt-tip">성냥개비를 누르면 들려요. 점선으로 된 빈 자리를 누르면 그리로 옮겨요. <b>=</b> 는 움직이지 않아요.</p>';
-      draw();
-      host.querySelector('.mt-board').onclick = function (e) {
-        var g = e.target.closest('[data-k]'); if (!g || !g.dataset.k) return;
-        tap(g.dataset.k, g.classList.contains('mt-on'));
+      host = h; P = p; ctx = c; opened = 0; solved = false; tries = 0;
+      host.innerHTML = '<div class="th-card"><div class="th-q">' + p.q + '</div>' + (p.fig ? '<div class="th-figbox">' + p.fig + '</div>' : '')
+        + '<div class="th-answer">' + ansHtml(p.a) + '</div><ul class="th-keys" id="thKeys"></ul><div class="th-solbox"></div></div>'
+        + '<div class="th-prints"><button type="button" class="th-pbtn" data-w="0">🖨️ 이 단계 학습지 인쇄</button><button type="button" class="th-pbtn" data-w="1">🖨️ 정답과 풀이 인쇄</button></div>';
+      host.onclick = function (e) {
+        var pk = e.target.closest('.th-pick'), ok = e.target.closest('.th-ok'), pb = e.target.closest('.th-pbtn');
+        if (pk) check(pk.dataset.v); else if (ok) check(); else if (pb) printSheet(pb.dataset.w === '1');
       };
+      host.querySelectorAll('.th-in').forEach(function (inp, i, all) {
+        inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); if (all[i + 1]) all[i + 1].focus(); else check() } });
+        inp.addEventListener('input', function () { inp.classList.remove('no') });
+      });
     },
-    hint: function () {   // 옮길 성냥개비 하나와 놓을 자리를 빛냄(엉뚱하게 옮긴 것이 있으면 처음으로)
-      if (solved) return false;
-      var extra = Object.keys(on).filter(function (k) { return !sol[k] }), need = Object.keys(sol).filter(function (k) { return !on[k] }), note = '';
-      if (extra.some(function (k) { return !start[k] }) || moved() > P.k) { on = Object.assign({}, start); note = '처음 모양으로 돌렸어요. '; extra = Object.keys(on).filter(function (k) { return !sol[k] }); need = Object.keys(sol).filter(function (k) { return !on[k] }) }
-      if (!extra.length || !need.length) return false;
-      held = null; hintPair = [extra[0], need[0]]; draw();
-      ctx.msg('💡 ' + note + '반짝이는 성냥개비를 초록 점선 자리로 옮겨 보세요.'); return true;
+    hint: function () {
+      if (solved || opened >= P.k.length) { if (!solved) ctx.msg('생각 열쇠를 모두 열었어요. 그래도 어려우면 ‘🔑 정답 보기’로 풀이를 보세요.'); return false }
+      opened++; host.querySelector('#thKeys').innerHTML = keysHtml(); ctx.msg(''); return true;
     },
-    reveal: function () { on = Object.assign({}, sol); held = null; hintPair = null; draw(); after() }
+    reveal: function () {
+      if (solved) return;
+      if (P.a.t !== 'pick') { var want = P.a.t === 'num' ? [P.a.v] : P.a.f.map(function (x) { return x.v }); host.querySelectorAll('.th-in').forEach(function (e, i) { e.value = want[i]; e.classList.remove('no') }) }
+      win('정답: <b>' + esc(answerText(P.a)) + '</b> — 풀이를 천천히 읽어 보세요.');
+    }
   };
 })();
 

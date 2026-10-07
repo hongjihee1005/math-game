@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>성냥개비 식 고치기 · 창의 수학 · 초등 수학 게임 | 초등교사 홍지희</title>
-<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/creative/match.html"><meta property="og:title" content="성냥개비 식 고치기 · 창의 수학 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="틀린 성냥개비 식에서 성냥개비를 1~2개 옮겨 맞는 식으로 고치는 퍼즐"><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="틀린 성냥개비 식에서 성냥개비를 1~2개 옮겨 맞는 식으로 고치는 퍼즐">
-<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#C9463B;--ok:#2E9E5B;--bad:#D0453B;--cell:#FFFDF9;
+<title>님 게임 · 창의 수학 · 초등 수학 게임 | 초등교사 홍지희</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/creative/nim.html"><meta property="og:title" content="님 게임 · 창의 수학 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="돌 무더기에서 번갈아 가져가며 마지막 돌을 가져가면 이기는 님 게임 — 컴퓨터나 친구와 대결하며 이기는 규칙 찾기"><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="돌 무더기에서 번갈아 가져가며 마지막 돌을 가져가면 이기는 님 게임 — 컴퓨터나 친구와 대결하며 이기는 규칙 찾기">
+<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#2B6FB8;--ok:#2E9E5B;--bad:#D0453B;--cell:#FFFDF9;
  --display:'Jua','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--body:'Gowun Dodum','Apple SD Gothic Neo','Malgun Gothic',sans-serif;box-sizing:border-box}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37;--cell:#2F2925}}
 :root[data-theme="dark"]{--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37;--cell:#2F2925}
@@ -56,26 +56,31 @@ button{font:inherit;color:inherit;cursor:pointer}
 @keyframes cr-pop{50%{transform:scale(1.08)}}
 @media (max-width:640px){.cr-levels{grid-template-columns:1fr}.cr-lv{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 8px}.cr-lv small{width:100%}}
 @media print{.cr-gnav,.cr-levels,.cr-nums,.cr-bar button,.cr-how,.creditbar,.hj-nav,.hj-navbar,#hj-home{display:none!important}}
-/* 성냥개비 식 고치기 */
-.mt-goal{margin:0;text-align:center;color:var(--soft)}
-.mt-goal b{color:var(--acc);font-size:1.15em}
-.mt-board{width:100%;max-width:720px;padding:14px 10px;border-radius:20px;background:#2F3B46}
-.mt-svg{display:block;width:100%;height:auto;max-height:42vh}
-.mt-wood{stroke:#F2D49B;stroke-width:7;stroke-linecap:round}
-.mt-head{fill:#E0503F}
-.mt-hit{stroke:transparent;stroke-width:18;stroke-linecap:round;cursor:pointer}
-.mt-slot{stroke:#6E7E8C;stroke-width:5;stroke-linecap:round;stroke-dasharray:4 5;opacity:.75}
-.mt-on.fixed .mt-wood{stroke:#C9B48C}.mt-on.fixed .mt-head{fill:#A8584E}.mt-on.fixed .mt-hit{cursor:default}
-.mt-on.held{transform:translateY(-5px)}.mt-on.held .mt-wood{stroke:#FFE9A6;filter:drop-shadow(0 0 4px #FFD24D)}
-.mt-on.hfrom .mt-wood{animation:mt-blink 1s infinite}
-.mt-off:hover .mt-slot{stroke:#B9C7D3;opacity:1}
-.mt-off.hto .mt-slot{stroke:#4BD48A;opacity:1;animation:mt-blink 1s infinite}
-@keyframes mt-blink{50%{opacity:.35}}
-.mt-board.win{background:#24533E}
-.mt-bar{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;font-size:18px;color:var(--soft)}
-.mt-bar b{font-family:var(--display);font-weight:400;font-size:1.3em;color:var(--ink)}
-.mt-bar .ok{color:var(--ok);font-weight:800}.mt-bar .no{color:var(--bad);font-weight:800}
-.mt-tip{margin:0;font-size:15px;color:var(--soft);text-align:center}
+/* 님 게임 */
+.nm-modes{display:flex;gap:8px;justify-content:center}
+.nm-mode{border:3px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 18px;font-family:var(--display);font-size:18px}
+.nm-mode[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#fff}
+.nm-rule{margin:0;text-align:center;color:var(--soft)}
+.nm-turn{min-height:36px;padding:4px 18px;border-radius:999px;font-size:19px;background:color-mix(in srgb,#3B82D6 12%,var(--paper));color:var(--ink)}
+.nm-turn.p1{background:color-mix(in srgb,#E5534B 12%,var(--paper))}
+.nm-turn b{font-family:var(--display);font-weight:400;font-size:1.25em}
+.nm-turn:empty{display:none}
+.nm-piles{display:flex;flex-direction:column;gap:12px;width:100%;max-width:820px}
+.nm-row{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:18px;background:color-mix(in srgb,var(--line) 20%,var(--bg))}
+.nm-lab{display:flex;flex-direction:column;align-items:center;min-width:3.2em;font-family:var(--display);font-size:18px}
+.nm-lab small{font-family:var(--body);font-size:14px;color:var(--soft)}
+.nm-stones{display:flex;flex-wrap:wrap;gap:6px}
+.nm-st{width:clamp(30px,6vw,44px);height:clamp(30px,6vw,44px);border-radius:50%;border:0;padding:0;background:radial-gradient(circle at 35% 30%,#9C9590,#5E5650 70%);box-shadow:0 3px 0 rgba(0,0,0,.25);cursor:pointer;transition:transform .12s}
+.nm-st:hover{transform:translateY(-2px)}
+.nm-st.pick{background:radial-gradient(circle at 35% 30%,#FFD27A,#E0A21A 70%);transform:translateY(-4px)}
+.nm-bar{display:flex;gap:10px;justify-content:center}
+.nm-take,.nm-again{height:50px;padding:0 24px;border:0;border-radius:999px;background:var(--acc);color:#fff;font-family:var(--display);font-size:20px}
+.nm-take:disabled{opacity:.4;cursor:default}
+.nm-again{background:var(--ink)}
+.nm-how{max-width:760px;padding:12px 16px;border-radius:16px;background:color-mix(in srgb,#F2B92C 14%,var(--paper));border:2px dashed color-mix(in srgb,#F2B92C 55%,var(--line));line-height:1.7}
+.nm-log{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;font-size:15px;color:var(--soft)}
+.nm-log li.p0{color:#2F6FB8}.nm-log li.p1{color:#C0392B}
+.nm-tip{margin:0;font-size:15px;color:var(--soft);text-align:center}
 
 </style><style id="hj-contact-css">.hj-contact{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:8px 0 0;padding:0}.hj-contact a{display:inline-flex;align-items:center;gap:6px;color:var(--ink,#1F2A44);text-decoration:none;font-size:15px;line-height:1.2;background:var(--paper,#fff);border:2px solid var(--line,#CAD6E4);border-radius:999px;padding:5px 12px;white-space:nowrap}.hj-contact a:hover,.hj-contact a:focus-visible{border-color:var(--ink,#1F2A44);outline:0}.hj-contact svg{flex:none}#ovNavMade+.hj-contact{margin:0 0 0 8px;flex:none;flex-wrap:nowrap;gap:6px}#ovNavMade+.hj-contact a{font-size:13px;padding:3px 9px}@media print{.hj-contact a{border:0;padding:0}}</style><style id="hjfoot-css">.hjfoot{display:block;width:100%;flex-basis:100%;margin:40px 0 0;padding:16px 0 4px;border:0;border-top:3px solid var(--line,#CAD6E4);text-align:center;color:var(--soft,#4F5B75);font-family:var(--body,inherit);font-size:17px;line-height:1.7;word-break:keep-all;opacity:1}.hjfoot p{margin:2px 0;padding:0;border:0;background:none;font-size:inherit;color:inherit;text-align:center}</style>
 <!--hj-ctheme--><style id="hj-ctheme">/* hj-ctheme · 수업 자료 페이지 공통: 글꼴을 Pretendard로, 바탕·글자색을 메뉴와 같은 밝고 따뜻한 톤으로 */
@@ -755,10 +760,10 @@ html body:not(.mix) .hj-contact,html body:not(.mix) .hj-contact.hj-cvc{display:n
 html body .frameline{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.3em;row-gap:.2em}html body .frameline input{max-width:100%;text-align:center}
 </style><!--/hj-ctheme--></head><body>
 <main>
-<nav class="cr-gnav" aria-label="다른 창의수학게임"><a href="magic.html">마방진</a><a href="tangram.html">칠교놀이</a><a href="kenken.html">계산 스도쿠</a><a href="hanoi.html">하노이 탑</a><a href="nonogram.html">네모 로직</a><a href="make.html">목표 수 만들기</a><a href="balance.html">저울 퍼즐</a><a href="match.html" aria-current="page">성냥개비 식 고치기</a><a href="pento.html">펜토미노 채우기</a><a href="nim.html">님 게임</a><a href="blocks.html">쌓기나무</a></nav>
-<h1>🔥 성냥개비 식 고치기</h1>
-<p class="sub">성냥개비로 만든 식이 틀렸어요! 성냥개비를 딱 정해진 개수만큼 옮겨서 맞는 식으로 고쳐 보세요. 숫자 모양을 바꾸는 생각이 필요해요.</p>
-<details class="cr-how"><summary>이렇게 해요</summary><ul><li>성냥개비를 <b>누르면 들리고</b>, 점선으로 된 <b>빈 자리</b>를 누르면 그리로 옮겨져요. 들린 성냥개비를 다시 누르면 내려놓아요.</li><li>숫자는 디지털시계 숫자 모양이에요. 성냥개비 하나로 6이 0이나 9가 되기도 하고, + 가 − 가 되기도 해요. <b>=</b> 는 움직이지 않아요.</li><li>정해진 개수만큼 옮겨서 맞는 식이 되면 성공! 아래에 ‘지금 식’이 나와요.</li><li>💡 실마리: 성냥개비 한 개를 빼면 다른 숫자가 되는 숫자(8→0·6·9, 9→3·5, 7→1 …)와 한 개를 더하면 되는 숫자를 떠올려 보세요. 모든 문제는 답이 딱 하나예요.</li></ul></details>
+<nav class="cr-gnav" aria-label="다른 창의수학게임"><a href="magic.html">마방진</a><a href="tangram.html">칠교놀이</a><a href="kenken.html">계산 스도쿠</a><a href="hanoi.html">하노이 탑</a><a href="nonogram.html">네모 로직</a><a href="make.html">목표 수 만들기</a><a href="balance.html">저울 퍼즐</a><a href="match.html">성냥개비 식 고치기</a><a href="pento.html">펜토미노 채우기</a><a href="nim.html" aria-current="page">님 게임</a><a href="blocks.html">쌓기나무</a></nav>
+<h1>🤝 님 게임</h1>
+<p class="sub">돌을 번갈아 가져가요. 마지막 돌을 가져가는 사람이 이겨요! 컴퓨터나 친구와 겨루면서, 언제나 이기는 비밀 규칙을 찾아보세요.</p>
+<details class="cr-how"><summary>이렇게 해요</summary><ul><li><b>🤖 컴퓨터와</b> 또는 <b>👫 친구와 둘이</b>를 골라요. 처음은 언제나 먼저 하는 사람(나 또는 ‘파랑’) 차례예요.</li><li>가져갈 돌을 누르면 그 돌부터 줄 끝까지 골라져요. <b>가져가기</b>를 누르면 차례가 넘어가요.</li><li>쉬움·보통은 한 줄에서 정해진 개수까지, 도전은 여러 줄 중 한 줄을 골라 몇 개든 가져가요.</li><li>모든 판은 먼저 하는 사람이 <b>규칙대로 하면 반드시 이기는</b> 판이에요. 컴퓨터를 이기면 성공! (도전의 컴퓨터는 실수하지 않아요)</li><li>💡 실마리: 돌이 조금 남았을 때부터 거꾸로 생각해 보세요. “내가 상대에게 몇 개를 남기면 상대가 꼭 지게 될까?”</li></ul></details>
 <div class="cr-levels" id="crLevels" role="tablist" aria-label="단계"></div>
 <div class="cr-nums" id="crNums" aria-label="문제 번호"></div>
 <section class="cr-play" id="crPlay" aria-live="polite">
@@ -770,92 +775,113 @@ html body .frameline{display:flex!important;flex-wrap:wrap;justify-content:cente
 </section>
 <div class="creditbar"><a class="tolist" href="../index.html">📋 자료 목록으로</a><footer class="hjfoot"><p>생각하는 힘을 기르는 창의수학게임 자료입니다.</p><p>만든 사람: 초등교사 홍지희</p><p class="hj-contact"><a href="mailto:hongjihee1005@gmail.com" aria-label="이메일 보내기: hongjihee1005@gmail.com"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>hongjihee1005@gmail.com</span></a><a href="https://www.youtube.com/@hongjihee1005" target="_blank" rel="noopener" aria-label="유튜브 채널 열기: @hongjihee1005"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E5484D"/><path d="M10 8.2v7.6l6.2-3.8z" fill="#fff"/></svg><span>유튜브 @hongjihee1005</span></a></p></footer></div>
 </main>
-<script>window.CR={"game":"match","levels":[{"id":"easy","nm":"쉬움","rec":"3~4학년","de":"한 자리 수 식, 성냥개비 1개 옮기기."},{"id":"normal","nm":"보통","rec":"4~5학년","de":"답이 두 자리 수일 수 있는 식, 성냥개비 1개 옮기기."},{"id":"hard","nm":"도전","rec":"5~6학년","de":"성냥개비 2개를 옮겨야 해요!"}],"data":{"easy":[{"q":"5+8=9","a":"9+0=9","k":1},{"q":"3+5=6","a":"3+3=6","k":1},{"q":"2-9=2","a":"2-0=2","k":1},{"q":"1-1=9","a":"1-1=0","k":1},{"q":"4-3=2","a":"4-2=2","k":1},{"q":"6-8=1","a":"9-8=1","k":1},{"q":"8-5=2","a":"8-5=3","k":1},{"q":"6+2=9","a":"6+3=9","k":1},{"q":"9-6=5","a":"9-6=3","k":1},{"q":"5-1=6","a":"6-1=5","k":1},{"q":"0-5=4","a":"9-5=4","k":1},{"q":"6-4=3","a":"6-4=2","k":1},{"q":"9+2=8","a":"6+2=8","k":1},{"q":"9+0=8","a":"8-0=8","k":1},{"q":"4-5=8","a":"4+5=9","k":1},{"q":"1-5=8","a":"1+5=6","k":1},{"q":"8-9=9","a":"0+9=9","k":1},{"q":"5+4=2","a":"6-4=2","k":1},{"q":"5+6=0","a":"6-6=0","k":1},{"q":"9-1=4","a":"3+1=4","k":1}],"normal":[{"q":"6-9=19","a":"6+9=15","k":1},{"q":"5+6=3","a":"9-6=3","k":1},{"q":"2-6=7","a":"2+5=7","k":1},{"q":"1-9=1","a":"1-0=1","k":1},{"q":"2+6=1","a":"2+5=7","k":1},{"q":"4+9=1","a":"4+3=7","k":1},{"q":"1+5=72","a":"7+5=12","k":1},{"q":"0+2=6","a":"8-2=6","k":1},{"q":"8-2=18","a":"8+2=10","k":1},{"q":"2+8=6","a":"2+6=8","k":1},{"q":"8+3=15","a":"6+9=15","k":1},{"q":"1-9=18","a":"1+9=10","k":1},{"q":"9+8=71","a":"9+8=17","k":1},{"q":"6+2=6","a":"8-2=6","k":1},{"q":"10-2=76","a":"18-2=16","k":1},{"q":"7+1=74","a":"7+7=14","k":1},{"q":"8-1=10","a":"9+1=10","k":1},{"q":"6+3=3","a":"0+3=3","k":1},{"q":"10-9=4","a":"10-6=4","k":1},{"q":"2+8=19","a":"2+8=10","k":1}],"hard":[{"q":"8-4=8","a":"9-9=0","k":2},{"q":"7+0=8","a":"3+0=3","k":2},{"q":"1+5=19","a":"7+5=12","k":2},{"q":"7-3=6","a":"1+5=6","k":2},{"q":"6-2=78","a":"8+2=10","k":2},{"q":"2+8=72","a":"2+8=10","k":2},{"q":"6+9=17","a":"5+9=14","k":2},{"q":"8-1=5","a":"5+1=6","k":2},{"q":"10+0=8","a":"16-8=8","k":2},{"q":"9-9=46","a":"9+9=18","k":2},{"q":"0+5=78","a":"9+9=18","k":2},{"q":"6-1=9","a":"5+1=6","k":2},{"q":"8+6=45","a":"8+8=16","k":2},{"q":"0-8=78","a":"8+8=16","k":2},{"q":"3+4=3","a":"9-4=5","k":2},{"q":"75-4=3","a":"13-4=9","k":2},{"q":"3-6=17","a":"5+6=11","k":2},{"q":"3+9=40","a":"9+9=18","k":2},{"q":"73-2=6","a":"13-8=5","k":2},{"q":"7+6=5","a":"7+2=9","k":2}]}};
-/* 창의수학게임 › 성냥개비 식 고치기: 성냥개비를 정해진 개수만큼 옮겨 맞는 식 만들기
-   성냥개비를 누르면 들리고, 빈 자리(점선)를 누르면 그리로 옮겨짐. = 는 움직이지 않음 */
+<script>window.CR={"game":"nim","levels":[{"id":"easy","nm":"쉬움","rec":"2~3학년","de":"돌 한 줄, 한 번에 1~2개. 컴퓨터가 가끔 실수해요."},{"id":"normal","nm":"보통","rec":"4~5학년","de":"돌 한 줄, 한 번에 1~3개. 컴퓨터는 실수하지 않아요 — 4의 비밀을 찾아요!"},{"id":"hard","nm":"도전","rec":"5~6학년","de":"돌 3~4줄, 한 줄에서 몇 개든. 2진법과 이어지는 ‘님 합’의 비밀!"}],"data":{"easy":[{"p":[5],"k":2},{"p":[7],"k":2},{"p":[8],"k":2},{"p":[10],"k":2},{"p":[11],"k":2},{"p":[13],"k":2},{"p":[14],"k":2},{"p":[16],"k":2},{"p":[19],"k":2},{"p":[20],"k":2}],"normal":[{"p":[13],"k":3},{"p":[14],"k":3},{"p":[15],"k":3},{"p":[17],"k":3},{"p":[18],"k":3},{"p":[19],"k":3},{"p":[21],"k":3},{"p":[23],"k":3},{"p":[26],"k":3},{"p":[27],"k":3}],"hard":[{"p":[1,4,4],"k":0},{"p":[2,4,4],"k":0},{"p":[1,3,3,4],"k":0},{"p":[1,2,3,5],"k":0},{"p":[3,3,6],"k":0},{"p":[1,2,5,5],"k":0},{"p":[1,1,4,7],"k":0},{"p":[3,3,7],"k":0},{"p":[4,5,5],"k":0},{"p":[3,5,7],"k":0}]}};
+/* 창의수학게임 › 님 게임: 돌 줄에서 번갈아 가져가고 마지막 돌을 가져가면 이김 — 컴퓨터와 / 친구와 둘이 */
 (function () {
   'use strict';
-  var SEG = { '0': 'abcdef', '1': 'bc', '2': 'abdeg', '3': 'abcdg', '4': 'bcfg', '5': 'acdfg', '6': 'acdefg', '7': 'abc', '8': 'abcdefg', '9': 'abcdfg' }, OPS = { '+': 'hv', '-': 'h' };
-  var X0 = 8, X1 = 52, Y0 = 10, YM = 58, Y1 = 106, DW = 60, OW = 50, GAP = 8;
-  var DC = { a: [X0, Y0, X1, Y0], b: [X1, Y0, X1, YM], c: [X1, YM, X1, Y1], d: [X0, Y1, X1, Y1], e: [X0, YM, X0, Y1], f: [X0, Y0, X0, YM], g: [X0, YM, X1, YM] };
-  var OC = { h: [7, 58, 43, 58], v: [25, 40, 25, 76] };
-  var P, ctx, host, sl, start, sol, on, held, solved, hintPair = null;
-  function parse(eq) { return eq.split('').map(function (ch) { return { t: /\d/.test(ch) ? 'd' : ch === '=' ? 'e' : 'o', ch: ch } }) }
-  function setOf(eq) { var s = {}; parse(eq).forEach(function (x, i) { if (x.t === 'e') return; (x.t === 'd' ? SEG[x.ch] : OPS[x.ch]).split('').forEach(function (c) { s[i + ':' + c] = 1 }) }); return s }
-  function read() {
-    var out = '';
-    for (var i = 0; i < sl.length; i++) {
-      if (sl[i].t === 'e') { out += '='; continue }
-      var cs = (sl[i].t === 'd' ? 'abcdefg' : 'hv').split('').filter(function (c) { return on[i + ':' + c] }).join(''), hit = null, tb = sl[i].t === 'd' ? SEG : OPS;
-      Object.keys(tb).forEach(function (k) { if (tb[k] === cs) hit = k }); if (hit === null) return null; out += hit;
-    }
-    return out;
+  var P, ctx, host, piles, turn, sel, mode = 'cpu', over, busy, timer = null, hist, autoT = null;
+  function maxTake(i) { return P.k ? Math.min(P.k, piles[i]) : piles[i] }
+  function best(ps) {   // 이기는 수 [줄, 개수] (없으면 null)
+    if (ps.length === 1 && P.k) { var r = ps[0] % (P.k + 1); return r ? [0, r] : null }
+    var x = 0; ps.forEach(function (n) { x ^= n }); if (!x) return null;
+    for (var i = 0; i < ps.length; i++) { var t = ps[i] ^ x; if (t < ps[i]) return [i, ps[i] - t] }
+    return null;
   }
-  function isTrue(s) {
-    if (!s) return false; var lr = s.split('='), l = lr[0], r = lr[1], parts = l.split(/[+-]/).concat([r]);
-    if (parts.some(function (x) { return x.length > 1 && x[0] === '0' })) return false;
-    var a = parseInt(parts[0], 10), b = parseInt(parts[1], 10), c = parseInt(r, 10);
-    return l.indexOf('+') >= 0 ? a + b === c : a - b === c;
-  }
-  function moved() { var n = 0; Object.keys(start).forEach(function (k) { if (!on[k]) n++ }); return n }
-  function layout() { var x = 0; sl.forEach(function (s) { s.x = x; x += (s.t === 'd' ? DW : OW) + GAP }); return x - GAP }
-  function stick(k, x1, y1, x2, y2, cls) {
-    var dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L, a = [x1 + ux * 4, y1 + uy * 4], b = [x2 - ux * 4, y2 - uy * 4];
-    var line = 'x1="' + a[0] + '" y1="' + a[1] + '" x2="' + b[0] + '" y2="' + b[1] + '"';
-    if (cls === 'off') return '<g class="mt-off" data-k="' + k + '"><line ' + line + ' class="mt-slot"/><line ' + line + ' class="mt-hit"/></g>';
-    return '<g class="mt-on' + (cls ? ' ' + cls : '') + '" data-k="' + k + '"><line ' + line + ' class="mt-wood"/><circle cx="' + a[0] + '" cy="' + a[1] + '" r="5.2" class="mt-head"/><line ' + line + ' class="mt-hit"/></g>';
-  }
+  function anyMove(ps) { var i = 0; ps.forEach(function (n, j) { if (n > ps[i]) i = j }); return [i, 1 + Math.floor(Math.random() * (P.k ? Math.min(P.k, ps[i]) : Math.min(ps[i], 3)))] }
+  function who(t) { return mode === 'cpu' ? (t === 0 ? '나' : '컴퓨터') : (t === 0 ? '파랑' : '빨강') }
+  function rule() { return P.k ? '한 줄에서 한 번에 <b>1~' + P.k + '개</b>씩 가져가요' : '한 줄을 골라 그 줄에서 <b>몇 개든</b>(1개 이상) 가져가요' }
   function draw() {
-    var W = layout(), h = '<svg class="mt-svg" viewBox="-6 0 ' + (W + 12) + ' 116" role="application" aria-label="성냥개비 식">';
-    sl.forEach(function (s, i) {
-      if (s.t === 'e') { h += stick('', s.x + 7, 48, s.x + 43, 48, 'fixed') + stick('', s.x + 7, 68, s.x + 43, 68, 'fixed'); return }
-      var C = s.t === 'd' ? DC : OC;
-      Object.keys(C).forEach(function (c) {
-        var k = i + ':' + c, q = C[c], cls = on[k] ? (held === k ? 'held' : '') + (hintPair && hintPair[0] === k ? ' hfrom' : '') : 'off';
-        if (cls === 'off' && hintPair && hintPair[1] === k) cls = 'off';
-        h += stick(k, s.x + q[0], q[1], s.x + q[2], q[3], cls);
-      });
+    host.innerHTML = '<div class="nm-modes" role="group" aria-label="누구와 할까요"><button type="button" class="nm-mode" data-m="cpu">🤖 컴퓨터와</button><button type="button" class="nm-mode" data-m="two">👫 친구와 둘이</button></div>'
+      + '<p class="nm-rule">' + rule() + ' · <b>마지막 돌을 가져가는 사람이 이겨요</b></p>'
+      + '<div class="nm-turn" id="nmTurn"></div><div class="nm-piles" id="nmPiles"></div>'
+      + '<div class="nm-bar"><button type="button" class="nm-take" id="nmTake" disabled>가져가기</button><button type="button" class="nm-again" id="nmAgain" hidden>한 판 더</button></div>'
+      + '<div class="nm-how" id="nmHow" hidden></div><ol class="nm-log" id="nmLog"></ol>'
+      + '<p class="nm-tip">가져갈 돌을 누르면 그 돌부터 줄 끝까지 골라져요. ‘가져가기’를 눌러 차례를 넘겨요. 처음은 언제나 ' + (mode === 'cpu' ? '내' : '‘파랑’') + ' 차례예요.</p>';
+    host.querySelectorAll('.nm-mode').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.m === mode)) });
+    paint();
+  }
+  function paint() {
+    var h = '';
+    piles.forEach(function (n, i) {
+      h += '<div class="nm-row"><span class="nm-lab">' + (piles.length > 1 ? (i + 1) + '줄' : '') + '<small>' + n + '개</small></span><div class="nm-stones">';
+      for (var j = 0; j < n; j++) h += '<button type="button" class="nm-st' + (sel && sel[0] === i && j >= sel[1] ? ' pick' : '') + '" data-i="' + i + '" data-j="' + j + '" aria-label="' + (i + 1) + '줄 ' + (j + 1) + '번째 돌"></button>';
+      h += '</div></div>';
     });
-    host.querySelector('.mt-board').innerHTML = h + '</svg>';
-    if (hintPair) { var t = host.querySelector('.mt-off[data-k="' + hintPair[1] + '"]'); if (t) t.classList.add('hto') }
-    var r = read(), m = moved();
-    host.querySelector('#mtCnt').innerHTML = '옮긴 성냥개비 <b>' + m + '</b> / ' + P.k + '개';
-    host.querySelector('#mtNow').innerHTML = '지금 식: <b>' + (r ? r.replace(/-/g, '−') : '?') + '</b>' + (r ? (isTrue(r) ? ' <span class="ok">맞음</span>' : ' <span class="no">틀림</span>') : ' <span class="no">숫자가 아닌 모양이 있어요</span>');
+    host.querySelector('#nmPiles').innerHTML = h;
+    var t = host.querySelector('#nmTurn');
+    t.className = 'nm-turn p' + turn; t.innerHTML = over ? '' : (mode === 'cpu' && turn === 1 ? '🤖 컴퓨터가 생각하고 있어요…' : '<b>' + who(turn) + '</b> 차례' + (mode === 'cpu' ? '예요' : ''));
+    var c = sel ? piles[sel[0]] - sel[1] : 0, b = host.querySelector('#nmTake');
+    b.disabled = !c || over || busy || (mode === 'cpu' && turn === 1); b.textContent = c ? c + '개 가져가기' : '가져가기';
+    host.querySelector('#nmLog').innerHTML = hist.map(function (x) { return '<li class="p' + x[0] + '">' + who(x[0]) + ': ' + (piles.length > 1 ? (x[1] + 1) + '줄에서 ' : '') + x[2] + '개</li>' }).join('');
   }
-  function after() {
-    var r = read(), m = moved();
-    if (m === P.k && isTrue(r)) { solved = true; held = null; draw(); host.querySelector('.mt-board').classList.add('win'); ctx.done('성냥개비 ' + P.k + '개를 옮겨 <b>' + r.replace(/-/g, '−') + '</b> 식을 만들었어요!'); return }
-    if (m > P.k) ctx.msg('성냥개비는 ' + P.k + '개만 옮길 수 있어요. 옮긴 성냥개비를 제자리로 돌려 보세요.', 'bad');
-    else if (m === P.k) ctx.msg('아직 맞는 식이 아니에요. 다른 성냥개비를 옮겨 보세요.', 'bad');
-    else ctx.msg('');
+  function pick(i, j) {
+    if (over || busy || (mode === 'cpu' && turn === 1)) return;
+    var n = piles[i], from = Math.max(j, n - maxTake(i));
+    if (j < n - maxTake(i)) ctx.msg('한 번에 ' + P.k + '개까지만 가져갈 수 있어요.', 'bad'); else ctx.msg('');
+    sel = sel && sel[0] === i && sel[1] === from ? null : [i, from]; paint();
   }
-  function tap(k, isOn) {
-    if (solved) return; hintPair = null;
-    if (isOn) { held = held === k ? null : k; draw(); return }
-    if (!held) { ctx.msg('먼저 옮길 성냥개비를 눌러요.', 'bad'); return }
-    delete on[held]; on[k] = 1; held = null; draw(); after();
+  function take(i, c) {
+    piles[i] -= c; hist.push([turn, i, c]); sel = null;
+    if (piles.every(function (n) { return !n })) { end(turn); return }
+    turn = 1 - turn; paint();
+    if (mode === 'cpu' && turn === 1 && !autoT) cpu();
+  }
+  function cpu() {
+    busy = true; paint();
+    timer = setTimeout(function () {
+      timer = null; busy = false; if (over || !document.body.contains(host)) return;
+      var m = best(piles); if (!m || (P.k === 2 && Math.random() < .35)) m = anyMove(piles);   // 쉬움 단계 컴퓨터는 가끔 실수
+      sel = [m[0], piles[m[0]] - m[1]]; paint();
+      setTimeout(function () { if (!over && document.body.contains(host)) take(m[0], m[1]) }, 450);
+    }, 700);
+  }
+  function end(t) {
+    over = true; paint(); host.querySelector('#nmAgain').hidden = false;
+    if (mode === 'cpu') {
+      if (t === 0) ctx.done('마지막 돌을 가져갔어요 — 컴퓨터를 이겼어요! 이기는 규칙을 찾았나요?');
+      else ctx.msg('컴퓨터가 마지막 돌을 가져갔어요. ‘한 판 더’로 다시 도전! 💡 힌트로 이기는 방법을 살짝 볼 수 있어요.', 'bad');
+    } else ctx.msg('🎉 <b>' + who(t) + '</b>이 마지막 돌을 가져가서 이겼어요!', 'ok');
+  }
+  function reset() {
+    if (timer) { clearTimeout(timer); timer = null } if (autoT) { clearInterval(autoT); autoT = null }
+    piles = P.p.slice(); turn = 0; sel = null; over = false; busy = false; hist = []; draw(); ctx.msg('');
+  }
+  function howText() {
+    return P.k ? '🔑 <b>이기는 규칙</b>: 상대에게 늘 <b>' + (P.k + 1) + '의 배수</b>만큼 남겨요. 상대가 □개를 가져가면 나는 ' + (P.k + 1) + '−□개를 가져가서, 둘이 한 번씩 할 때마다 꼭 ' + (P.k + 1) + '개씩 줄게 해요. 그러면 마지막 돌은 언제나 내 차지!'
+      : '🔑 <b>이기는 규칙(님 합)</b>: 줄마다 돌 수를 <b>4개 묶음·2개 묶음·1개 묶음</b>으로 나누어 보세요(예: 7 = 4 + 2 + 1, 5 = 4 + 1). 모든 줄을 합쳐 4개 묶음, 2개 묶음, 1개 묶음이 <b>각각 짝수 개</b>가 되게 남기면 이겨요. 상대가 어떻게 가져가도 짝이 깨지고, 나는 다시 짝을 맞출 수 있어요.';
   }
   window.CRG = {
     render: function (h, p, c) {
-      host = h; P = p; ctx = c; sl = parse(p.q); start = setOf(p.q); sol = setOf(p.a); on = Object.assign({}, start); held = null; solved = false; hintPair = null;
-      host.innerHTML = '<p class="mt-goal">성냥개비를 <b>' + p.k + '개</b> 옮겨서 맞는 식을 만들어요</p><div class="mt-board"></div>'
-        + '<div class="mt-bar"><span id="mtCnt"></span><span id="mtNow"></span></div>'
-        + '<p class="mt-tip">성냥개비를 누르면 들려요. 점선으로 된 빈 자리를 누르면 그리로 옮겨요. <b>=</b> 는 움직이지 않아요.</p>';
-      draw();
-      host.querySelector('.mt-board').onclick = function (e) {
-        var g = e.target.closest('[data-k]'); if (!g || !g.dataset.k) return;
-        tap(g.dataset.k, g.classList.contains('mt-on'));
+      host = h; P = p; ctx = c; reset();
+      host.onclick = function (e) {
+        var st = e.target.closest('.nm-st'), md = e.target.closest('.nm-mode');
+        if (st) return pick(+st.dataset.i, +st.dataset.j);
+        if (md) { mode = md.dataset.m; reset(); return }
+        if (e.target.closest('#nmTake') && sel) return take(sel[0], piles[sel[0]] - sel[1]);
+        if (e.target.closest('#nmAgain')) reset();
       };
     },
-    hint: function () {   // 옮길 성냥개비 하나와 놓을 자리를 빛냄(엉뚱하게 옮긴 것이 있으면 처음으로)
-      if (solved) return false;
-      var extra = Object.keys(on).filter(function (k) { return !sol[k] }), need = Object.keys(sol).filter(function (k) { return !on[k] }), note = '';
-      if (extra.some(function (k) { return !start[k] }) || moved() > P.k) { on = Object.assign({}, start); note = '처음 모양으로 돌렸어요. '; extra = Object.keys(on).filter(function (k) { return !sol[k] }); need = Object.keys(sol).filter(function (k) { return !on[k] }) }
-      if (!extra.length || !need.length) return false;
-      held = null; hintPair = [extra[0], need[0]]; draw();
-      ctx.msg('💡 ' + note + '반짝이는 성냥개비를 초록 점선 자리로 옮겨 보세요.'); return true;
+    hint: function () {
+      if (over || busy || autoT) return false;
+      if (mode === 'cpu' && turn === 1) return false;
+      var m = best(piles);
+      if (!m) { ctx.msg('💡 지금은 어떻게 가져가도 불리한 자리예요. 1개만 가져가고 상대의 실수를 기다려 보세요. 다음 판에는 처음부터 규칙을 지켜 봐요!'); return true }
+      sel = [m[0], piles[m[0]] - m[1]]; paint();
+      ctx.msg('💡 ' + (piles.length > 1 ? (m[0] + 1) + '줄에서 ' : '') + m[1] + '개를 가져가 보세요(골라 두었어요). ' + (P.k ? '남은 돌이 ' + (P.k + 1) + '의 배수가 돼요.' : '그러면 상대가 불리해져요.'));
+      return true;
     },
-    reveal: function () { on = Object.assign({}, sol); held = null; hintPair = null; draw(); after() }
+    reveal: function () {   // 이기는 규칙을 보여 주고, 처음부터 양쪽 모두 잘하면 어떻게 되는지 저절로 보여 줌
+      if (autoT) return;
+      var md = mode; mode = 'cpu'; reset(); mode = md;
+      var hw = host.querySelector('#nmHow'); hw.hidden = false; hw.innerHTML = howText();
+      autoT = setInterval(function () {
+        if (!document.body.contains(host)) { clearInterval(autoT); autoT = null; return }
+        var m = best(piles) || anyMove(piles); var t = turn;
+        piles[m[0]] -= m[1]; hist.push([t, m[0], m[1]]); sel = null;
+        if (piles.every(function (n) { return !n })) { clearInterval(autoT); autoT = null; over = true; paint(); host.querySelector('#nmHow').hidden = false; ctx.done('규칙대로 하면 먼저 하는 사람이 이겨요. ' + (P.k ? (P.k + 1) + '의 배수를 남기는 것' : '님 합을 0으로 남기는 것') + '을 기억하세요!'); return }
+        turn = 1 - turn; paint();
+      }, 650);
+    }
   };
 })();
 
