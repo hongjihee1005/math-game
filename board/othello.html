@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>바둑 · 초등 수학 게임 | 초등교사 홍지희</title>
-<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/board/baduk.html"><meta property="og:title" content="바둑 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="1~3단계는 돌을 먼저 잡으면 이기는 따먹기 바둑, 4~10단계는 집을 더 많이 짓는 9줄 바둑이에요. 친구와 둘이 13줄 바둑도 둘 수 있어요."><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="1~3단계는 돌을 먼저 잡으면 이기는 따먹기 바둑, 4~10단계는 집을 더 많이 짓는 9줄 바둑이에요. 친구와 둘이 13줄 바둑도 둘 수 있어요.">
-<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#8A5A1F;--ok:#2E9E5B;--bad:#D0453B;
+<title>오셀로 · 초등 수학 게임 | 초등교사 홍지희</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/board/othello.html"><meta property="og:title" content="오셀로 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="상대 돌을 내 돌 두 개 사이에 끼우면 내 색으로 뒤집혀요. 판이 다 차거나 둘 곳이 없을 때 돌이 더 많은 쪽이 이겨요."><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="상대 돌을 내 돌 두 개 사이에 끼우면 내 색으로 뒤집혀요. 판이 다 차거나 둘 곳이 없을 때 돌이 더 많은 쪽이 이겨요.">
+<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#2E8B57;--ok:#2E9E5B;--bad:#D0453B;
  --display:'Jua','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--body:'Gowun Dodum','Apple SD Gothic Neo','Malgun Gothic',sans-serif;box-sizing:border-box}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37}}
 :root[data-theme="dark"]{--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37}
@@ -85,6 +85,44 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(21px,2.4vw,26px);m
 .bd-msg.bd-ok{color:var(--ok);font-weight:700}.bd-msg.bd-bad{color:var(--bad)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .bd-wood{fill:#C9A060}}
 :root[data-theme="dark"] .bd-wood{fill:#C9A060}
+/* 사목·오셀로·장기 (c4- ot- jg-, 말 조각 pc-) */
+.bd-bwrap.pg-connect4{width:min(560px,100%,calc((100vh - 230px) * 1.07))}
+.bd-bwrap.pg-othello{width:min(600px,100%,calc(100vh - 230px))}
+.bd-bwrap.pg-janggi{width:min(540px,100%,calc((100vh - 230px) * .9))}
+.bd-tbar{width:min(600px,100%)}
+.pc-connect41{background:#E0443A;border-color:#9B241C}.pc-connect42{background:#F5C518;border-color:#A8850A}
+.pc-othello1{background:#1d1d1d}.pc-othello2{background:#fff}
+.pc-janggi1{background:#1B5FAF;border-color:#0F3D73;border-radius:3px}.pc-janggi2{background:#C0392B;border-color:#7E2219;border-radius:3px}
+.c4-board{fill:#2E63C8}
+.c4-hole{fill:var(--paper)}
+.c4-col{fill:#fff;opacity:.13;pointer-events:none}
+.c4-d{stroke-width:3}.c4-p1{fill:#E0443A;stroke:#9B241C}.c4-p2{fill:#F5C518;stroke:#A8850A}
+.c4-ghost{opacity:.55;pointer-events:none}
+.c4-new{animation:c4drop .35s cubic-bezier(.5,0,.75,1)}
+@keyframes c4drop{from{transform:translateY(var(--fy))}to{transform:none}}
+.c4-win{fill:#fff;opacity:.9;pointer-events:none}
+.c4-last{fill:#fff;opacity:.85;pointer-events:none}
+.ot-frame{fill:#2F5A3A}.ot-board{fill:#2E8B57}.ot-ln{stroke:#174A2C;stroke-width:1.5}.ot-star{fill:#174A2C}
+.ot-d{stroke-width:1.5}.ot-p1{fill:#1d1d1d;stroke:#000}.ot-p2{fill:#FBFAF6;stroke:#555}
+.ot-can{pointer-events:none}.ot-c1{fill:#1d1d1d;opacity:.45}.ot-c2{fill:#fff;opacity:.7}
+.ot-last{fill:#D0453B;pointer-events:none}
+.ot-flip{animation:otflip .45s ease;transform-box:fill-box;transform-origin:center}
+.ot-new{animation:otnew .25s ease-out;transform-box:fill-box;transform-origin:center}
+@keyframes otflip{0%{transform:scaleX(1)}50%{transform:scaleX(.05)}100%{transform:scaleX(1)}}
+@keyframes otnew{from{transform:scale(.4)}to{transform:scale(1)}}
+.jg-wood{fill:#E8C07A}.jg-ln{stroke:#5A3B12;stroke-width:1.4}
+.jg-pc polygon{fill:#FFF8E7;stroke-width:2.5}
+.jg-pc text{text-anchor:middle;font-weight:800;font-family:inherit;pointer-events:none}
+.jg-s1 polygon{stroke:#1B5FAF}.jg-s1 text{fill:#1B5FAF}
+.jg-s2 polygon{stroke:#C0392B}.jg-s2 text{fill:#C0392B}
+.jg-sel polygon{fill:#FFE38A;stroke-width:4}
+.jg-new{animation:otnew .25s ease-out;transform-box:fill-box;transform-origin:center}
+.jg-dot{fill:#2E8B57;opacity:.8;pointer-events:none}
+.jg-cap{fill:none;stroke:#D0453B;stroke-width:3.5;stroke-dasharray:6 4;pointer-events:none}
+.jg-from{fill:#5A3B12;opacity:.25;pointer-events:none}
+.jg-lastm{fill:none;stroke:#E0A21A;stroke-width:3;pointer-events:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .jg-wood{fill:#C9A060}}
+:root[data-theme="dark"] .jg-wood{fill:#C9A060}
 
 </style><style id="hj-contact-css">.hj-contact{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:8px 0 0;padding:0}.hj-contact a{display:inline-flex;align-items:center;gap:6px;color:var(--ink,#1F2A44);text-decoration:none;font-size:15px;line-height:1.2;background:var(--paper,#fff);border:2px solid var(--line,#CAD6E4);border-radius:999px;padding:5px 12px;white-space:nowrap}.hj-contact a:hover,.hj-contact a:focus-visible{border-color:var(--ink,#1F2A44);outline:0}.hj-contact svg{flex:none}#ovNavMade+.hj-contact{margin:0 0 0 8px;flex:none;flex-wrap:nowrap;gap:6px}#ovNavMade+.hj-contact a{font-size:13px;padding:3px 9px}@media print{.hj-contact a{border:0;padding:0}}</style><style id="hjfoot-css">.hjfoot{display:block;width:100%;flex-basis:100%;margin:40px 0 0;padding:16px 0 4px;border:0;border-top:3px solid var(--line,#CAD6E4);text-align:center;color:var(--soft,#4F5B75);font-family:var(--body,inherit);font-size:17px;line-height:1.7;word-break:keep-all;opacity:1}.hjfoot p{margin:2px 0;padding:0;border:0;background:none;font-size:inherit;color:inherit;text-align:center}</style>
 <!--hj-ctheme--><style id="hj-ctheme">/* hj-ctheme · 수업 자료 페이지 공통: 글꼴을 Pretendard로, 바탕·글자색을 메뉴와 같은 밝고 따뜻한 톤으로 */
@@ -764,136 +802,160 @@ html body:not(.mix) .hj-contact,html body:not(.mix) .hj-contact.hj-cvc{display:n
 html body .frameline{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.3em;row-gap:.2em}html body .frameline input{max-width:100%;text-align:center}
 </style><!--/hj-ctheme--></head><body>
 <main>
-<nav class="tl-gnav" aria-label="다른 판 놀이"><a href="omok.html">⚫ 오목</a><a href="baduk.html" aria-current="page">⚪ 바둑</a><a href="connect4.html">🔴 사목</a><a href="othello.html">🔘 오셀로</a><a href="janggi.html">🐎 장기</a></nav>
-<header class="tl-head"><span class="tl-ico" aria-hidden="true">⚪</span><div><h1>바둑</h1><p class="tl-desc">1~3단계는 돌을 먼저 잡으면 이기는 따먹기 바둑, 4~10단계는 집을 더 많이 짓는 9줄 바둑이에요. 친구와 둘이 13줄 바둑도 둘 수 있어요.</p><p class="tl-rec">모든 학년 · 따먹기 바둑 → 9줄 바둑</p></div></header>
-<section class="tl-stage" id="tlStage" aria-label="바둑">
+<nav class="tl-gnav" aria-label="다른 판 놀이"><a href="omok.html">⚫ 오목</a><a href="baduk.html">⚪ 바둑</a><a href="connect4.html">🔴 사목</a><a href="othello.html" aria-current="page">🔘 오셀로</a><a href="janggi.html">🐎 장기</a></nav>
+<header class="tl-head"><span class="tl-ico" aria-hidden="true">🔘</span><div><h1>오셀로</h1><p class="tl-desc">상대 돌을 내 돌 두 개 사이에 끼우면 내 색으로 뒤집혀요. 판이 다 차거나 둘 곳이 없을 때 돌이 더 많은 쪽이 이겨요.</p><p class="tl-rec">모든 학년 · 인공지능과 10단계 · 친구와 둘이</p></div></header>
+<section class="tl-stage" id="tlStage" aria-label="오셀로">
 <div class="tl-bar"><span class="tl-bt" id="tlBarT"></span><span class="tl-sp"></span><button type="button" class="tl-btn" id="tlFull">⛶ 크게 보기</button></div>
 <div class="tl-host" id="tlHost"></div>
 </section>
-<details class="tl-how" open><summary>쓰는 법</summary><ul><li>돌은 줄이 만나는 점에 둬요. 상대 돌의 숨 쉴 곳(활로)을 모두 막으면 그 돌을 잡아요.</li><li>스스로 잡히는 자리, 방금 따낸 자리를 바로 다시 따내는 ‘패’는 둘 수 없어요(화면에 알려 줘요).</li><li>9줄 바둑은 더 둘 곳이 없으면 ‘통과’를 눌러요. 두 사람(나와 인공지능)이 모두 통과하면 집을 세요: 판 위의 내 돌 + 내가 둘러싼 집(죽은 돌은 저절로 찾아 줘요). 덤은 나중에 두는 백에게 더하는 점수예요.</li><li>🤖 인공지능과: 나는 흑, 한 수 시간이 있어요(시간이 다 되면 그 판은 져요). 이기면 다음 단계가 열려요.</li><li>👫 친구와 둘이: 따먹기(7줄·9줄)·9줄·13줄 바둑, 덤과 한 수 시간을 골라요. 집을 셀 때 죽은 돌이 틀렸으면 그 돌을 눌러 바꿔요.</li></ul></details>
-<section class="tl-ideas"><h2>💡 수업에서 이렇게 써 보세요</h2><ul><li>따먹기 바둑으로 ‘단수’(활로가 하나 남은 상태) 개념 익히기.</li><li>9줄 바둑이 끝나면 집 세는 화면을 보며 우리 집과 상대 집을 함께 세어 보기.</li></ul></section>
+<details class="tl-how" open><summary>쓰는 법</summary><ul><li>돌은 상대 돌을 하나 이상 뒤집을 수 있는 자리에만 놓아요(화면에 점으로 보여 줘요). 가로·세로·대각선 모두 뒤집혀요.</li><li>둘 곳이 없으면 차례가 저절로 넘어가요. 둘 다 둘 곳이 없으면 끝나고, 돌이 많은 쪽이 이겨요.</li><li>🤖 인공지능과: 나는 흑(먼저), 인공지능은 백. 한 수 시간(30초 → 20초), 시간이 다 되면 그 판은 져요. 이기면 다음 단계가 열려요.</li><li>👫 친구와 둘이: 한 화면에서 번갈아 두고, 한 수 시간(없음·20·30·60초)과 무르기가 있어요.</li></ul></details>
+<section class="tl-ideas"><h2>💡 수업에서 이렇게 써 보세요</h2><ul><li>모서리(네 귀퉁이)를 차지하면 왜 좋은지 이야기해 보기 — 모서리 돌은 다시 뒤집히지 않아요.</li><li>끝났을 때 돌 수를 세고 둘의 차이를 식으로 써 보기.</li></ul></section>
 <div class="creditbar"><a class="tolist" href="index.html">📋 자료 목록으로</a><footer class="hjfoot"><p>쉬는 시간에 인공지능이나 친구와 함께 즐기는 판 놀이(오목·바둑·사목·오셀로·장기) 자료입니다.</p><p>만든 사람: 초등교사 홍지희</p><p class="hj-contact"><a href="mailto:hongjihee1005@gmail.com" aria-label="이메일 보내기: hongjihee1005@gmail.com"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>hongjihee1005@gmail.com</span></a><a href="https://www.youtube.com/@hongjihee1005" target="_blank" rel="noopener" aria-label="유튜브 채널 열기: @hongjihee1005"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E5484D"/><path d="M10 8.2v7.6l6.2-3.8z" fill="#fff"/></svg><span>유튜브 @hongjihee1005</span></a></p></footer></div>
 </main>
 
-<script>window.TL={"id": "baduk", "game": "baduk", "levels": [{"name": "따먹기 첫걸음", "info": "7줄 · 돌 1개 먼저 잡기", "n": 7, "goal": 1, "komi": 0, "it": 40, "rnd": 0.35, "t": 30, "ms": 4500}, {"name": "따먹기 셋", "info": "7줄 · 돌 3개 먼저 잡기", "n": 7, "goal": 3, "komi": 0, "it": 300, "rnd": 0.1, "t": 30, "ms": 4500}, {"name": "따먹기 다섯", "info": "9줄 · 돌 5개 먼저 잡기", "n": 9, "goal": 5, "komi": 0, "it": 1200, "rnd": 0, "t": 30, "ms": 4500}, {"name": "9줄 바둑 입문", "info": "9줄 · 집 많은 쪽 승 · 덤 없음", "n": 9, "goal": 0, "komi": 0, "it": 400, "rnd": 0.15, "t": 45, "ms": 4500}, {"name": "9줄 바둑 초급", "info": "9줄 · 덤 없음", "n": 9, "goal": 0, "komi": 0, "it": 900, "rnd": 0, "t": 45, "ms": 4500}, {"name": "9줄 바둑 중급", "info": "9줄 · 덤 없음", "n": 9, "goal": 0, "komi": 0, "it": 1800, "rnd": 0, "t": 45, "ms": 4500}, {"name": "9줄 바둑 덤", "info": "9줄 · 백 덤 6.5", "n": 9, "goal": 0, "komi": 6.5, "it": 3000, "rnd": 0, "t": 40, "ms": 4500}, {"name": "9줄 바둑 고급", "info": "9줄 · 덤 6.5", "n": 9, "goal": 0, "komi": 6.5, "it": 5000, "rnd": 0, "t": 40, "ms": 4500}, {"name": "9줄 바둑 고수", "info": "9줄 · 덤 6.5", "n": 9, "goal": 0, "komi": 6.5, "it": 8000, "rnd": 0, "t": 30, "ms": 4500}, {"name": "9줄 바둑 최강", "info": "9줄 · 덤 6.5 · 가장 강해요", "n": 9, "goal": 0, "komi": 6.5, "it": 12000, "rnd": 0, "t": 30, "ms": 4500}], "make": ""};
-/* 바둑 규칙·인공지능. makeBaduk()은 화면과 워커 둘 다에서 씀.
-   판: (n+2)² 칸 Int8Array — 0 빈칸 · 1 흑 · 2 백 · 3 바깥. 자리 p = (y+1)*(n+2)+(x+1).
-   상태 S = {n, b, ko, cap:[0,흑이 잡은 수,백이 잡은 수], turn, pass, moves, goal}  goal>0이면 따먹기 바둑(먼저 goal개 잡으면 승). */
-function makeBaduk() {
-  function init(n, goal) { var W = n + 2, b = new Int8Array(W * W); for (var i = 0; i < W * W; i++) { var x = i % W, y = (i / W) | 0; if (x === 0 || y === 0 || x === W - 1 || y === W - 1) b[i] = 3 } return { n: n, b: b, ko: -1, cap: [0, 0, 0], turn: 1, pass: 0, moves: 0, goal: goal || 0, last: -1 } }
-  function clone(S) { return { n: S.n, b: new Int8Array(S.b), ko: S.ko, cap: S.cap.slice(), turn: S.turn, pass: S.pass, moves: S.moves, goal: S.goal, last: S.last } }
-  var mark = new Int32Array(0), stamp = 0, stk = new Int32Array(0);
-  function prep(len) { if (mark.length < len) { mark = new Int32Array(len); stk = new Int32Array(len) } }
-  /* 무리와 활로 수(limit까지 세면 멈춤) */
-  function libs(b, W, p, limit, out) {
-    prep(b.length); stamp++; var c = b[p], sp = 0, L = 0; stk[sp++] = p; mark[p] = stamp; var nb = [1, -1, W, -W];
-    if (out) out.length = 0;
-    while (sp) { var q = stk[--sp]; if (out) out.push(q); for (var k = 0; k < 4; k++) { var r = q + nb[k]; if (mark[r] === stamp) continue; var v = b[r]; if (v === 0) { mark[r] = stamp; L++; if (limit && L >= limit && !out) return L } else if (v === c) { mark[r] = stamp; stk[sp++] = r } } }
-    return L;
-  }
-  var tmp = [];
-  /* 두기: 성공하면 true(S를 바꿈), 못 두면 false. p<0이면 통과 */
-  function play(S, p) {
-    var b = S.b, W = S.n + 2, me = S.turn, op = 3 - me;
-    if (p < 0) { S.pass++; S.turn = op; S.ko = -1; S.moves++; S.last = -1; return true }
-    if (b[p] !== 0 || p === S.ko) return false;
-    b[p] = me; var nb = [1, -1, W, -W], got = 0, last = -1;
-    for (var k = 0; k < 4; k++) { var r = p + nb[k]; if (b[r] === op && libs(b, W, r, 1) === 0) { libs(b, W, r, 0, tmp); for (var i = 0; i < tmp.length; i++) b[tmp[i]] = 0; got += tmp.length; last = tmp[0] } }
-    if (!got && libs(b, W, p, 1) === 0) { b[p] = 0; return false }
-    S.ko = -1;
-    if (got === 1) { var own = 0, emp = 0; for (k = 0; k < 4; k++) { var v = b[p + nb[k]]; if (v === me) own++; if (v === 0) emp++ } if (!own && emp === 1) S.ko = last }
-    S.cap[me] += got; S.pass = 0; S.turn = op; S.moves++; S.last = p; return true;
-  }
-  function legalAt(S, p) { var T = clone(S); return play(T, p) }
-  function isEye(b, W, p, c) {
-    var nb = [1, -1, W, -W]; for (var k = 0; k < 4; k++) { var v = b[p + nb[k]]; if (v !== c && v !== 3) return false }
-    var dg = [W + 1, W - 1, -W + 1, -W - 1], bad = 0, edge = 0; for (k = 0; k < 4; k++) { var u = b[p + dg[k]]; if (u === 3) edge = 1; else if (u === 3 - c) bad++ }
-    return edge ? bad === 0 : bad <= 1;
-  }
-  /* 집 세기(판 위의 돌 + 둘러싼 빈칸) — 결과는 [0, 흑, 백] */
-  function area(b, W) {
-    var sc = [0, 0, 0]; prep(b.length); stamp++;
-    for (var p = 0; p < b.length; p++) {
-      var v = b[p]; if (v === 1 || v === 2) { sc[v]++; continue } if (v !== 0 || mark[p] === stamp) continue;
-      var sp = 0, cnt = 0, touch = 0; stk[sp++] = p; mark[p] = stamp;
-      while (sp) { var q = stk[--sp]; cnt++; for (var k = 0, nb = [1, -1, W, -W]; k < 4; k++) { var r = q + nb[k], u = b[r]; if (u === 0 && mark[r] !== stamp) { mark[r] = stamp; stk[sp++] = r } else if (u === 1 || u === 2) touch |= u } }
-      if (touch === 1 || touch === 2) sc[touch] += cnt;
+<script>window.TL={"id": "othello", "game": "othello", "levels": [{"name": "새싹", "info": "아무 데나 둬요", "t": 30}, {"name": "떡잎", "info": "좋은 자리를 조금 알아요", "t": 30}, {"name": "꽃봉오리", "info": "모서리를 좋아해요", "t": 30}, {"name": "꽃", "info": "두 수 앞을 봐요", "t": 25}, {"name": "열매", "info": "세 수 앞 · 끝 6칸은 정확히", "t": 25}, {"name": "나무", "info": "네 수 앞 · 끝 8칸은 정확히", "t": 25}, {"name": "숲", "info": "여섯 수 앞 · 끝 12칸은 정확히", "t": 20}, {"name": "산", "info": "일곱 수 앞 · 끝 14칸", "t": 20}, {"name": "하늘", "info": "여덟 수 앞 · 끝 16칸", "t": 20}, {"name": "별", "info": "가장 강한 단계", "t": 20}], "make": "makeOthello"};
+/* 오셀로(리버시) 규칙·인공지능. 8×8, 칸 번호 = 줄 × 8 + 칸. 0 빈칸 · 1 흑(먼저) · 2 백.
+   makeOthello()은 화면과 워커(Worker) 둘 다에서 씀. 수 = 칸 번호, -1 = 넘기기(둘 곳이 없을 때) */
+function makeOthello() {
+  var D8 = [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [0, 1], [1, 1]];
+  var WT = [100, -20, 10, 5, 5, 10, -20, 100, -20, -50, -2, -2, -2, -2, -50, -20, 10, -2, 1, 1, 1, 1, -2, 10, 5, -2, 1, 0, 0, 1, -2, 5,
+            5, -2, 1, 0, 0, 1, -2, 5, 10, -2, 1, 1, 1, 1, -2, 10, -20, -50, -2, -2, -2, -2, -50, -20, 100, -20, 10, 5, 5, 10, -20, 100];
+  var ORDER = []; for (var i = 0; i < 64; i++) ORDER.push(i); ORDER.sort(function (a, b) { return WT[b] - WT[a] });
+  function init() { var b = []; for (var i = 0; i < 64; i++) b.push(0); b[27] = 2; b[36] = 2; b[28] = 1; b[35] = 1; return { b: b, turn: 1, last: -1, pass: 0, n: 0 } }
+  function flips(b, p, me) {
+    if (b[p]) return []; var op = 3 - me, x = p & 7, y = p >> 3, out = [];
+    for (var d = 0; d < 8; d++) {
+      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;
+      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }
+      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) for (var j = 1; j <= k; j++) out.push((y + j * dy) * 8 + x + j * dx);
     }
-    return sc;
+    return out;
   }
-  function empties(S) { var o = [], b = S.b; for (var p = 0; p < b.length; p++) if (b[p] === 0) o.push(p); return o }
-  /* 활로가 하나뿐이면 그 자리, 아니면 -1 */
-  function oneLib(b, W, p) { libs(b, W, p, 0, tmp); var nb = [1, -1, W, -W], f = -1; for (var i = 0; i < tmp.length; i++) for (var k = 0; k < 4; k++) { var r = tmp[i] + nb[k]; if (b[r] === 0) { if (f < 0) f = r; else if (f !== r) return -1 } } return f }
-  /* 무작위 끝까지 두기 → 흑 기준 결과(+1 흑 승, -1 백 승, 0 비김). own이 있으면 마지막 판의 주인을 더함 */
-  function playout(S, komi, own) {
-    var W = S.n + 2, lim = S.n * S.n * 3, b = S.b, nb = [1, -1, W, -W], E = empties(S), caps = S.cap[1] + S.cap[2];
-    while (S.moves < lim) {
-      if (S.goal && (S.cap[1] >= S.goal || S.cap[2] >= S.goal)) break;
-      var me = S.turn, done = false;
-      if (S.last >= 0 && b[S.last] === 3 - me && Math.random() < .9) { var lb = oneLib(b, W, S.last); if (lb >= 0 && play(S, lb)) done = true }
-      for (var n = E.length; n > 0 && !done; n--) {
-        var i = (Math.random() * n) | 0, q = E[i]; E[i] = E[n - 1]; E[n - 1] = q;
-        if (b[q] !== 0) continue;
-        if (!S.goal && isEye(b, W, q, me)) continue;
-        if (play(S, q)) done = true;
-      }
-      if (!done) { play(S, -1); if (S.pass >= 2) break; continue }
-      var c2 = S.cap[1] + S.cap[2]; if (c2 !== caps) { caps = c2; E = empties(S) } else { var j = E.indexOf(S.last); if (j >= 0) { E[j] = E[E.length - 1]; E.pop() } }
+  function canPlay(b, p, me) {
+    if (b[p]) return false; var op = 3 - me, x = p & 7, y = p >> 3;
+    for (var d = 0; d < 8; d++) {
+      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;
+      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }
+      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) return true;
     }
-    if (S.goal) { var r = S.cap[1] >= S.goal ? 1 : S.cap[2] >= S.goal ? -1 : 0; if (r) return r }
-    var sc = area(b, W);
-    if (own) for (var p = 0; p < b.length; p++) { var v = b[p]; if (v === 1) own[p]++; else if (v === 2) own[p]--; else if (v === 0) { var o = 0; for (var k = 0; k < 4; k++) { var u = b[p + nb[k]]; if (u === 1) o |= 1; else if (u === 2) o |= 2 } if (o === 1) own[p]++; else if (o === 2) own[p]-- } }
-    var d = sc[1] - sc[2] - komi; return d > 0 ? 1 : d < 0 ? -1 : 0;
+    return false;
   }
-  function moves(S) { var b = S.b, W = S.n + 2, o = []; for (var p = 0; p < b.length; p++) if (b[p] === 0 && p !== S.ko && !(!S.goal && isEye(b, W, p, S.turn)) && legalAt(S, p)) o.push(p); return o }
-  /* 몬테카를로 트리 탐색 */
-  function mcts(S, iters, komi, ms) {
-    var root = { m: -1, n: 0, w: 0, kids: null, un: moves(S), turn: S.turn }, t0 = Date.now();
-    if (!root.un.length) return { p: -1, rate: 0 };
-    for (var it = 0; it < iters; it++) {
-      if (ms && (it & 63) === 0 && Date.now() - t0 > ms) break;
-      var T = clone(S), node = root, path = [root];
-      while (!node.un.length && node.kids && node.kids.length) {
-        var best = null, bv = -1, lg = Math.log(node.n + 1);
-        for (var i = 0; i < node.kids.length; i++) { var c = node.kids[i], v = c.w / (c.n + 1e-9) + 1.0 * Math.sqrt(lg / (c.n + 1e-9)); if (v > bv) { bv = v; best = c } }
-        play(T, best.m); node = best; path.push(node);
-      }
-      if (node.un.length && !(T.goal && (T.cap[1] >= T.goal || T.cap[2] >= T.goal))) {
-        var j = (Math.random() * node.un.length) | 0, m = node.un[j]; node.un[j] = node.un[node.un.length - 1]; node.un.pop();
-        var mover = T.turn; play(T, m); var kid = { m: m, n: 0, w: 0, kids: null, un: null, turn: T.turn, mover: mover }; kid.un = (T.goal && (T.cap[1] >= T.goal || T.cap[2] >= T.goal)) ? [] : moves(T);
-        (node.kids = node.kids || []).push(kid); node = kid; path.push(kid);
-      }
-      var r = playout(T, komi);   // +1 흑 승
-      for (i = 0; i < path.length; i++) { var nd = path[i]; nd.n++; var mv = nd.mover || (3 - nd.turn); if ((r > 0 && mv === 1) || (r < 0 && mv === 2)) nd.w++; else if (r === 0) nd.w += .5 }
+  function legal(b, me) { var o = []; for (var i = 0; i < 64; i++) { var p = ORDER[i]; if (canPlay(b, p, me)) o.push(p) } return o }
+  function count(b) { var c = [0, 0, 0]; for (var i = 0; i < 64; i++) c[b[i]]++; return c }
+  function over(st) {
+    if (legal(st.b, 1).length || legal(st.b, 2).length) return null;
+    var c = count(st.b); return { w: c[1] > c[2] ? 1 : c[2] > c[1] ? 2 : 0, why: '더 둘 곳이 없어요. 흑 ' + c[1] + ' · 백 ' + c[2] };
+  }
+  function moves(st) { return legal(st.b, st.turn) }
+  function play(st, p) {
+    var b = st.b.slice();
+    if (p < 0) return { b: b, turn: 3 - st.turn, last: -1, pass: st.pass + 1, n: st.n, fl: [] };
+    var f = flips(b, p, st.turn); b[p] = st.turn; for (var i = 0; i < f.length; i++) b[f[i]] = st.turn;
+    return { b: b, turn: 3 - st.turn, last: p, pass: 0, n: st.n + 1, fl: f };
+  }
+  /* 점수: 자리 값(모서리 큼, 모서리 옆 위험 — 모서리를 차지하면 옆도 괜찮음) + 둘 수 있는 곳 수 */
+  var CORN = [[0, [1, 8, 9]], [7, [6, 15, 14]], [56, [57, 48, 49]], [63, [62, 55, 54]]];
+  function evalB(b, me, myMob) {
+    var op = 3 - me, s = 0;
+    for (var i = 0; i < 64; i++) { var v = b[i]; if (v === me) s += WT[i]; else if (v === op) s -= WT[i] }
+    for (var k = 0; k < 4; k++) if (b[CORN[k][0]]) CORN[k][1].forEach(function (q) { var v = b[q]; if (v === me) s -= WT[q]; else if (v === op) s += WT[q] });
+    return s + 6 * (myMob - legal(b, op).length);
+  }
+  function final(b, me) { var c = count(b), d = c[me] - c[3 - me]; return d * 1000 + (d > 0 ? 50000 : d < 0 ? -50000 : 0) }
+  var stop = 0, nodes = 0;
+  function nega(b, me, depth, a, bt, passed, exact) {
+    if ((++nodes & 1023) === 0 && stop && Date.now() > stop) throw 'time';
+    var ms = legal(b, me);
+    if (!ms.length) { if (passed) return final(b, me); return -nega(b, 3 - me, depth, -bt, -a, true, exact) }
+    if (depth <= 0 && !exact) return evalB(b, me, ms.length);
+    for (var i = 0; i < ms.length; i++) {
+      var p = ms[i], f = flips(b, p, me); b[p] = me; for (var j = 0; j < f.length; j++) b[f[j]] = me;
+      var v = -nega(b, 3 - me, depth - 1, -bt, -a, false, exact);
+      b[p] = 0; for (j = 0; j < f.length; j++) b[f[j]] = 3 - me;
+      if (v > a) { a = v; if (a >= bt) break }
     }
-    var kids = root.kids || [], bestK = null; kids.forEach(function (k) { if (!bestK || k.n > bestK.n) bestK = k });
-    return bestK ? { p: bestK.m, rate: bestK.w / bestK.n, kids: kids.map(function (k) { return [k.m, k.n, k.w / k.n] }) } : { p: root.un[0], rate: .5 };
+    return a;
   }
-  /* 주인 추정(죽은 돌·집): 무작위로 여러 번 끝까지 둬서 평균 */
-  function owner(S, k) { var own = new Float32Array(S.b.length); for (var i = 0; i < k; i++) { var T = clone(S); T.goal = 0; playout(T, 0, own) } for (i = 0; i < own.length; i++) own[i] /= k; return own }
-  function judge(S, own, dead, komi) {   // dead: 죽은 돌 자리 집합(Uint8Array)
-    var b = S.b, W = S.n + 2, sc = [0, 0, 0], terr = new Int8Array(b.length);
-    for (var p = 0; p < b.length; p++) { var v = b[p]; if (v === 3) continue; if ((v === 1 || v === 2) && !dead[p]) { sc[v]++; terr[p] = v; continue } var o = own[p]; var t = v && dead[p] ? 3 - v : o > .35 ? 1 : o < -.35 ? 2 : 0; if (t) { sc[t]++; terr[p] = t } }
-    return { b: sc[1], w: sc[2], komi: komi, diff: sc[1] - sc[2] - komi, terr: terr };
+  function rootScores(st, depth, exact) {
+    var b = st.b.slice(), me = st.turn;
+    return legal(b, me).map(function (p) {
+      var f = flips(b, p, me); b[p] = me; f.forEach(function (q) { b[q] = me });
+      var v = -nega(b, 3 - me, depth - 1, -1e9, 1e9, false, exact);
+      b[p] = 0; f.forEach(function (q) { b[q] = 3 - me }); return { c: p, v: v };
+    });
   }
-  function deadFrom(S, own) { var d = new Uint8Array(S.b.length); for (var p = 0; p < S.b.length; p++) { var v = S.b[p]; if (v === 1 && own[p] < -.4) d[p] = 1; if (v === 2 && own[p] > .4) d[p] = 1 } return d }
-  return { init: init, clone: clone, play: play, legalAt: legalAt, mcts: mcts, owner: owner, judge: judge, deadFrom: deadFrom, libs: libs, area: area, isEye: isEye, moves: moves };
+  /* 단계: 1 아무 데나(가끔 많이 뒤집기) · 2 가장 많이 뒤집기 · 3~10 자리 값을 보며 더 멀리 읽기, 끝이 가까우면 끝까지 정확히 */
+  var LV = [null, { rnd: 1 }, { d: 1, noise: 120 }, { d: 1, noise: 30 }, { d: 2, noise: 10 }, { d: 3, ex: 6 }, { d: 4, ex: 8 }, { d: 6, ex: 12, ms: 3000 }, { d: 7, ex: 14, ms: 3500 }, { d: 8, ex: 16, ms: 4000 }, { d: 10, ex: 18, ms: 4500 }];
+  function pick(L, noise) {
+    var best = -Infinity, bs = [];
+    L.forEach(function (o) { var v = o.v + (noise ? Math.random() * noise : 0); if (v > best + 1e-9) { best = v; bs = [o.c] } else if (Math.abs(v - best) < 1e-9) bs.push(o.c) });
+    return bs[(Math.random() * bs.length) | 0];
+  }
+  function ai(st, level) {
+    var C = LV[level], ms = moves(st);
+    if (!ms.length) return -1;
+    if (C.rnd != null || C.greedy) {
+      if (C.rnd && Math.random() < C.rnd) return ms[(Math.random() * ms.length) | 0];
+      return pick(ms.map(function (p) { return { c: p, v: flips(st.b, p, st.turn).length } }), 0);
+    }
+    var empt = count(st.b)[0], best = null;
+    stop = C.ms ? Date.now() + C.ms : 0; nodes = 0;
+    try {
+      for (var d = C.ms ? 1 : C.d; d <= C.d; d++) best = rootScores(st, d, false);
+      if (C.ex && empt <= C.ex) best = rootScores(st, 99, true);
+    } catch (e) { if (e !== 'time') throw e }
+    stop = 0;
+    if (!best) best = rootScores(st, 1, false);
+    return pick(best, C.noise);
+  }
+  return { init: init, moves: moves, play: play, over: over, ai: ai, count: count, flips: flips, LV: LV };
 }
 
-window.ENG_SRC="/* 바둑 규칙·인공지능. makeBaduk()은 화면과 워커 둘 다에서 씀.\n   판: (n+2)² 칸 Int8Array — 0 빈칸 · 1 흑 · 2 백 · 3 바깥. 자리 p = (y+1)*(n+2)+(x+1).\n   상태 S = {n, b, ko, cap:[0,흑이 잡은 수,백이 잡은 수], turn, pass, moves, goal}  goal>0이면 따먹기 바둑(먼저 goal개 잡으면 승). */\nfunction makeBaduk() {\n  function init(n, goal) { var W = n + 2, b = new Int8Array(W * W); for (var i = 0; i < W * W; i++) { var x = i % W, y = (i / W) | 0; if (x === 0 || y === 0 || x === W - 1 || y === W - 1) b[i] = 3 } return { n: n, b: b, ko: -1, cap: [0, 0, 0], turn: 1, pass: 0, moves: 0, goal: goal || 0, last: -1 } }\n  function clone(S) { return { n: S.n, b: new Int8Array(S.b), ko: S.ko, cap: S.cap.slice(), turn: S.turn, pass: S.pass, moves: S.moves, goal: S.goal, last: S.last } }\n  var mark = new Int32Array(0), stamp = 0, stk = new Int32Array(0);\n  function prep(len) { if (mark.length < len) { mark = new Int32Array(len); stk = new Int32Array(len) } }\n  /* 무리와 활로 수(limit까지 세면 멈춤) */\n  function libs(b, W, p, limit, out) {\n    prep(b.length); stamp++; var c = b[p], sp = 0, L = 0; stk[sp++] = p; mark[p] = stamp; var nb = [1, -1, W, -W];\n    if (out) out.length = 0;\n    while (sp) { var q = stk[--sp]; if (out) out.push(q); for (var k = 0; k < 4; k++) { var r = q + nb[k]; if (mark[r] === stamp) continue; var v = b[r]; if (v === 0) { mark[r] = stamp; L++; if (limit && L >= limit && !out) return L } else if (v === c) { mark[r] = stamp; stk[sp++] = r } } }\n    return L;\n  }\n  var tmp = [];\n  /* 두기: 성공하면 true(S를 바꿈), 못 두면 false. p<0이면 통과 */\n  function play(S, p) {\n    var b = S.b, W = S.n + 2, me = S.turn, op = 3 - me;\n    if (p < 0) { S.pass++; S.turn = op; S.ko = -1; S.moves++; S.last = -1; return true }\n    if (b[p] !== 0 || p === S.ko) return false;\n    b[p] = me; var nb = [1, -1, W, -W], got = 0, last = -1;\n    for (var k = 0; k < 4; k++) { var r = p + nb[k]; if (b[r] === op && libs(b, W, r, 1) === 0) { libs(b, W, r, 0, tmp); for (var i = 0; i < tmp.length; i++) b[tmp[i]] = 0; got += tmp.length; last = tmp[0] } }\n    if (!got && libs(b, W, p, 1) === 0) { b[p] = 0; return false }\n    S.ko = -1;\n    if (got === 1) { var own = 0, emp = 0; for (k = 0; k < 4; k++) { var v = b[p + nb[k]]; if (v === me) own++; if (v === 0) emp++ } if (!own && emp === 1) S.ko = last }\n    S.cap[me] += got; S.pass = 0; S.turn = op; S.moves++; S.last = p; return true;\n  }\n  function legalAt(S, p) { var T = clone(S); return play(T, p) }\n  function isEye(b, W, p, c) {\n    var nb = [1, -1, W, -W]; for (var k = 0; k < 4; k++) { var v = b[p + nb[k]]; if (v !== c && v !== 3) return false }\n    var dg = [W + 1, W - 1, -W + 1, -W - 1], bad = 0, edge = 0; for (k = 0; k < 4; k++) { var u = b[p + dg[k]]; if (u === 3) edge = 1; else if (u === 3 - c) bad++ }\n    return edge ? bad === 0 : bad <= 1;\n  }\n  /* 집 세기(판 위의 돌 + 둘러싼 빈칸) — 결과는 [0, 흑, 백] */\n  function area(b, W) {\n    var sc = [0, 0, 0]; prep(b.length); stamp++;\n    for (var p = 0; p < b.length; p++) {\n      var v = b[p]; if (v === 1 || v === 2) { sc[v]++; continue } if (v !== 0 || mark[p] === stamp) continue;\n      var sp = 0, cnt = 0, touch = 0; stk[sp++] = p; mark[p] = stamp;\n      while (sp) { var q = stk[--sp]; cnt++; for (var k = 0, nb = [1, -1, W, -W]; k < 4; k++) { var r = q + nb[k], u = b[r]; if (u === 0 && mark[r] !== stamp) { mark[r] = stamp; stk[sp++] = r } else if (u === 1 || u === 2) touch |= u } }\n      if (touch === 1 || touch === 2) sc[touch] += cnt;\n    }\n    return sc;\n  }\n  function empties(S) { var o = [], b = S.b; for (var p = 0; p < b.length; p++) if (b[p] === 0) o.push(p); return o }\n  /* 활로가 하나뿐이면 그 자리, 아니면 -1 */\n  function oneLib(b, W, p) { libs(b, W, p, 0, tmp); var nb = [1, -1, W, -W], f = -1; for (var i = 0; i < tmp.length; i++) for (var k = 0; k < 4; k++) { var r = tmp[i] + nb[k]; if (b[r] === 0) { if (f < 0) f = r; else if (f !== r) return -1 } } return f }\n  /* 무작위 끝까지 두기 → 흑 기준 결과(+1 흑 승, -1 백 승, 0 비김). own이 있으면 마지막 판의 주인을 더함 */\n  function playout(S, komi, own) {\n    var W = S.n + 2, lim = S.n * S.n * 3, b = S.b, nb = [1, -1, W, -W], E = empties(S), caps = S.cap[1] + S.cap[2];\n    while (S.moves < lim) {\n      if (S.goal && (S.cap[1] >= S.goal || S.cap[2] >= S.goal)) break;\n      var me = S.turn, done = false;\n      if (S.last >= 0 && b[S.last] === 3 - me && Math.random() < .9) { var lb = oneLib(b, W, S.last); if (lb >= 0 && play(S, lb)) done = true }\n      for (var n = E.length; n > 0 && !done; n--) {\n        var i = (Math.random() * n) | 0, q = E[i]; E[i] = E[n - 1]; E[n - 1] = q;\n        if (b[q] !== 0) continue;\n        if (!S.goal && isEye(b, W, q, me)) continue;\n        if (play(S, q)) done = true;\n      }\n      if (!done) { play(S, -1); if (S.pass >= 2) break; continue }\n      var c2 = S.cap[1] + S.cap[2]; if (c2 !== caps) { caps = c2; E = empties(S) } else { var j = E.indexOf(S.last); if (j >= 0) { E[j] = E[E.length - 1]; E.pop() } }\n    }\n    if (S.goal) { var r = S.cap[1] >= S.goal ? 1 : S.cap[2] >= S.goal ? -1 : 0; if (r) return r }\n    var sc = area(b, W);\n    if (own) for (var p = 0; p < b.length; p++) { var v = b[p]; if (v === 1) own[p]++; else if (v === 2) own[p]--; else if (v === 0) { var o = 0; for (var k = 0; k < 4; k++) { var u = b[p + nb[k]]; if (u === 1) o |= 1; else if (u === 2) o |= 2 } if (o === 1) own[p]++; else if (o === 2) own[p]-- } }\n    var d = sc[1] - sc[2] - komi; return d > 0 ? 1 : d < 0 ? -1 : 0;\n  }\n  function moves(S) { var b = S.b, W = S.n + 2, o = []; for (var p = 0; p < b.length; p++) if (b[p] === 0 && p !== S.ko && !(!S.goal && isEye(b, W, p, S.turn)) && legalAt(S, p)) o.push(p); return o }\n  /* 몬테카를로 트리 탐색 */\n  function mcts(S, iters, komi, ms) {\n    var root = { m: -1, n: 0, w: 0, kids: null, un: moves(S), turn: S.turn }, t0 = Date.now();\n    if (!root.un.length) return { p: -1, rate: 0 };\n    for (var it = 0; it < iters; it++) {\n      if (ms && (it & 63) === 0 && Date.now() - t0 > ms) break;\n      var T = clone(S), node = root, path = [root];\n      while (!node.un.length && node.kids && node.kids.length) {\n        var best = null, bv = -1, lg = Math.log(node.n + 1);\n        for (var i = 0; i < node.kids.length; i++) { var c = node.kids[i], v = c.w / (c.n + 1e-9) + 1.0 * Math.sqrt(lg / (c.n + 1e-9)); if (v > bv) { bv = v; best = c } }\n        play(T, best.m); node = best; path.push(node);\n      }\n      if (node.un.length && !(T.goal && (T.cap[1] >= T.goal || T.cap[2] >= T.goal))) {\n        var j = (Math.random() * node.un.length) | 0, m = node.un[j]; node.un[j] = node.un[node.un.length - 1]; node.un.pop();\n        var mover = T.turn; play(T, m); var kid = { m: m, n: 0, w: 0, kids: null, un: null, turn: T.turn, mover: mover }; kid.un = (T.goal && (T.cap[1] >= T.goal || T.cap[2] >= T.goal)) ? [] : moves(T);\n        (node.kids = node.kids || []).push(kid); node = kid; path.push(kid);\n      }\n      var r = playout(T, komi);   // +1 흑 승\n      for (i = 0; i < path.length; i++) { var nd = path[i]; nd.n++; var mv = nd.mover || (3 - nd.turn); if ((r > 0 && mv === 1) || (r < 0 && mv === 2)) nd.w++; else if (r === 0) nd.w += .5 }\n    }\n    var kids = root.kids || [], bestK = null; kids.forEach(function (k) { if (!bestK || k.n > bestK.n) bestK = k });\n    return bestK ? { p: bestK.m, rate: bestK.w / bestK.n, kids: kids.map(function (k) { return [k.m, k.n, k.w / k.n] }) } : { p: root.un[0], rate: .5 };\n  }\n  /* 주인 추정(죽은 돌·집): 무작위로 여러 번 끝까지 둬서 평균 */\n  function owner(S, k) { var own = new Float32Array(S.b.length); for (var i = 0; i < k; i++) { var T = clone(S); T.goal = 0; playout(T, 0, own) } for (i = 0; i < own.length; i++) own[i] /= k; return own }\n  function judge(S, own, dead, komi) {   // dead: 죽은 돌 자리 집합(Uint8Array)\n    var b = S.b, W = S.n + 2, sc = [0, 0, 0], terr = new Int8Array(b.length);\n    for (var p = 0; p < b.length; p++) { var v = b[p]; if (v === 3) continue; if ((v === 1 || v === 2) && !dead[p]) { sc[v]++; terr[p] = v; continue } var o = own[p]; var t = v && dead[p] ? 3 - v : o > .35 ? 1 : o < -.35 ? 2 : 0; if (t) { sc[t]++; terr[p] = t } }\n    return { b: sc[1], w: sc[2], komi: komi, diff: sc[1] - sc[2] - komi, terr: terr };\n  }\n  function deadFrom(S, own) { var d = new Uint8Array(S.b.length); for (var p = 0; p < S.b.length; p++) { var v = S.b[p]; if (v === 1 && own[p] < -.4) d[p] = 1; if (v === 2 && own[p] > .4) d[p] = 1 } return d }\n  return { init: init, clone: clone, play: play, legalAt: legalAt, mcts: mcts, owner: owner, judge: judge, deadFrom: deadFrom, libs: libs, area: area, isEye: isEye, moves: moves };\n}\n";
-/* 오목·바둑 화면: 인공지능과(단계 1~10, 한 수마다 시간) · 친구와 둘이. window.TOOL(host, api) */
+window.ENG_SRC="/* 오셀로(리버시) 규칙·인공지능. 8×8, 칸 번호 = 줄 × 8 + 칸. 0 빈칸 · 1 흑(먼저) · 2 백.\n   makeOthello()은 화면과 워커(Worker) 둘 다에서 씀. 수 = 칸 번호, -1 = 넘기기(둘 곳이 없을 때) */\nfunction makeOthello() {\n  var D8 = [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [0, 1], [1, 1]];\n  var WT = [100, -20, 10, 5, 5, 10, -20, 100, -20, -50, -2, -2, -2, -2, -50, -20, 10, -2, 1, 1, 1, 1, -2, 10, 5, -2, 1, 0, 0, 1, -2, 5,\n            5, -2, 1, 0, 0, 1, -2, 5, 10, -2, 1, 1, 1, 1, -2, 10, -20, -50, -2, -2, -2, -2, -50, -20, 100, -20, 10, 5, 5, 10, -20, 100];\n  var ORDER = []; for (var i = 0; i < 64; i++) ORDER.push(i); ORDER.sort(function (a, b) { return WT[b] - WT[a] });\n  function init() { var b = []; for (var i = 0; i < 64; i++) b.push(0); b[27] = 2; b[36] = 2; b[28] = 1; b[35] = 1; return { b: b, turn: 1, last: -1, pass: 0, n: 0 } }\n  function flips(b, p, me) {\n    if (b[p]) return []; var op = 3 - me, x = p & 7, y = p >> 3, out = [];\n    for (var d = 0; d < 8; d++) {\n      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;\n      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }\n      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) for (var j = 1; j <= k; j++) out.push((y + j * dy) * 8 + x + j * dx);\n    }\n    return out;\n  }\n  function canPlay(b, p, me) {\n    if (b[p]) return false; var op = 3 - me, x = p & 7, y = p >> 3;\n    for (var d = 0; d < 8; d++) {\n      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;\n      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }\n      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) return true;\n    }\n    return false;\n  }\n  function legal(b, me) { var o = []; for (var i = 0; i < 64; i++) { var p = ORDER[i]; if (canPlay(b, p, me)) o.push(p) } return o }\n  function count(b) { var c = [0, 0, 0]; for (var i = 0; i < 64; i++) c[b[i]]++; return c }\n  function over(st) {\n    if (legal(st.b, 1).length || legal(st.b, 2).length) return null;\n    var c = count(st.b); return { w: c[1] > c[2] ? 1 : c[2] > c[1] ? 2 : 0, why: '더 둘 곳이 없어요. 흑 ' + c[1] + ' · 백 ' + c[2] };\n  }\n  function moves(st) { return legal(st.b, st.turn) }\n  function play(st, p) {\n    var b = st.b.slice();\n    if (p < 0) return { b: b, turn: 3 - st.turn, last: -1, pass: st.pass + 1, n: st.n, fl: [] };\n    var f = flips(b, p, st.turn); b[p] = st.turn; for (var i = 0; i < f.length; i++) b[f[i]] = st.turn;\n    return { b: b, turn: 3 - st.turn, last: p, pass: 0, n: st.n + 1, fl: f };\n  }\n  /* 점수: 자리 값(모서리 큼, 모서리 옆 위험 — 모서리를 차지하면 옆도 괜찮음) + 둘 수 있는 곳 수 */\n  var CORN = [[0, [1, 8, 9]], [7, [6, 15, 14]], [56, [57, 48, 49]], [63, [62, 55, 54]]];\n  function evalB(b, me, myMob) {\n    var op = 3 - me, s = 0;\n    for (var i = 0; i < 64; i++) { var v = b[i]; if (v === me) s += WT[i]; else if (v === op) s -= WT[i] }\n    for (var k = 0; k < 4; k++) if (b[CORN[k][0]]) CORN[k][1].forEach(function (q) { var v = b[q]; if (v === me) s -= WT[q]; else if (v === op) s += WT[q] });\n    return s + 6 * (myMob - legal(b, op).length);\n  }\n  function final(b, me) { var c = count(b), d = c[me] - c[3 - me]; return d * 1000 + (d > 0 ? 50000 : d < 0 ? -50000 : 0) }\n  var stop = 0, nodes = 0;\n  function nega(b, me, depth, a, bt, passed, exact) {\n    if ((++nodes & 1023) === 0 && stop && Date.now() > stop) throw 'time';\n    var ms = legal(b, me);\n    if (!ms.length) { if (passed) return final(b, me); return -nega(b, 3 - me, depth, -bt, -a, true, exact) }\n    if (depth <= 0 && !exact) return evalB(b, me, ms.length);\n    for (var i = 0; i < ms.length; i++) {\n      var p = ms[i], f = flips(b, p, me); b[p] = me; for (var j = 0; j < f.length; j++) b[f[j]] = me;\n      var v = -nega(b, 3 - me, depth - 1, -bt, -a, false, exact);\n      b[p] = 0; for (j = 0; j < f.length; j++) b[f[j]] = 3 - me;\n      if (v > a) { a = v; if (a >= bt) break }\n    }\n    return a;\n  }\n  function rootScores(st, depth, exact) {\n    var b = st.b.slice(), me = st.turn;\n    return legal(b, me).map(function (p) {\n      var f = flips(b, p, me); b[p] = me; f.forEach(function (q) { b[q] = me });\n      var v = -nega(b, 3 - me, depth - 1, -1e9, 1e9, false, exact);\n      b[p] = 0; f.forEach(function (q) { b[q] = 3 - me }); return { c: p, v: v };\n    });\n  }\n  /* 단계: 1 아무 데나(가끔 많이 뒤집기) · 2 가장 많이 뒤집기 · 3~10 자리 값을 보며 더 멀리 읽기, 끝이 가까우면 끝까지 정확히 */\n  var LV = [null, { rnd: 1 }, { d: 1, noise: 120 }, { d: 1, noise: 30 }, { d: 2, noise: 10 }, { d: 3, ex: 6 }, { d: 4, ex: 8 }, { d: 6, ex: 12, ms: 3000 }, { d: 7, ex: 14, ms: 3500 }, { d: 8, ex: 16, ms: 4000 }, { d: 10, ex: 18, ms: 4500 }];\n  function pick(L, noise) {\n    var best = -Infinity, bs = [];\n    L.forEach(function (o) { var v = o.v + (noise ? Math.random() * noise : 0); if (v > best + 1e-9) { best = v; bs = [o.c] } else if (Math.abs(v - best) < 1e-9) bs.push(o.c) });\n    return bs[(Math.random() * bs.length) | 0];\n  }\n  function ai(st, level) {\n    var C = LV[level], ms = moves(st);\n    if (!ms.length) return -1;\n    if (C.rnd != null || C.greedy) {\n      if (C.rnd && Math.random() < C.rnd) return ms[(Math.random() * ms.length) | 0];\n      return pick(ms.map(function (p) { return { c: p, v: flips(st.b, p, st.turn).length } }), 0);\n    }\n    var empt = count(st.b)[0], best = null;\n    stop = C.ms ? Date.now() + C.ms : 0; nodes = 0;\n    try {\n      for (var d = C.ms ? 1 : C.d; d <= C.d; d++) best = rootScores(st, d, false);\n      if (C.ex && empt <= C.ex) best = rootScores(st, 99, true);\n    } catch (e) { if (e !== 'time') throw e }\n    stop = 0;\n    if (!best) best = rootScores(st, 1, false);\n    return pick(best, C.noise);\n  }\n  return { init: init, moves: moves, play: play, over: over, ai: ai, count: count, flips: flips, LV: LV };\n}\n";
+/* 오셀로 판 그리기·누르기 (window.VIEW) */
+window.VIEW = (function () {
+  var S = 64, M = 16, seen = null;
+  function cc(i) { return M + S * i + S / 2 }
+  return {
+    side: ['흑', '백'], twoT: [0, 20, 30, 60], how: '점이 있는 곳에 놓으세요. 상대 돌을 내 돌 사이에 끼우면 뒤집혀요.',
+    size: function () { return [M * 2 + S * 8, M * 2 + S * 8] },
+    draw: function (st, ui) {
+      var anim = st !== seen, Z = M * 2 + S * 8; seen = st;
+      var h = '<rect x="0" y="0" width="' + Z + '" height="' + Z + '" rx="14" class="ot-frame"/><rect x="' + M + '" y="' + M + '" width="' + S * 8 + '" height="' + S * 8 + '" class="ot-board"/>';
+      for (var i = 0; i <= 8; i++) h += '<line x1="' + M + '" y1="' + (M + S * i) + '" x2="' + (M + S * 8) + '" y2="' + (M + S * i) + '" class="ot-ln"/><line x1="' + (M + S * i) + '" y1="' + M + '" x2="' + (M + S * i) + '" y2="' + (M + S * 8) + '" class="ot-ln"/>';
+      [[2, 2], [2, 6], [6, 2], [6, 6]].forEach(function (a) { h += '<circle cx="' + (M + S * a[0]) + '" cy="' + (M + S * a[1]) + '" r="4" class="ot-star"/>' });
+      var fl = anim && st.fl ? st.fl : [];
+      for (var p = 0; p < 64; p++) {
+        var v = st.b[p], x = cc(p & 7), y = cc(p >> 3);
+        if (v) h += '<circle cx="' + x + '" cy="' + y + '" r="' + (S * .41) + '" class="ot-d ot-p' + v + (fl.indexOf(p) >= 0 ? ' ot-flip' : anim && p === st.last ? ' ot-new' : '') + '"/>';
+        else if (ui.legal.indexOf(p) >= 0) h += '<circle cx="' + x + '" cy="' + y + '" r="' + (S * .12) + '" class="ot-can ot-c' + st.turn + '"/>';
+      }
+      if (st.last >= 0) h += '<circle cx="' + cc(st.last & 7) + '" cy="' + cc(st.last >> 3) + '" r="6" class="ot-last"/>';
+      return h;
+    },
+    hit: function (st, ui, q) {
+      var x = Math.floor((q[0] - M) / S), y = Math.floor((q[1] - M) / S); if (x < 0 || y < 0 || x > 7 || y > 7) return null;
+      var p = y * 8 + x; if (st.b[p]) return null;
+      if (ui.legal.indexOf(p) < 0) return { msg: '그 자리는 뒤집을 돌이 없어서 둘 수 없어요. 점이 있는 곳에 놓아요.' };
+      return { mv: p };
+    },
+    status: function (st, E) { var c = E.count(st.b); return [c[1] + '개', c[2] + '개', ''] }
+  };
+})();
+
+/* 판 놀이 공통 화면(사목·오셀로·장기): 인공지능과(단계 1~10, 한 수마다 시간) · 친구와 둘이. window.TOOL(host, api)
+   규칙·인공지능은 엔진 window[TL.make]()(워커에서도 같은 글로 돌림), 판 그리기·누르기는 window.VIEW */
 window.TOOL = function (host, api) {
-  var D = window.TL, GAME = D.game, LVS = D.levels, KEY = 'hj-board-v1';
+  var D = window.TL, GAME = D.game, LVS = D.levels, KEY = 'hj-board-v1', V = window.VIEW, E = window[D.make](), SIDE = V.side;
   function ld() { try { return JSON.parse(localStorage.getItem(KEY) || '{}') } catch (e) { return {} } }
   function sv(o) { try { localStorage.setItem(KEY, JSON.stringify(o)) } catch (e) {} }
   var rec = ld(); rec[GAME] = rec[GAME] || { clear: 0, win: 0, lose: 0 };
-  var R = rec[GAME], OM = GAME === 'omok' ? makeOmok() : null, BD = GAME === 'baduk' ? makeBaduk() : null;
+  var R = rec[GAME];
   /* 워커: 엔진 글을 그대로 넣어 따로 계산(화면이 멈추지 않게). 안 되면 화면에서 계산 */
   var worker = null, wq = null;
   function mkWorker() {
     try {
-      var src = window.ENG_SRC + '\nvar E=' + (OM ? 'makeOmok()' : 'makeBaduk()') + ';onmessage=function(e){var d=e.data,r;' +
-        (OM ? 'r={p:E.ai(d.b,d.me,d.level,d.rule33)};' : 'var S=d.S;S.b=new Int8Array(S.b);if(d.cmd==="own"){var o=E.owner(S,d.k);r={own:Array.prototype.slice.call(o)}}else{r=E.mcts(S,d.it,d.komi,d.ms);r.kids=null}') + 'postMessage(r)}';
+      var src = window.ENG_SRC + '\nvar E=' + D.make + '();onmessage=function(e){postMessage({mv:E.ai(e.data.st,e.data.level)})}';
       worker = new Worker(URL.createObjectURL(new Blob([src], { type: 'text/javascript' })));
       worker.onmessage = function (e) { var f = wq; wq = null; if (f) f(e.data) };
       worker.onerror = function () { worker = null };
@@ -902,14 +964,14 @@ window.TOOL = function (host, api) {
   mkWorker();
   function ask(msg, cb) {
     if (worker) { wq = cb; worker.postMessage(msg); return }
-    setTimeout(function () { var r; if (OM) r = { p: OM.ai(msg.b, msg.me, msg.level, msg.rule33) }; else { var S = msg.S; S.b = new Int8Array(S.b); if (msg.cmd === 'own') r = { own: BD.owner(S, msg.k) }; else r = BD.mcts(S, msg.it, msg.komi, msg.ms) } cb(r) }, 30);
+    setTimeout(function () { cb({ mv: E.ai(msg.st, msg.level) }) }, 30);
   }
   function snd(f, d) { try { var A = snd.a = snd.a || new (window.AudioContext || window.webkitAudioContext)(), o = A.createOscillator(), g = A.createGain(); o.frequency.value = f; g.gain.value = .12; o.connect(g); g.connect(A.destination); o.start(); g.gain.exponentialRampToValueAtTime(.001, A.currentTime + d); o.stop(A.currentTime + d) } catch (e) {} }
 
   host.innerHTML = '<div class="bd-tabs" role="tablist"><button type="button" role="tab" class="bd-tab" data-m="ai">🤖 인공지능과</button><button type="button" role="tab" class="bd-tab" data-m="two">👫 친구와 둘이</button></div>' +
-    '<div class="bd-setup"></div><div class="bd-play" hidden><div class="bd-top"></div><div class="bd-tbar" aria-hidden="true"><i></i></div><div class="bd-bwrap"><svg class="bd-svg" role="img" aria-label="판"></svg></div><p class="bd-msg" aria-live="polite"></p><p class="tl-row bd-ctl"></p></div>';
+    '<div class="bd-setup"></div><div class="bd-play" hidden><div class="bd-top"></div><div class="bd-tbar" aria-hidden="true"><i></i></div><div class="bd-bwrap pg-' + GAME + '"><svg class="bd-svg" role="img" aria-label="판"></svg></div><p class="bd-msg" aria-live="polite"></p><p class="tl-row bd-ctl"></p></div>';
   var setup = host.querySelector('.bd-setup'), play = host.querySelector('.bd-play'), svg = host.querySelector('.bd-svg'), msgEl = host.querySelector('.bd-msg');
-  var mode = 'ai', G = null;   // G: 지금 판
+  var mode = 'ai', G = null;
   host.querySelectorAll('.bd-tab').forEach(function (b) { b.onclick = function () { stopAll(); mode = b.dataset.m; showSetup() } });
   function tabs() { host.querySelectorAll('.bd-tab').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.m === mode) }) }
 
@@ -918,52 +980,39 @@ window.TOOL = function (host, api) {
     tabs(); play.hidden = true; setup.hidden = false; G = null;
     if (mode === 'ai') {
       api.bar('인공지능과 · 단계 고르기');
-      setup.innerHTML = '<p class="bd-intro">나는 <b>흑(먼저)</b>, 인공지능은 <b>백</b>이에요. 한 수씩 번갈아 두고, 내 차례에는 <b>시간 제한</b>이 있어요(시간이 다 되면 그 판은 져요). 이기면 다음 단계가 열려요.</p>' +
+      setup.innerHTML = '<p class="bd-intro">나는 <b>' + SIDE[0] + '(먼저)</b>, 인공지능은 <b>' + SIDE[1] + '</b>이에요. 한 수씩 번갈아 두고, 내 차례에는 <b>시간 제한</b>이 있어요(시간이 다 되면 그 판은 져요). 이기면 다음 단계가 열려요.</p>' +
         '<div class="bd-lvs">' + LVS.map(function (L, i) { var n = i + 1, lock = n > R.clear + 1, done = n <= R.clear; return '<button type="button" class="bd-lv' + (done ? ' bd-done' : '') + '" data-l="' + n + '"' + (lock ? ' disabled' : '') + '><b>' + (lock ? '🔒 ' : done ? '⭐ ' : '') + n + '단계</b><span>' + L.name + '</span><small>' + L.info + ' · 한 수 ' + L.t + '초</small></button>' }).join('') + '</div>' +
         '<p class="bd-rec">이긴 판 ' + R.win + ' · 진 판 ' + R.lose + ' · 깬 단계 ' + R.clear + '/10 <button type="button" class="tl-btn bd-unlock">🔓 선생님: 모든 단계 열기</button></p>';
       setup.querySelectorAll('.bd-lv').forEach(function (b) { b.onclick = function () { start({ mode: 'ai', level: +b.dataset.l }) } });
       setup.querySelector('.bd-unlock').onclick = function () { if (confirm('모든 단계를 열까요? (이 기기의 기록이 바뀌어요)')) { R.clear = Math.max(R.clear, 9); sv(rec); showSetup() } };
     } else {
       api.bar('친구와 둘이 · 준비');
-      var o = GAME === 'omok' ? '<p class="tl-row"><b>규칙</b><label class="bd-opt"><input type="checkbox" id="bdR33" checked> 쌍삼(3·3) 금지</label></p>' :
-        '<p class="tl-row"><b>판</b>' + [['c1', '따먹기 7줄 · 1개'], ['c3', '따먹기 7줄 · 3개'], ['c5', '따먹기 9줄 · 5개'], ['n9', '9줄 바둑'], ['n13', '13줄 바둑']].map(function (x, i) { return '<label class="bd-opt"><input type="radio" name="bdKind" value="' + x[0] + '"' + (i === 3 ? ' checked' : '') + '> ' + x[1] + '</label>' }).join('') + '</p><p class="tl-row"><b>덤(백에게 더하는 집)</b>' + ['0', '6.5'].map(function (x, i) { return '<label class="bd-opt"><input type="radio" name="bdKomi" value="' + x + '"' + (i ? ' checked' : '') + '> ' + x + '</label>' }).join('') + '</p>';
-      setup.innerHTML = '<p class="bd-intro">한 화면에서 둘이 번갈아 둬요. <b>흑</b>이 먼저 둬요.</p>' + o +
-        '<p class="tl-row"><b>한 수 시간</b>' + [0, 20, 30, 60].map(function (s, i) { return '<label class="bd-opt"><input type="radio" name="bdT" value="' + s + '"' + (i === 2 ? ' checked' : '') + '> ' + (s ? s + '초' : '없음') + '</label>' }).join('') + '</p>' +
-        '<p class="tl-row"><label class="bd-opt">흑 <input class="bd-nm" id="bdN1" value="친구 1" maxlength="10"></label><label class="bd-opt">백 <input class="bd-nm" id="bdN2" value="친구 2" maxlength="10"></label></p>' +
+      setup.innerHTML = '<p class="bd-intro">한 화면에서 둘이 번갈아 둬요. <b>' + SIDE[0] + '</b>이 먼저 둬요.</p>' +
+        '<p class="tl-row"><b>한 수 시간</b>' + V.twoT.map(function (s, i) { return '<label class="bd-opt"><input type="radio" name="bdT" value="' + s + '"' + (i === 2 ? ' checked' : '') + '> ' + (s ? s + '초' : '없음') + '</label>' }).join('') + '</p>' +
+        '<p class="tl-row"><label class="bd-opt">' + SIDE[0] + ' <input class="bd-nm" id="bdN1" value="친구 1" maxlength="10"></label><label class="bd-opt">' + SIDE[1] + ' <input class="bd-nm" id="bdN2" value="친구 2" maxlength="10"></label></p>' +
         '<p class="tl-row"><button type="button" class="tl-btn tl-go bd-go2">▶ 시작</button></p>';
       setup.querySelector('.bd-go2').onclick = function () {
-        var t = +setup.querySelector('input[name="bdT"]:checked').value, c = { mode: 'two', t: t, names: [setup.querySelector('#bdN1').value || '흑', setup.querySelector('#bdN2').value || '백'] };
-        if (GAME === 'omok') c.rule33 = setup.querySelector('#bdR33').checked;
-        else { var k = setup.querySelector('input[name="bdKind"]:checked').value; c.n = k[0] === 'c' ? (k === 'c5' ? 9 : 7) : +k.slice(1); c.goal = k[0] === 'c' ? +k[1] : 0; c.komi = c.goal ? 0 : +setup.querySelector('input[name="bdKomi"]:checked').value }
-        start(c);
+        start({ mode: 'two', t: +setup.querySelector('input[name="bdT"]:checked').value, names: [setup.querySelector('#bdN1').value || SIDE[0], setup.querySelector('#bdN2').value || SIDE[1]] });
       };
     }
   }
 
-  /* ── 판 그리기 ── */
-  var CELL = 40, M = 30;
-  function geo() { var n = G.n; return { n: n, size: M * 2 + CELL * (n - 1) } }
-  function xy(i) { return M + i * CELL }
-  function stars(n) { var s = n === 15 ? [3, 7, 11] : n === 13 ? [3, 6, 9] : n === 9 ? [2, 4, 6] : n === 7 ? [3] : []; var o = []; s.forEach(function (a) { s.forEach(function (b) { if (n !== 9 || (a !== 4) === (b !== 4) || (a === 4 && b === 4)) o.push([a, b]) }) }); return o }
+  /* ── 판 ── */
   function draw() {
-    var g = geo(), n = g.n, h = '<rect x="0" y="0" width="' + g.size + '" height="' + g.size + '" rx="14" class="bd-wood"/>';
-    for (var i = 0; i < n; i++) h += '<line x1="' + xy(0) + '" y1="' + xy(i) + '" x2="' + xy(n - 1) + '" y2="' + xy(i) + '" class="bd-ln"/><line x1="' + xy(i) + '" y1="' + xy(0) + '" x2="' + xy(i) + '" y2="' + xy(n - 1) + '" class="bd-ln"/>';
-    stars(n).forEach(function (s) { h += '<circle cx="' + xy(s[0]) + '" cy="' + xy(s[1]) + '" r="4" class="bd-star"/>' });
-    for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
-      var v = get(x, y), dead = G.score && G.dead && G.dead[pidx(x, y)], tr = G.score && G.score.terr[pidx(x, y)];
-      if (v) h += '<circle cx="' + xy(x) + '" cy="' + xy(y) + '" r="' + (CELL * .46) + '" class="bd-st bd-s' + v + (dead ? ' bd-dead' : '') + '"/>';
-      if (G.score && tr && (!v || dead)) h += '<rect x="' + (xy(x) - 7) + '" y="' + (xy(y) - 7) + '" width="14" height="14" class="bd-terr bd-t' + tr + '"/>';
-    }
-    if (G.last != null && G.last >= 0) { var lx = G.last % n, ly = (G.last / n) | 0; h += '<circle cx="' + xy(lx) + '" cy="' + xy(ly) + '" r="6" class="bd-lastm"/>' }
-    if (G.warn != null) h += '<circle cx="' + xy(G.warn % n) + '" cy="' + xy((G.warn / n) | 0) + '" r="' + (CELL * .42) + '" class="bd-warn"/>';
-    h += '<circle class="bd-ghost bd-s' + G.turn + '" r="' + (CELL * .44) + '" cx="-99" cy="-99"/>';
-    svg.setAttribute('viewBox', '0 0 ' + g.size + ' ' + g.size); svg.innerHTML = h;
+    var ui = { sel: G.sel, human: humanTurn(), legal: humanTurn() ? G.legal : [], over: G.res, hov: G.hov };
+    var z = V.size(); svg.setAttribute('viewBox', '0 0 ' + z[0] + ' ' + z[1]); svg.innerHTML = V.draw(G.st, ui, E);
   }
-  function pidx(x, y) { return (y + 1) * (G.n + 2) + (x + 1) }
-  function get(x, y) { return OM ? G.b[y * 15 + x] : G.S.b[pidx(x, y)] }
-  function pt(e) { var r = svg.getBoundingClientRect(), g = geo(), s = g.size / r.width, x = Math.round(((e.clientX - r.left) * s - M) / CELL), y = Math.round(((e.clientY - r.top) * s - M) / CELL); return x < 0 || y < 0 || x >= g.n || y >= g.n ? null : [x, y] }
-  svg.addEventListener('pointermove', function (e) { if (!G || e.pointerType !== 'mouse') return; var g = svg.querySelector('.bd-ghost'), q = pt(e); if (!g) return; if (q && humanTurn() && !get(q[0], q[1])) { g.setAttribute('cx', xy(q[0])); g.setAttribute('cy', xy(q[1])) } else { g.setAttribute('cx', -99) } });
-  svg.addEventListener('click', function (e) { if (!G) return; var q = pt(e); if (!q) return; if (G.score && G.cfg.mode === 'two' && !G.final) return toggleDead(q); if (humanTurn()) human(q[0], q[1]) });
+  function pt(e) { var r = svg.getBoundingClientRect(), z = V.size(); return [(e.clientX - r.left) * z[0] / r.width, (e.clientY - r.top) * z[1] / r.height] }
+  svg.addEventListener('pointermove', function (e) { if (!G || !V.hover || e.pointerType !== 'mouse') return; var h = humanTurn() ? V.hover(G.st, pt(e)) : null; if (h !== G.hov) { G.hov = h; draw() } });
+  svg.addEventListener('pointerleave', function () { if (G && G.hov != null) { G.hov = null; draw() } });
+  svg.addEventListener('click', function (e) {
+    if (!G || !humanTurn()) return;
+    var r = V.hit(G.st, { sel: G.sel, legal: G.legal }, pt(e), E);
+    if (!r) return;
+    if (r.msg) { msg(r.msg, 'bd-bad') }
+    if ('sel' in r) { G.sel = r.sel; draw(); return }
+    if ('mv' in r) human(r.mv);
+  });
 
   /* ── 한 판 ── */
   var tick = null;
@@ -972,121 +1021,76 @@ window.TOOL = function (host, api) {
   function start(cfg) {
     stopAll(); setup.hidden = true; play.hidden = false; tabs();
     var L = cfg.mode === 'ai' ? LVS[cfg.level - 1] : null;
-    G = { cfg: cfg, L: L, turn: 1, last: -1, hist: [], over: false };
-    if (OM) { G.n = 15; G.b = new Array(225).fill(0); G.rule33 = cfg.mode === 'ai' ? true : cfg.rule33 }
-    else { G.n = L ? L.n : cfg.n; G.goal = L ? L.goal : cfg.goal; G.komi = L ? L.komi : cfg.komi; G.S = BD.init(G.n, G.goal) }
+    G = { cfg: cfg, L: L, st: E.init(), hist: [], sel: null, hov: null, res: null };
     G.tsec = L ? L.t : cfg.t;
     api.bar(cfg.mode === 'ai' ? cfg.level + '단계 · ' + L.name : '친구와 둘이');
-    ctl(); top(); draw(); turnStart();
+    ctl(); turnStart();
     setTimeout(function () { var r = play.getBoundingClientRect(); if (r.top < 0 || r.bottom > innerHeight) play.scrollIntoView({ behavior: 'smooth', block: 'start' }) }, 50);
   }
-  function humanTurn() { return G && !G.over && !G.busy && !G.score && (G.cfg.mode === 'two' || G.turn === 1) }
+  function humanTurn() { return G && !G.res && !G.busy && (G.cfg.mode === 'two' || G.st.turn === 1) }
   function top() {
-    var nm = names(), cap = BD ? G.S.cap : null;
-    host.querySelector('.bd-top').innerHTML = [1, 2].map(function (c) { return '<span class="bd-pl' + (G.turn === c && !G.over ? ' bd-now' : '') + '"><i class="bd-chip bd-s' + c + '"></i>' + (c === 1 ? '흑' : '백') + ' · ' + nm[c - 1] + (cap ? ' <small>잡은 돌 ' + cap[c] + (G.goal ? '/' + G.goal : '') + '</small>' : '') + '</span>' }).join('<span class="bd-vs">vs</span>') +
-      (BD && !G.goal ? '<span class="bd-komi">덤 ' + G.komi + '</span>' : '') + '<span class="bd-clock"></span>';
+    var nm = names(), ex = V.status ? V.status(G.st, E) : ['', ''];
+    host.querySelector('.bd-top').innerHTML = [1, 2].map(function (c) { return '<span class="bd-pl' + (G.st.turn === c && !G.res ? ' bd-now' : '') + '"><i class="bd-chip pc-' + GAME + c + '"></i>' + SIDE[c - 1] + ' · ' + nm[c - 1] + (ex[c - 1] ? ' <small>' + ex[c - 1] + '</small>' : '') + '</span>' }).join('<span class="bd-vs">vs</span>') +
+      (ex[2] ? '<span class="bd-komi">' + ex[2] + '</span>' : '') + '<span class="bd-clock"></span>';
   }
   function ctl() {
     var c = host.querySelector('.bd-ctl'), h = '';
-    if (BD && !G.goal) h += '<button type="button" class="tl-btn bd-pass">✋ 통과(쉬기)</button>';
     if (G.cfg.mode === 'two') h += '<button type="button" class="tl-btn bd-undo">↶ 무르기</button>';
     h += '<button type="button" class="tl-btn bd-resign">🏳️ 그만두기(기권)</button><button type="button" class="tl-btn bd-home">↩ 처음 화면</button>';
     c.innerHTML = h;
-    var p = c.querySelector('.bd-pass'); if (p) p.onclick = function () { if (humanTurn()) humanPass() };
     var u = c.querySelector('.bd-undo'); if (u) u.onclick = undo;
-    c.querySelector('.bd-resign').onclick = function () { if (G.over || G.score) return; if (confirm('이 판을 그만둘까요? (기권하면 상대가 이겨요)')) end(G.cfg.mode === 'ai' ? 2 : 3 - G.turn, '기권') };
-    c.querySelector('.bd-home').onclick = function () { if (!G.over && !confirm('이 판을 그만두고 처음 화면으로 갈까요?')) return; stopAll(); showSetup() };
+    c.querySelector('.bd-resign').onclick = function () { if (G.res) return; if (confirm('이 판을 그만둘까요? (기권하면 상대가 이겨요)')) end({ w: G.cfg.mode === 'ai' ? 2 : 3 - G.st.turn, why: '기권했어요.' }) };
+    c.querySelector('.bd-home').onclick = function () { if (!G.res && !confirm('이 판을 그만두고 처음 화면으로 갈까요?')) return; stopAll(); showSetup() };
   }
   function msg(t, cls) { msgEl.innerHTML = t || ''; msgEl.className = 'bd-msg' + (cls ? ' ' + cls : '') }
-  function turnStart() {
-    top(); if (G.over || G.score) return;
+  /* 차례가 바뀔 때: 끝났는지 → 둘 곳이 없으면 넘기기 → 인공지능 / 사람(시간 재기) */
+  function turnStart(note) {
     if (tick) { clearInterval(tick); tick = null }
-    var bar = host.querySelector('.bd-tbar i'), clk = host.querySelector('.bd-clock');
-    if (G.cfg.mode === 'ai' && G.turn === 2) { bar.style.width = '0'; clk.textContent = ''; return aiMove() }
-    msg(G.cfg.mode === 'ai' ? '내 차례예요. 놓을 자리를 누르세요.' : names()[G.turn - 1] + '(' + (G.turn === 1 ? '흑' : '백') + ') 차례예요.');
+    G.sel = null; G.hov = null;
+    var o = E.over(G.st); if (o) { G.legal = []; draw(); return end(o) }
+    G.legal = E.moves(G.st);
+    if (!G.legal.length) {   // 둘 곳이 없음 → 한 번 넘김
+      var who = G.cfg.mode === 'ai' ? (G.st.turn === 1 ? '나' : '인공지능') : names()[G.st.turn - 1];
+      G.hist.push(G.st); G.st = E.play(G.st, -1);
+      return turnStart('↪️ ' + who + '는 둘 곳이 없어서 차례를 넘겨요.');
+    }
+    top(); draw();
+    var bar = host.querySelector('.bd-tbar i'), clk = host.querySelector('.bd-clock'), extra = V.note ? V.note(G.st, E) : '';
+    var pre = (note ? note + ' ' : '') + (extra ? extra + ' ' : '');
+    if (G.cfg.mode === 'ai' && G.st.turn === 2) { bar.style.width = '0'; clk.textContent = ''; return aiMove(pre) }
+    msg(pre + (G.cfg.mode === 'ai' ? '내 차례예요. ' + V.how : names()[G.st.turn - 1] + '(' + SIDE[G.st.turn - 1] + ') 차례예요.'), extra ? 'bd-bad' : '');
     if (!G.tsec) { bar.style.width = '0'; clk.textContent = ''; return }
     var left = G.tsec, t0 = Date.now();
     bar.style.width = '100%'; bar.className = ''; clk.textContent = '⏱️ ' + left + '초';
     tick = setInterval(function () {
       var l = G.tsec - (Date.now() - t0) / 1000; bar.style.width = Math.max(0, l / G.tsec * 100) + '%'; bar.className = l <= 5 ? 'bd-hurry' : ''; clk.textContent = '⏱️ ' + Math.max(0, Math.ceil(l)) + '초';
       if (l <= 5 && Math.ceil(l) !== left) { left = Math.ceil(l); if (left > 0) snd(880, .08) }
-      if (l <= 0) { clearInterval(tick); tick = null; end(3 - G.turn, '시간이 다 됨') }
+      if (l <= 0) { clearInterval(tick); tick = null; end({ w: 3 - G.st.turn, why: '시간이 다 됐어요.' }) }
     }, 200);
   }
-  function save() { G.hist.push(OM ? { b: G.b.slice(), turn: G.turn, last: G.last } : { S: BD.clone(G.S), turn: G.turn, last: G.last }) }
-  function undo() { if (!G.hist.length || G.over || G.score) return; var h = G.hist.pop(); if (OM) G.b = h.b; else G.S = h.S; G.turn = h.turn; G.last = h.last; G.warn = null; draw(); turnStart() }
-  function human(x, y) {
-    G.warn = null;
-    if (OM) {
-      var why = OM.legal(G.b, x, y, G.turn, G.rule33);
-      if (why === 'stone') return;
-      if (why === 'd3') { G.warn = y * 15 + x; draw(); msg('⚠️ 쌍삼(열린 3이 두 개 생기는 수)은 둘 수 없어요.', 'bd-bad'); return }
-      save(); G.b[y * 15 + x] = G.turn; G.last = y * 15 + x; snd(520, .05);
-      if (OM.five(G.b, x, y, G.turn)) return (draw(), end(G.turn, '다섯 개를 이었어요'));
-      if (OM.full(G.b)) return (draw(), end(0, '판이 꽉 찼어요'));
-    } else {
-      var p = pidx(x, y), S = G.S;
-      if (S.b[p]) return;
-      if (p === S.ko) { msg('⚠️ 패: 방금 따낸 자리는 바로 다시 따낼 수 없어요. 다른 곳에 한 번 둔 뒤에 둘 수 있어요.', 'bd-bad'); return }
-      save(); var c0 = S.cap[G.turn];
-      if (!BD.play(S, p)) { G.hist.pop(); msg('⚠️ 그 자리에 두면 내 돌이 바로 잡혀요(스스로 잡히는 수). 둘 수 없어요.', 'bd-bad'); return }
-      G.last = y * G.n + x; snd(S.cap[G.turn] > c0 ? 700 : 520, .06);
-      if (G.goal && S.cap[G.turn] >= G.goal) return (draw(), end(G.turn, '돌을 ' + G.goal + '개 먼저 잡았어요'));
-    }
-    G.turn = 3 - G.turn; draw(); turnStart();
+  function undo() {
+    if (!G.hist.length || G.res) return;
+    G.st = G.hist.pop(); while (G.hist.length && !E.moves(G.st).length) G.st = G.hist.pop();   // 넘긴 차례도 함께 되돌림
+    turnStart();
   }
-  function humanPass() {
-    save(); BD.play(G.S, -1); G.last = -1; G.turn = 3 - G.turn; draw();
-    if (G.S.pass >= 2) return scoreStart();
-    msg((G.cfg.mode === 'ai' ? '나' : names()[2 - G.turn]) + '는 통과했어요. 상대도 통과하면 집을 세요.'); turnStart();
+  function human(mv) {
+    if (G.legal.indexOf(mv) < 0) return;
+    G.hist.push(G.st); G.st = E.play(G.st, mv); snd(520, .05); turnStart();
   }
-  function aiMove() {
-    var L = G.L; G.busy = true; msg('🤖 인공지능이 생각하고 있어요…'); var t0 = Date.now();
-    function done(p) { setTimeout(function () { G.busy = false; if (G.over || !G) return; aiPlay(p) }, Math.max(0, 450 - (Date.now() - t0))) }
-    if (OM) return ask({ b: G.b, me: 2, level: G.cfg.level, rule33: G.rule33 }, function (r) { done(r.p) });
-    var S = G.S;
-    if (!G.goal && S.pass === 1) {   // 사람이 통과했으면: 이기고 있으면 통과
-      return ask({ cmd: 'own', S: ser(S), k: 160 }, function (r) { var own = r.own, J = BD.judge(S, own, BD.deadFrom(S, own), G.komi); if (J.diff < 0) done(-1); else think() });
-    }
-    think();
-    function think() { if (L.rnd && Math.random() < L.rnd) { var ms = BD.moves(S); return done(ms.length ? ms[(Math.random() * ms.length) | 0] : -1) } ask({ S: ser(S), it: L.it, komi: G.goal ? 0 : G.komi, ms: L.ms }, function (r) { done(r.p) }) }
-  }
-  function ser(S) { return { n: S.n, b: Array.prototype.slice.call(S.b), ko: S.ko, cap: S.cap.slice(), turn: S.turn, pass: S.pass, moves: S.moves, goal: S.goal, last: S.last } }
-  function aiPlay(p) {
-    if (OM) {
-      if (p < 0) return end(0, '둘 곳이 없어요');
-      G.b[p] = 2; G.last = p; snd(400, .05);
-      if (OM.five(G.b, p % 15, (p / 15) | 0, 2)) return (draw(), end(2, '인공지능이 다섯 개를 이었어요'));
-      if (OM.full(G.b)) return (draw(), end(0, '판이 꽉 찼어요'));
-    } else {
-      var S = G.S, c0 = S.cap[2];
-      if (p < 0 || !BD.play(S, p)) { BD.play(S, -1); G.last = -1; G.turn = 1; draw(); if (S.pass >= 2) return scoreStart(); msg('🤖 인공지능은 통과했어요. 더 둘 곳이 없으면 나도 ‘통과’를 눌러 집을 세요.'); turnStart(); return }
-      G.last = ((p / (G.n + 2) | 0) - 1) * G.n + (p % (G.n + 2) - 1); snd(S.cap[2] > c0 ? 700 : 400, .06);
-      if (G.goal && S.cap[2] >= G.goal) return (draw(), end(2, '인공지능이 돌을 ' + G.goal + '개 먼저 잡았어요'));
-    }
-    G.turn = 1; draw(); turnStart();
-  }
-  /* ── 바둑 집 세기 ── */
-  function scoreStart() {
-    if (tick) { clearInterval(tick); tick = null } msg('🧮 집을 세고 있어요…'); G.busy = true;
-    ask({ cmd: 'own', S: ser(G.S), k: 400 }, function (r) {
-      G.busy = false; G.own = r.own; G.dead = BD.deadFrom(G.S, G.own); rescore();
-      if (G.cfg.mode === 'two') { msg('두 사람 모두 통과해서 집을 셌어요. 죽은 돌이 틀렸으면 그 돌을 눌러 바꾸고 ‘결과 확정’을 누르세요. (네모 = 그 색의 집, 흐린 돌 = 죽은 돌)'); var c = host.querySelector('.bd-ctl'); c.innerHTML = '<button type="button" class="tl-btn tl-go bd-fin">✅ 결과 확정</button><button type="button" class="tl-btn bd-home">↩ 처음 화면</button>'; c.querySelector('.bd-fin').onclick = finalScore; c.querySelector('.bd-home').onclick = function () { stopAll(); showSetup() } }
-      else finalScore();
+  function aiMove(pre) {
+    G.busy = true; msg(pre + '🤖 인공지능이 생각하고 있어요…', pre ? 'bd-bad' : ''); var t0 = Date.now(), want = G;
+    ask({ st: G.st, level: G.cfg.level }, function (r) {
+      setTimeout(function () { if (G !== want || G.res) return; G.busy = false; G.st = E.play(G.st, G.legal.indexOf(r.mv) >= 0 ? r.mv : G.legal[0]); snd(400, .05); turnStart() }, Math.max(0, 500 - (Date.now() - t0)));
     });
   }
-  function rescore() { G.score = BD.judge(G.S, G.own, G.dead, G.komi); draw(); top() }
-  function toggleDead(q) { var p = pidx(q[0], q[1]), v = G.S.b[p]; if (!v) return; var grp = []; BD.libs(G.S.b, G.n + 2, p, 0, grp); var to = G.dead[p] ? 0 : 1; grp.forEach(function (x) { G.dead[x] = to }); rescore() }
-  function finalScore() { G.final = true; var J = G.score, w = J.diff > 0 ? 1 : J.diff < 0 ? 2 : 0; end(w, '흑 ' + J.b + ' · 백 ' + J.w + (J.komi ? ' + 덤 ' + J.komi : '') + ' (판 위의 돌 + 집)') }
-
-  function end(w, why) {
-    if (G.over) return; G.over = true; if (tick) { clearInterval(tick); tick = null } top();
-    var nm = names(), t;
+  function end(o) {
+    if (G.res) return; G.res = o; if (tick) { clearInterval(tick); tick = null } G.busy = false; top(); draw();
+    var nm = names(), w = o.w, t;
     if (G.cfg.mode === 'ai') {
-      if (w === 1) { R.win++; var lv = G.cfg.level, newly = lv > R.clear; if (newly) R.clear = lv; t = '🏆 이겼어요! ' + why + (newly && lv < 10 ? ' — ' + (lv + 1) + '단계가 열렸어요!' : lv === 10 ? ' — 10단계까지 모두 깼어요! 🎉' : ''); snd(660, .15); setTimeout(function () { snd(880, .3) }, 160) }
-      else if (w === 2) { R.lose++; t = '😢 졌어요. ' + why + ' 다시 도전해 봐요!'; snd(260, .4) } else t = '🤝 비겼어요. ' + why;
+      if (w === 1) { R.win++; var lv = G.cfg.level, newly = lv > R.clear; if (newly) R.clear = lv; t = '🏆 이겼어요! ' + o.why + (newly && lv < 10 ? ' — ' + (lv + 1) + '단계가 열렸어요!' : lv === 10 ? ' — 10단계까지 모두 깼어요! 🎉' : ''); snd(660, .15); setTimeout(function () { snd(880, .3) }, 160) }
+      else if (w === 2) { R.lose++; t = '😢 졌어요. ' + o.why + ' 다시 도전해 봐요!'; snd(260, .4) } else t = '🤝 비겼어요. ' + o.why;
       sv(rec);
-    } else t = w ? '🏆 ' + nm[w - 1] + '(' + (w === 1 ? '흑' : '백') + ') 승리! ' + why : '🤝 비겼어요. ' + why;
+    } else t = w ? '🏆 ' + nm[w - 1] + '(' + SIDE[w - 1] + ') 승리! ' + o.why : '🤝 비겼어요. ' + o.why;
     msg(t, w === 1 || G.cfg.mode === 'two' ? 'bd-ok' : 'bd-bad');
     var c = host.querySelector('.bd-ctl'), lvl = G.cfg.level;
     c.innerHTML = '<button type="button" class="tl-btn tl-go bd-again">🔁 한 판 더</button>' + (G.cfg.mode === 'ai' && w === 1 && lvl < 10 ? '<button type="button" class="tl-btn tl-go bd-up">⬆ ' + (lvl + 1) + '단계 도전</button>' : '') + '<button type="button" class="tl-btn bd-home">↩ 처음 화면</button>';
