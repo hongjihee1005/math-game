@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>오셀로 · 초등 수학 게임 | 초등교사 홍지희</title>
-<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/board/othello.html"><meta property="og:title" content="오셀로 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="상대 돌을 내 돌 두 개 사이에 끼우면 내 색으로 뒤집혀요. 판이 다 차거나 둘 곳이 없을 때 돌이 더 많은 쪽이 이겨요."><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="상대 돌을 내 돌 두 개 사이에 끼우면 내 색으로 뒤집혀요. 판이 다 차거나 둘 곳이 없을 때 돌이 더 많은 쪽이 이겨요.">
-<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#2E8B57;--ok:#2E9E5B;--bad:#D0453B;
+<title>점 잇기 상자 · 수학 보드게임 · 초등 수학 게임 | 초등교사 홍지희</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/mathboard/dots.html"><meta property="og:title" content="점 잇기 상자 · 수학 보드게임 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="두 점 사이에 선을 하나씩 그어요. 상자의 네 번째 변을 그은 사람이 그 상자를 갖고 한 번 더 해요. 상자를 더 많이 가진 쪽이 이겨요."><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="두 점 사이에 선을 하나씩 그어요. 상자의 네 번째 변을 그은 사람이 그 상자를 갖고 한 번 더 해요. 상자를 더 많이 가진 쪽이 이겨요.">
+<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#2E9E5B;--ok:#2E9E5B;--bad:#D0453B;
  --display:'Jua','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--body:'Gowun Dodum','Apple SD Gothic Neo','Malgun Gothic',sans-serif;box-sizing:border-box}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37}}
 :root[data-theme="dark"]{--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37}
@@ -123,6 +123,49 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(21px,2.4vw,26px);m
 .jg-lastm{fill:none;stroke:#E0A21A;stroke-width:3;pointer-events:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .jg-wood{fill:#C9A060}}
 :root[data-theme="dark"] .jg-wood{fill:#C9A060}
+/* 수학 보드게임 (pm- 곱셈 사목 · ft- 15 만들기 · dt- 점 잇기 상자) */
+.bd-bwrap.pg-product{width:min(500px,100%,calc((100vh - 230px) * .82))}
+.bd-bwrap.pg-fifteen{width:min(600px,100%)}
+.bd-bwrap.pg-dots{width:min(560px,100%,calc(100vh - 230px))}
+.pc-product1,.pc-fifteen1,.pc-dots1{background:#2B6FB8;border-color:#1B4D85}
+.pc-product2,.pc-fifteen2,.pc-dots2{background:#E07B1A;border-color:#A3560D}
+.pm-frame{fill:color-mix(in srgb,var(--acc) 12%,var(--paper))}
+.pm-cell{fill:var(--paper);stroke:var(--line);stroke-width:2}
+.pm-cell.pm-p1{fill:#2B6FB8;stroke:#1B4D85}.pm-cell.pm-p2{fill:#E07B1A;stroke:#A3560D}
+.pm-cell.pm-can{stroke:#2E9E5B;stroke-width:3.5;stroke-dasharray:7 4}
+.pm-num{text-anchor:middle;font-size:26px;font-weight:800;fill:var(--ink);pointer-events:none}.pm-num.pm-on{fill:#fff}
+.pm-new{animation:pmnew .3s ease-out;transform-box:fill-box;transform-origin:center}
+@keyframes pmnew{from{transform:scale(.6)}to{transform:none}}
+.pm-last{fill:none;stroke:#E0A21A;stroke-width:4;pointer-events:none}
+.pm-win{fill:#fff;pointer-events:none}
+.pm-lab{font-size:15px;font-weight:700;fill:var(--soft)}
+.pm-key{fill:var(--paper);stroke:var(--line);stroke-width:2}.pm-key.pm-keyon{fill:color-mix(in srgb,#7B4FB0 14%,var(--paper));stroke:#7B4FB0}
+.pm-knum{text-anchor:middle;font-size:26px;font-weight:800;fill:var(--ink);pointer-events:none}
+.pm-clip path{fill:#7B4FB0;stroke:#4E2F75;stroke-width:1.5}.pm-clip text{text-anchor:middle;font-size:14px;font-weight:800;fill:#fff;pointer-events:none}
+.pm-c1 path{fill:#2F8F8F;stroke:#1C5E5E}
+.pm-csel path{stroke:#E0A21A;stroke-width:5}
+.ft-card rect{fill:var(--paper);stroke:var(--line);stroke-width:2.5}
+.ft-card text{text-anchor:middle;font-size:34px;font-weight:800;fill:var(--ink);pointer-events:none}
+.ft-card.ft-can rect{stroke:var(--acc)}
+.ft-card.ft-p1 rect{fill:#2B6FB8;stroke:#1B4D85}.ft-card.ft-p2 rect{fill:#E07B1A;stroke:#A3560D}
+.ft-card.ft-p1 text,.ft-card.ft-p2 text{fill:#fff}
+.ft-card.ft-win rect,.ft-sq.ft-win{stroke:#E0A21A;stroke-width:6}
+.ft-new{animation:pmnew .3s ease-out;transform-box:fill-box;transform-origin:center}
+.ft-lst{font-size:24px;font-weight:700;fill:var(--ink)}
+.ft-dot.ft-d1{fill:#2B6FB8}.ft-dot.ft-d2{fill:#E07B1A}
+.ft-cap{text-anchor:middle;font-size:17px;font-weight:700;fill:var(--soft)}.ft-cap.ft-sm{font-size:15px;font-weight:400}
+.ft-lock{fill:none;stroke:var(--line);stroke-width:2.5;stroke-dasharray:8 6}
+.ft-sq{fill:var(--paper);stroke:var(--line);stroke-width:2}.ft-sq.ft-s1{fill:#2B6FB8}.ft-sq.ft-s2{fill:#E07B1A}
+.ft-sqn{text-anchor:middle;font-size:26px;font-weight:800;fill:var(--ink)}.ft-sqn.ft-on{fill:#fff}
+.dt-bg{fill:color-mix(in srgb,var(--acc) 8%,var(--paper))}
+.dt-dot{fill:var(--ink)}
+.dt-empty{stroke:var(--line);stroke-width:5;stroke-dasharray:3 9;stroke-linecap:round}
+.dt-hov{stroke-dasharray:none;stroke-width:8;opacity:.6}.dt-hov.dt-h1{stroke:#2B6FB8}.dt-hov.dt-h2{stroke:#E07B1A}
+.dt-ln{stroke-width:8;stroke-linecap:round}.dt-l1{stroke:#2B6FB8}.dt-l2{stroke:#E07B1A}
+.dt-last{stroke-width:11}
+.dt-box.dt-b1{fill:color-mix(in srgb,#2B6FB8 30%,var(--paper))}.dt-box.dt-b2{fill:color-mix(in srgb,#E07B1A 30%,var(--paper))}
+.dt-bt{text-anchor:middle;font-size:26px;font-weight:800;fill:var(--ink);opacity:.65;pointer-events:none}
+.dt-new{animation:pmnew .3s ease-out;transform-box:fill-box;transform-origin:center}
 
 </style><style id="hj-contact-css">.hj-contact{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:8px 0 0;padding:0}.hj-contact a{display:inline-flex;align-items:center;gap:6px;color:var(--ink,#1F2A44);text-decoration:none;font-size:15px;line-height:1.2;background:var(--paper,#fff);border:2px solid var(--line,#CAD6E4);border-radius:999px;padding:5px 12px;white-space:nowrap}.hj-contact a:hover,.hj-contact a:focus-visible{border-color:var(--ink,#1F2A44);outline:0}.hj-contact svg{flex:none}#ovNavMade+.hj-contact{margin:0 0 0 8px;flex:none;flex-wrap:nowrap;gap:6px}#ovNavMade+.hj-contact a{font-size:13px;padding:3px 9px}@media print{.hj-contact a{border:0;padding:0}}</style><style id="hjfoot-css">.hjfoot{display:block;width:100%;flex-basis:100%;margin:40px 0 0;padding:16px 0 4px;border:0;border-top:3px solid var(--line,#CAD6E4);text-align:center;color:var(--soft,#4F5B75);font-family:var(--body,inherit);font-size:17px;line-height:1.7;word-break:keep-all;opacity:1}.hjfoot p{margin:2px 0;padding:0;border:0;background:none;font-size:inherit;color:inherit;text-align:center}</style>
 <!--hj-ctheme--><style id="hj-ctheme">/* hj-ctheme · 수업 자료 페이지 공통: 글꼴을 Pretendard로, 바탕·글자색을 메뉴와 같은 밝고 따뜻한 톤으로 */
@@ -802,144 +845,117 @@ html body:not(.mix) .hj-contact,html body:not(.mix) .hj-contact.hj-cvc{display:n
 html body .frameline{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.3em;row-gap:.2em}html body .frameline input{max-width:100%;text-align:center}
 </style><!--/hj-ctheme--></head><body>
 <main>
-<nav class="tl-gnav" aria-label="다른 판 놀이"><a href="omok.html">⚫ 오목</a><a href="baduk.html">⚪ 바둑</a><a href="connect4.html">🔴 사목</a><a href="othello.html" aria-current="page">🔘 오셀로</a><a href="janggi.html">🐎 장기</a></nav>
-<header class="tl-head"><span class="tl-ico" aria-hidden="true">🔘</span><div><h1>오셀로</h1><p class="tl-desc">상대 돌을 내 돌 두 개 사이에 끼우면 내 색으로 뒤집혀요. 판이 다 차거나 둘 곳이 없을 때 돌이 더 많은 쪽이 이겨요.</p><p class="tl-rec">모든 학년 · 인공지능과 10단계 · 친구와 둘이</p></div></header>
-<section class="tl-stage" id="tlStage" aria-label="오셀로">
+<nav class="tl-gnav" aria-label="다른 수학 보드게임"><a href="product.html">✖️ 곱셈 사목</a><a href="fifteen.html">🔢 15 만들기</a><a href="dots.html" aria-current="page">⬜ 점 잇기 상자</a></nav>
+<header class="tl-head"><span class="tl-ico" aria-hidden="true">⬜</span><div><h1>점 잇기 상자</h1><p class="tl-desc">두 점 사이에 선을 하나씩 그어요. 상자의 네 번째 변을 그은 사람이 그 상자를 갖고 한 번 더 해요. 상자를 더 많이 가진 쪽이 이겨요.</p><p class="tl-rec">추천 2~6학년 · 넓이(상자 세기), 전략</p></div></header>
+<section class="tl-stage" id="tlStage" aria-label="점 잇기 상자">
 <div class="tl-bar"><span class="tl-bt" id="tlBarT"></span><span class="tl-sp"></span><button type="button" class="tl-btn" id="tlFull">⛶ 크게 보기</button></div>
 <div class="tl-host" id="tlHost"></div>
 </section>
-<details class="tl-how" open><summary>쓰는 법</summary><ul><li>돌은 상대 돌을 하나 이상 뒤집을 수 있는 자리에만 놓아요(화면에 점으로 보여 줘요). 가로·세로·대각선 모두 뒤집혀요.</li><li>둘 곳이 없으면 차례가 저절로 넘어가요. 둘 다 둘 곳이 없으면 끝나고, 돌이 많은 쪽이 이겨요.</li><li>🤖 인공지능과: 나는 흑(먼저), 인공지능은 백. 한 수 시간(30초 → 20초), 시간이 다 되면 그 판은 져요. 이기면 다음 단계가 열려요.</li><li>👫 친구와 둘이: 한 화면에서 번갈아 두고, 한 수 시간(없음·20·30·60초)과 무르기가 있어요.</li></ul></details>
-<section class="tl-ideas"><h2>💡 수업에서 이렇게 써 보세요</h2><ul><li>모서리(네 귀퉁이)를 차지하면 왜 좋은지 이야기해 보기 — 모서리 돌은 다시 뒤집히지 않아요.</li><li>끝났을 때 돌 수를 세고 둘의 차이를 식으로 써 보기.</li></ul></section>
-<div class="creditbar"><a class="tolist" href="index.html">📋 자료 목록으로</a><footer class="hjfoot"><p>쉬는 시간에 인공지능이나 친구와 함께 즐기는 판 놀이(오목·바둑·사목·오셀로·장기) 자료입니다.</p><p>만든 사람: 초등교사 홍지희</p><p class="hj-contact"><a href="mailto:hongjihee1005@gmail.com" aria-label="이메일 보내기: hongjihee1005@gmail.com"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>hongjihee1005@gmail.com</span></a><a href="https://www.youtube.com/@hongjihee1005" target="_blank" rel="noopener" aria-label="유튜브 채널 열기: @hongjihee1005"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E5484D"/><path d="M10 8.2v7.6l6.2-3.8z" fill="#fff"/></svg><span>유튜브 @hongjihee1005</span></a></p></footer></div>
+<details class="tl-how" open><summary>쓰는 법</summary><ul><li>두 점 사이(점선)를 누르면 선이 그어져요. 마우스를 올리면 그을 선이 미리 보여요.</li><li>내가 상자의 네 번째 변을 그으면 그 상자에 내 색이 칠해지고 한 번 더 해요. 선을 다 그으면 상자가 많은 쪽이 이겨요.</li><li>세 번째 변을 그으면 상대가 그 상자를 가져가요. 끝이 다가오면 상자를 조금 내주고 더 많이 가져오는 방법도 있어요.</li><li>🤖 인공지능과: 1~5단계는 상자 3×3, 6~10단계는 4×4. 나는 파랑(먼저). 한 수 시간(30초 → 20초). 이기면 다음 단계가 열려요.</li><li>👫 친구와 둘이: 판 크기(3×3·4×4·5×5), 한 수 시간(없음·15·30·60초)과 무르기.</li></ul></details>
+<section class="tl-ideas"><h2>💡 수업에서 이렇게 써 보세요</h2><ul><li>끝났을 때 상자 수의 합이 판 전체(3×3이면 9)와 같은지 확인하기.</li><li>‘세 번째 변을 긋지 않기’ 전략을 써 본 뒤, 왜 끝에는 피할 수 없는지 이야기하기(짝수·홀수).</li></ul></section>
+<div class="creditbar"><a class="tolist" href="index.html">📋 자료 목록으로</a><footer class="hjfoot"><p>인공지능이나 친구와 겨루며 수학을 익히는 보드게임 자료입니다.</p><p>만든 사람: 초등교사 홍지희</p><p class="hj-contact"><a href="mailto:hongjihee1005@gmail.com" aria-label="이메일 보내기: hongjihee1005@gmail.com"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>hongjihee1005@gmail.com</span></a><a href="https://www.youtube.com/@hongjihee1005" target="_blank" rel="noopener" aria-label="유튜브 채널 열기: @hongjihee1005"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E5484D"/><path d="M10 8.2v7.6l6.2-3.8z" fill="#fff"/></svg><span>유튜브 @hongjihee1005</span></a></p></footer></div>
 </main>
 
-<script>window.TL={"id": "othello", "game": "othello", "levels": [{"name": "새싹", "info": "아무 데나 둬요", "t": 30}, {"name": "떡잎", "info": "좋은 자리를 조금 알아요", "t": 30}, {"name": "꽃봉오리", "info": "모서리를 좋아해요", "t": 30}, {"name": "꽃", "info": "두 수 앞을 봐요", "t": 25}, {"name": "열매", "info": "세 수 앞 · 끝 6칸은 정확히", "t": 25}, {"name": "나무", "info": "네 수 앞 · 끝 8칸은 정확히", "t": 25}, {"name": "숲", "info": "여섯 수 앞 · 끝 12칸은 정확히", "t": 20}, {"name": "산", "info": "일곱 수 앞 · 끝 14칸", "t": 20}, {"name": "하늘", "info": "여덟 수 앞 · 끝 16칸", "t": 20}, {"name": "별", "info": "가장 강한 단계", "t": 20}], "make": "makeOthello"};
-/* 오셀로(리버시) 규칙·인공지능. 8×8, 칸 번호 = 줄 × 8 + 칸. 0 빈칸 · 1 흑(먼저) · 2 백.
-   makeOthello()은 화면과 워커(Worker) 둘 다에서 씀. 수 = 칸 번호, -1 = 넘기기(둘 곳이 없을 때) */
-function makeOthello() {
-  var D8 = [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [0, 1], [1, 1]];
-  var WT = [100, -20, 10, 5, 5, 10, -20, 100, -20, -50, -2, -2, -2, -2, -50, -20, 10, -2, 1, 1, 1, 1, -2, 10, 5, -2, 1, 0, 0, 1, -2, 5,
-            5, -2, 1, 0, 0, 1, -2, 5, 10, -2, 1, 1, 1, 1, -2, 10, -20, -50, -2, -2, -2, -2, -50, -20, 100, -20, 10, 5, 5, 10, -20, 100];
-  var ORDER = []; for (var i = 0; i < 64; i++) ORDER.push(i); ORDER.sort(function (a, b) { return WT[b] - WT[a] });
-  function init() { var b = []; for (var i = 0; i < 64; i++) b.push(0); b[27] = 2; b[36] = 2; b[28] = 1; b[35] = 1; return { b: b, turn: 1, last: -1, pass: 0, n: 0 } }
-  function flips(b, p, me) {
-    if (b[p]) return []; var op = 3 - me, x = p & 7, y = p >> 3, out = [];
-    for (var d = 0; d < 8; d++) {
-      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;
-      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }
-      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) for (var j = 1; j <= k; j++) out.push((y + j * dy) * 8 + x + j * dx);
-    }
-    return out;
+<script>window.TL={"id": "dots", "game": "dots", "levels": [{"name": "새싹", "info": "아무 선이나 그어요", "t": 30, "opt": {"n": 3}}, {"name": "떡잎", "info": "상자는 꼭 가져가요", "t": 30, "opt": {"n": 3}}, {"name": "꽃봉오리", "info": "세 번째 변을 가끔 피해요", "t": 30, "opt": {"n": 3}}, {"name": "꽃", "info": "세 번째 변을 꼭 피해요", "t": 30, "opt": {"n": 3}}, {"name": "열매", "info": "줄 수밖에 없으면 가장 적게 줘요", "t": 30, "opt": {"n": 3}}, {"name": "나무", "info": "4×4 판 · 가장 적게 줘요", "t": 25, "opt": {"n": 4}}, {"name": "숲", "info": "4×4 · 끝 12선은 끝까지 따져요", "t": 25, "opt": {"n": 4}}, {"name": "산", "info": "4×4 · 끝 16선", "t": 25, "opt": {"n": 4}}, {"name": "하늘", "info": "4×4 · 끝 20선", "t": 20, "opt": {"n": 4}}, {"name": "별", "info": "4×4 · 가장 강한 단계", "t": 20, "opt": {"n": 4}}], "make": "makeDots"};
+/* 점 잇기 상자 규칙·인공지능. 상자 N×N개(점 (N+1)×(N+1)). 선 번호: 가로선 줄 r(0~N)·칸 c → r×N+c, 세로선 줄 r·칸 c(0~N) → (N+1)N + r(N+1)+c.
+   차례마다 선 하나를 긋고, 상자의 네 변을 내가 완성하면 그 상자를 갖고 한 번 더 함. 선을 다 그으면 상자가 많은 쪽 승리.
+   수 = 선 번호. makeDots()은 화면과 워커 둘 다에서 씀 */
+function makeDots() {
+  var G = {};
+  function geo(N) {
+    if (G[N]) return G[N];
+    var H = (N + 1) * N, E = H + N * (N + 1), BE = [], EB = [];
+    for (var i = 0; i < E; i++) EB.push([]);
+    for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) { var b = r * N + c, es = [r * N + c, (r + 1) * N + c, H + r * (N + 1) + c, H + r * (N + 1) + c + 1]; BE.push(es); es.forEach(function (e) { EB[e].push(b) }) }
+    return G[N] = { N: N, H: H, E: E, BE: BE, EB: EB };
   }
-  function canPlay(b, p, me) {
-    if (b[p]) return false; var op = 3 - me, x = p & 7, y = p >> 3;
-    for (var d = 0; d < 8; d++) {
-      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;
-      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }
-      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) return true;
-    }
-    return false;
+  function init(o) { var N = (o && o.n) || 3, g = geo(N), e = [], bx = []; for (var i = 0; i < g.E; i++) e.push(0); for (i = 0; i < N * N; i++) bx.push(0); return { N: N, e: e, bx: bx, turn: 1, k: 0, last: -1, again: false } }
+  function cnt(st) { var c = [0, 0, 0]; st.bx.forEach(function (v) { c[v]++ }); return c }
+  function over(st) { if (st.k < st.e.length) return null; var c = cnt(st); return { w: c[1] > c[2] ? 1 : c[2] > c[1] ? 2 : 0, why: '선을 다 그었어요. 상자 ' + c[1] + ' : ' + c[2] } }
+  function moves(st) { if (over(st)) return []; var m = []; for (var i = 0; i < st.e.length; i++) if (!st.e[i]) m.push(i); return m }
+  function sides(e, g, b) { var s = 0, es = g.BE[b]; for (var i = 0; i < 4; i++) if (e[es[i]]) s++; return s }
+  function play(st, m) {
+    var g = geo(st.N), e = st.e.slice(), bx = st.bx.slice(), got = 0; e[m] = st.turn;
+    g.EB[m].forEach(function (b) { if (sides(e, g, b) === 4) { bx[b] = st.turn; got++ } });
+    return { N: st.N, e: e, bx: bx, turn: got ? st.turn : 3 - st.turn, k: st.k + 1, last: m, again: got > 0 };
   }
-  function legal(b, me) { var o = []; for (var i = 0; i < 64; i++) { var p = ORDER[i]; if (canPlay(b, p, me)) o.push(p) } return o }
-  function count(b) { var c = [0, 0, 0]; for (var i = 0; i < 64; i++) c[b[i]]++; return c }
-  function over(st) {
-    if (legal(st.b, 1).length || legal(st.b, 2).length) return null;
-    var c = count(st.b); return { w: c[1] > c[2] ? 1 : c[2] > c[1] ? 2 : 0, why: '더 둘 곳이 없어요. 흑 ' + c[1] + ' · 백 ' + c[2] };
+  /* 인공지능 도구: 상자를 완성하는 선 · 세 번째 변을 만들지 않는 '안전한' 선 · 상대가 가져갈 상자 수(희생) */
+  function gains(e, g, m) { var n = 0; g.EB[m].forEach(function (b) { if (sides(e, g, b) === 3) n++ }); return n }
+  function safe(e, g, m) { var ok = true; g.EB[m].forEach(function (b) { if (sides(e, g, b) === 2) ok = false }); return ok }
+  function giveAway(e0, g, m) {   // 이 선을 그으면 상대가 이어서 몇 상자를 가져가는가
+    var e = e0.slice(); e[m] = 1; var n = 0, again = true;
+    while (again) { again = false; for (var b = 0; b < g.BE.length; b++) if (sides(e, g, b) === 3) { g.BE[b].forEach(function (x) { if (!e[x]) e[x] = 1 }); n++; again = true } }
+    return n;
   }
-  function moves(st) { return legal(st.b, st.turn) }
-  function play(st, p) {
-    var b = st.b.slice();
-    if (p < 0) return { b: b, turn: 3 - st.turn, last: -1, pass: st.pass + 1, n: st.n, fl: [] };
-    var f = flips(b, p, st.turn); b[p] = st.turn; for (var i = 0; i < f.length; i++) b[f[i]] = st.turn;
-    return { b: b, turn: 3 - st.turn, last: p, pass: 0, n: st.n + 1, fl: f };
-  }
-  /* 점수: 자리 값(모서리 큼, 모서리 옆 위험 — 모서리를 차지하면 옆도 괜찮음) + 둘 수 있는 곳 수 */
-  var CORN = [[0, [1, 8, 9]], [7, [6, 15, 14]], [56, [57, 48, 49]], [63, [62, 55, 54]]];
-  function evalB(b, me, myMob) {
-    var op = 3 - me, s = 0;
-    for (var i = 0; i < 64; i++) { var v = b[i]; if (v === me) s += WT[i]; else if (v === op) s -= WT[i] }
-    for (var k = 0; k < 4; k++) if (b[CORN[k][0]]) CORN[k][1].forEach(function (q) { var v = b[q]; if (v === me) s -= WT[q]; else if (v === op) s += WT[q] });
-    return s + 6 * (myMob - legal(b, op).length);
-  }
-  function final(b, me) { var c = count(b), d = c[me] - c[3 - me]; return d * 1000 + (d > 0 ? 50000 : d < 0 ? -50000 : 0) }
-  var stop = 0, nodes = 0;
-  function nega(b, me, depth, a, bt, passed, exact) {
+  var stop = 0, nodes = 0, memo = null;
+  function solve(e, g, key, left) {   // 남은 상자에서 (지금 둘 사람 − 상대) 최대
+    if (!left) return 0;
     if ((++nodes & 1023) === 0 && stop && Date.now() > stop) throw 'time';
-    var ms = legal(b, me);
-    if (!ms.length) { if (passed) return final(b, me); return -nega(b, 3 - me, depth, -bt, -a, true, exact) }
-    if (depth <= 0 && !exact) return evalB(b, me, ms.length);
+    var hit = memo.get(key); if (hit !== undefined) return hit;
+    var best = -1e9, ms = [];
+    for (var m = 0; m < g.E; m++) if (!e[m]) ms.push(m);
+    ms.sort(function (a, b) { return gains(e, g, b) - gains(e, g, a) });
     for (var i = 0; i < ms.length; i++) {
-      var p = ms[i], f = flips(b, p, me); b[p] = me; for (var j = 0; j < f.length; j++) b[f[j]] = me;
-      var v = -nega(b, 3 - me, depth - 1, -bt, -a, false, exact);
-      b[p] = 0; for (j = 0; j < f.length; j++) b[f[j]] = 3 - me;
-      if (v > a) { a = v; if (a >= bt) break }
+      var m2 = ms[i], got = gains(e, g, m2); e[m2] = 1;
+      var v = got ? got + solve(e, g, key + Math.pow(2, m2), left - got) : -solve(e, g, key + Math.pow(2, m2), left);
+      e[m2] = 0; if (v > best) best = v;
     }
-    return a;
+    memo.set(key, best); return best;
   }
-  function rootScores(st, depth, exact) {
-    var b = st.b.slice(), me = st.turn;
-    return legal(b, me).map(function (p) {
-      var f = flips(b, p, me); b[p] = me; f.forEach(function (q) { b[q] = me });
-      var v = -nega(b, 3 - me, depth - 1, -1e9, 1e9, false, exact);
-      b[p] = 0; f.forEach(function (q) { b[q] = 3 - me }); return { c: p, v: v };
-    });
-  }
-  /* 단계: 1 아무 데나(가끔 많이 뒤집기) · 2 가장 많이 뒤집기 · 3~10 자리 값을 보며 더 멀리 읽기, 끝이 가까우면 끝까지 정확히 */
-  var LV = [null, { rnd: 1 }, { d: 1, noise: 120 }, { d: 1, noise: 30 }, { d: 2, noise: 10 }, { d: 3, ex: 6 }, { d: 4, ex: 8 }, { d: 6, ex: 12, ms: 3000 }, { d: 7, ex: 14, ms: 3500 }, { d: 8, ex: 16, ms: 4000 }, { d: 10, ex: 18, ms: 4500 }];
-  function pick(L, noise) {
-    var best = -Infinity, bs = [];
-    L.forEach(function (o) { var v = o.v + (noise ? Math.random() * noise : 0); if (v > best + 1e-9) { best = v; bs = [o.c] } else if (Math.abs(v - best) < 1e-9) bs.push(o.c) });
-    return bs[(Math.random() * bs.length) | 0];
-  }
+  /* 단계: 1 아무 선 · 2 상자는 꼭 가져감 · 3~4 상대에게 상자를 주지 않는 선 · 5~6 줄 수밖에 없으면 가장 적게 · 7~10 끝이 가까우면 끝까지 따져 보기 */
+  var LV = [null, { take: .5 }, { take: 1 }, { take: 1, safe: .6 }, { take: 1, safe: 1 }, { take: 1, safe: 1, sac: 1 }, { take: 1, safe: 1, sac: 1 }, { take: 1, safe: 1, sac: 1, K: 12 }, { take: 1, safe: 1, sac: 1, K: 16, ms: 3000 }, { take: 1, safe: 1, sac: 1, K: 20, ms: 4000 }, { take: 1, safe: 1, sac: 1, K: 24, ms: 4500 }];
   function ai(st, level) {
-    var C = LV[level], ms = moves(st);
+    var C = LV[level], ms = moves(st), g = geo(st.N), e = st.e.map(function (x) { return x ? 1 : 0 }), r = function (a) { return a[(Math.random() * a.length) | 0] };
     if (!ms.length) return -1;
-    if (C.rnd != null || C.greedy) {
-      if (C.rnd && Math.random() < C.rnd) return ms[(Math.random() * ms.length) | 0];
-      return pick(ms.map(function (p) { return { c: p, v: flips(st.b, p, st.turn).length } }), 0);
+    if (C.K && ms.length <= C.K) {
+      stop = C.ms ? Date.now() + C.ms : 0; nodes = 0; memo = new Map();
+      try {
+        var key = 0; for (var i = 0; i < g.E; i++) if (e[i]) key += Math.pow(2, i);
+        var left = st.bx.filter(function (x) { return !x }).length, best = -1e9, bs = [];
+        ms.forEach(function (m) { var got = gains(e, g, m); e[m] = 1; var v = got ? got + solve(e, g, key + Math.pow(2, m), left - got) : -solve(e, g, key + Math.pow(2, m), left); e[m] = 0; if (v > best) { best = v; bs = [m] } else if (v === best) bs.push(m) });
+        stop = 0; memo = null; return r(bs);
+      } catch (x) { if (x !== 'time') throw x; stop = 0; memo = null }
     }
-    var empt = count(st.b)[0], best = null;
-    stop = C.ms ? Date.now() + C.ms : 0; nodes = 0;
-    try {
-      for (var d = C.ms ? 1 : C.d; d <= C.d; d++) best = rootScores(st, d, false);
-      if (C.ex && empt <= C.ex) best = rootScores(st, 99, true);
-    } catch (e) { if (e !== 'time') throw e }
-    stop = 0;
-    if (!best) best = rootScores(st, 1, false);
-    return pick(best, C.noise);
+    var tk = ms.filter(function (m) { return gains(e, g, m) > 0 });
+    if (tk.length && Math.random() < C.take) return r(tk);
+    if (C.safe) { var sf = ms.filter(function (m) { return safe(e, g, m) }); if (sf.length && Math.random() < C.safe) return r(sf) }
+    if (C.sac) { var mn = 1e9, mb = []; ms.forEach(function (m) { var n = giveAway(e, g, m); if (n < mn) { mn = n; mb = [m] } else if (n === mn) mb.push(m) }); return r(mb) }
+    return r(ms);
   }
-  return { init: init, moves: moves, play: play, over: over, ai: ai, count: count, flips: flips, LV: LV };
+  return { geo: geo, init: init, moves: moves, play: play, over: over, ai: ai, cnt: cnt, LV: LV };
 }
 
-window.ENG_SRC="/* 오셀로(리버시) 규칙·인공지능. 8×8, 칸 번호 = 줄 × 8 + 칸. 0 빈칸 · 1 흑(먼저) · 2 백.\n   makeOthello()은 화면과 워커(Worker) 둘 다에서 씀. 수 = 칸 번호, -1 = 넘기기(둘 곳이 없을 때) */\nfunction makeOthello() {\n  var D8 = [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [0, 1], [1, 1]];\n  var WT = [100, -20, 10, 5, 5, 10, -20, 100, -20, -50, -2, -2, -2, -2, -50, -20, 10, -2, 1, 1, 1, 1, -2, 10, 5, -2, 1, 0, 0, 1, -2, 5,\n            5, -2, 1, 0, 0, 1, -2, 5, 10, -2, 1, 1, 1, 1, -2, 10, -20, -50, -2, -2, -2, -2, -50, -20, 100, -20, 10, 5, 5, 10, -20, 100];\n  var ORDER = []; for (var i = 0; i < 64; i++) ORDER.push(i); ORDER.sort(function (a, b) { return WT[b] - WT[a] });\n  function init() { var b = []; for (var i = 0; i < 64; i++) b.push(0); b[27] = 2; b[36] = 2; b[28] = 1; b[35] = 1; return { b: b, turn: 1, last: -1, pass: 0, n: 0 } }\n  function flips(b, p, me) {\n    if (b[p]) return []; var op = 3 - me, x = p & 7, y = p >> 3, out = [];\n    for (var d = 0; d < 8; d++) {\n      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;\n      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }\n      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) for (var j = 1; j <= k; j++) out.push((y + j * dy) * 8 + x + j * dx);\n    }\n    return out;\n  }\n  function canPlay(b, p, me) {\n    if (b[p]) return false; var op = 3 - me, x = p & 7, y = p >> 3;\n    for (var d = 0; d < 8; d++) {\n      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;\n      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }\n      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) return true;\n    }\n    return false;\n  }\n  function legal(b, me) { var o = []; for (var i = 0; i < 64; i++) { var p = ORDER[i]; if (canPlay(b, p, me)) o.push(p) } return o }\n  function count(b) { var c = [0, 0, 0]; for (var i = 0; i < 64; i++) c[b[i]]++; return c }\n  function over(st) {\n    if (legal(st.b, 1).length || legal(st.b, 2).length) return null;\n    var c = count(st.b); return { w: c[1] > c[2] ? 1 : c[2] > c[1] ? 2 : 0, why: '더 둘 곳이 없어요. 흑 ' + c[1] + ' · 백 ' + c[2] };\n  }\n  function moves(st) { return legal(st.b, st.turn) }\n  function play(st, p) {\n    var b = st.b.slice();\n    if (p < 0) return { b: b, turn: 3 - st.turn, last: -1, pass: st.pass + 1, n: st.n, fl: [] };\n    var f = flips(b, p, st.turn); b[p] = st.turn; for (var i = 0; i < f.length; i++) b[f[i]] = st.turn;\n    return { b: b, turn: 3 - st.turn, last: p, pass: 0, n: st.n + 1, fl: f };\n  }\n  /* 점수: 자리 값(모서리 큼, 모서리 옆 위험 — 모서리를 차지하면 옆도 괜찮음) + 둘 수 있는 곳 수 */\n  var CORN = [[0, [1, 8, 9]], [7, [6, 15, 14]], [56, [57, 48, 49]], [63, [62, 55, 54]]];\n  function evalB(b, me, myMob) {\n    var op = 3 - me, s = 0;\n    for (var i = 0; i < 64; i++) { var v = b[i]; if (v === me) s += WT[i]; else if (v === op) s -= WT[i] }\n    for (var k = 0; k < 4; k++) if (b[CORN[k][0]]) CORN[k][1].forEach(function (q) { var v = b[q]; if (v === me) s -= WT[q]; else if (v === op) s += WT[q] });\n    return s + 6 * (myMob - legal(b, op).length);\n  }\n  function final(b, me) { var c = count(b), d = c[me] - c[3 - me]; return d * 1000 + (d > 0 ? 50000 : d < 0 ? -50000 : 0) }\n  var stop = 0, nodes = 0;\n  function nega(b, me, depth, a, bt, passed, exact) {\n    if ((++nodes & 1023) === 0 && stop && Date.now() > stop) throw 'time';\n    var ms = legal(b, me);\n    if (!ms.length) { if (passed) return final(b, me); return -nega(b, 3 - me, depth, -bt, -a, true, exact) }\n    if (depth <= 0 && !exact) return evalB(b, me, ms.length);\n    for (var i = 0; i < ms.length; i++) {\n      var p = ms[i], f = flips(b, p, me); b[p] = me; for (var j = 0; j < f.length; j++) b[f[j]] = me;\n      var v = -nega(b, 3 - me, depth - 1, -bt, -a, false, exact);\n      b[p] = 0; for (j = 0; j < f.length; j++) b[f[j]] = 3 - me;\n      if (v > a) { a = v; if (a >= bt) break }\n    }\n    return a;\n  }\n  function rootScores(st, depth, exact) {\n    var b = st.b.slice(), me = st.turn;\n    return legal(b, me).map(function (p) {\n      var f = flips(b, p, me); b[p] = me; f.forEach(function (q) { b[q] = me });\n      var v = -nega(b, 3 - me, depth - 1, -1e9, 1e9, false, exact);\n      b[p] = 0; f.forEach(function (q) { b[q] = 3 - me }); return { c: p, v: v };\n    });\n  }\n  /* 단계: 1 아무 데나(가끔 많이 뒤집기) · 2 가장 많이 뒤집기 · 3~10 자리 값을 보며 더 멀리 읽기, 끝이 가까우면 끝까지 정확히 */\n  var LV = [null, { rnd: 1 }, { d: 1, noise: 120 }, { d: 1, noise: 30 }, { d: 2, noise: 10 }, { d: 3, ex: 6 }, { d: 4, ex: 8 }, { d: 6, ex: 12, ms: 3000 }, { d: 7, ex: 14, ms: 3500 }, { d: 8, ex: 16, ms: 4000 }, { d: 10, ex: 18, ms: 4500 }];\n  function pick(L, noise) {\n    var best = -Infinity, bs = [];\n    L.forEach(function (o) { var v = o.v + (noise ? Math.random() * noise : 0); if (v > best + 1e-9) { best = v; bs = [o.c] } else if (Math.abs(v - best) < 1e-9) bs.push(o.c) });\n    return bs[(Math.random() * bs.length) | 0];\n  }\n  function ai(st, level) {\n    var C = LV[level], ms = moves(st);\n    if (!ms.length) return -1;\n    if (C.rnd != null || C.greedy) {\n      if (C.rnd && Math.random() < C.rnd) return ms[(Math.random() * ms.length) | 0];\n      return pick(ms.map(function (p) { return { c: p, v: flips(st.b, p, st.turn).length } }), 0);\n    }\n    var empt = count(st.b)[0], best = null;\n    stop = C.ms ? Date.now() + C.ms : 0; nodes = 0;\n    try {\n      for (var d = C.ms ? 1 : C.d; d <= C.d; d++) best = rootScores(st, d, false);\n      if (C.ex && empt <= C.ex) best = rootScores(st, 99, true);\n    } catch (e) { if (e !== 'time') throw e }\n    stop = 0;\n    if (!best) best = rootScores(st, 1, false);\n    return pick(best, C.noise);\n  }\n  return { init: init, moves: moves, play: play, over: over, ai: ai, count: count, flips: flips, LV: LV };\n}\n";
-/* 오셀로 판 그리기·누르기 (window.VIEW) */
+window.ENG_SRC="/* 점 잇기 상자 규칙·인공지능. 상자 N×N개(점 (N+1)×(N+1)). 선 번호: 가로선 줄 r(0~N)·칸 c → r×N+c, 세로선 줄 r·칸 c(0~N) → (N+1)N + r(N+1)+c.\n   차례마다 선 하나를 긋고, 상자의 네 변을 내가 완성하면 그 상자를 갖고 한 번 더 함. 선을 다 그으면 상자가 많은 쪽 승리.\n   수 = 선 번호. makeDots()은 화면과 워커 둘 다에서 씀 */\nfunction makeDots() {\n  var G = {};\n  function geo(N) {\n    if (G[N]) return G[N];\n    var H = (N + 1) * N, E = H + N * (N + 1), BE = [], EB = [];\n    for (var i = 0; i < E; i++) EB.push([]);\n    for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) { var b = r * N + c, es = [r * N + c, (r + 1) * N + c, H + r * (N + 1) + c, H + r * (N + 1) + c + 1]; BE.push(es); es.forEach(function (e) { EB[e].push(b) }) }\n    return G[N] = { N: N, H: H, E: E, BE: BE, EB: EB };\n  }\n  function init(o) { var N = (o && o.n) || 3, g = geo(N), e = [], bx = []; for (var i = 0; i < g.E; i++) e.push(0); for (i = 0; i < N * N; i++) bx.push(0); return { N: N, e: e, bx: bx, turn: 1, k: 0, last: -1, again: false } }\n  function cnt(st) { var c = [0, 0, 0]; st.bx.forEach(function (v) { c[v]++ }); return c }\n  function over(st) { if (st.k < st.e.length) return null; var c = cnt(st); return { w: c[1] > c[2] ? 1 : c[2] > c[1] ? 2 : 0, why: '선을 다 그었어요. 상자 ' + c[1] + ' : ' + c[2] } }\n  function moves(st) { if (over(st)) return []; var m = []; for (var i = 0; i < st.e.length; i++) if (!st.e[i]) m.push(i); return m }\n  function sides(e, g, b) { var s = 0, es = g.BE[b]; for (var i = 0; i < 4; i++) if (e[es[i]]) s++; return s }\n  function play(st, m) {\n    var g = geo(st.N), e = st.e.slice(), bx = st.bx.slice(), got = 0; e[m] = st.turn;\n    g.EB[m].forEach(function (b) { if (sides(e, g, b) === 4) { bx[b] = st.turn; got++ } });\n    return { N: st.N, e: e, bx: bx, turn: got ? st.turn : 3 - st.turn, k: st.k + 1, last: m, again: got > 0 };\n  }\n  /* 인공지능 도구: 상자를 완성하는 선 · 세 번째 변을 만들지 않는 '안전한' 선 · 상대가 가져갈 상자 수(희생) */\n  function gains(e, g, m) { var n = 0; g.EB[m].forEach(function (b) { if (sides(e, g, b) === 3) n++ }); return n }\n  function safe(e, g, m) { var ok = true; g.EB[m].forEach(function (b) { if (sides(e, g, b) === 2) ok = false }); return ok }\n  function giveAway(e0, g, m) {   // 이 선을 그으면 상대가 이어서 몇 상자를 가져가는가\n    var e = e0.slice(); e[m] = 1; var n = 0, again = true;\n    while (again) { again = false; for (var b = 0; b < g.BE.length; b++) if (sides(e, g, b) === 3) { g.BE[b].forEach(function (x) { if (!e[x]) e[x] = 1 }); n++; again = true } }\n    return n;\n  }\n  var stop = 0, nodes = 0, memo = null;\n  function solve(e, g, key, left) {   // 남은 상자에서 (지금 둘 사람 − 상대) 최대\n    if (!left) return 0;\n    if ((++nodes & 1023) === 0 && stop && Date.now() > stop) throw 'time';\n    var hit = memo.get(key); if (hit !== undefined) return hit;\n    var best = -1e9, ms = [];\n    for (var m = 0; m < g.E; m++) if (!e[m]) ms.push(m);\n    ms.sort(function (a, b) { return gains(e, g, b) - gains(e, g, a) });\n    for (var i = 0; i < ms.length; i++) {\n      var m2 = ms[i], got = gains(e, g, m2); e[m2] = 1;\n      var v = got ? got + solve(e, g, key + Math.pow(2, m2), left - got) : -solve(e, g, key + Math.pow(2, m2), left);\n      e[m2] = 0; if (v > best) best = v;\n    }\n    memo.set(key, best); return best;\n  }\n  /* 단계: 1 아무 선 · 2 상자는 꼭 가져감 · 3~4 상대에게 상자를 주지 않는 선 · 5~6 줄 수밖에 없으면 가장 적게 · 7~10 끝이 가까우면 끝까지 따져 보기 */\n  var LV = [null, { take: .5 }, { take: 1 }, { take: 1, safe: .6 }, { take: 1, safe: 1 }, { take: 1, safe: 1, sac: 1 }, { take: 1, safe: 1, sac: 1 }, { take: 1, safe: 1, sac: 1, K: 12 }, { take: 1, safe: 1, sac: 1, K: 16, ms: 3000 }, { take: 1, safe: 1, sac: 1, K: 20, ms: 4000 }, { take: 1, safe: 1, sac: 1, K: 24, ms: 4500 }];\n  function ai(st, level) {\n    var C = LV[level], ms = moves(st), g = geo(st.N), e = st.e.map(function (x) { return x ? 1 : 0 }), r = function (a) { return a[(Math.random() * a.length) | 0] };\n    if (!ms.length) return -1;\n    if (C.K && ms.length <= C.K) {\n      stop = C.ms ? Date.now() + C.ms : 0; nodes = 0; memo = new Map();\n      try {\n        var key = 0; for (var i = 0; i < g.E; i++) if (e[i]) key += Math.pow(2, i);\n        var left = st.bx.filter(function (x) { return !x }).length, best = -1e9, bs = [];\n        ms.forEach(function (m) { var got = gains(e, g, m); e[m] = 1; var v = got ? got + solve(e, g, key + Math.pow(2, m), left - got) : -solve(e, g, key + Math.pow(2, m), left); e[m] = 0; if (v > best) { best = v; bs = [m] } else if (v === best) bs.push(m) });\n        stop = 0; memo = null; return r(bs);\n      } catch (x) { if (x !== 'time') throw x; stop = 0; memo = null }\n    }\n    var tk = ms.filter(function (m) { return gains(e, g, m) > 0 });\n    if (tk.length && Math.random() < C.take) return r(tk);\n    if (C.safe) { var sf = ms.filter(function (m) { return safe(e, g, m) }); if (sf.length && Math.random() < C.safe) return r(sf) }\n    if (C.sac) { var mn = 1e9, mb = []; ms.forEach(function (m) { var n = giveAway(e, g, m); if (n < mn) { mn = n; mb = [m] } else if (n === mn) mb.push(m) }); return r(mb) }\n    return r(ms);\n  }\n  return { geo: geo, init: init, moves: moves, play: play, over: over, ai: ai, cnt: cnt, LV: LV };\n}\n";
+/* 점 잇기 상자 그리기·누르기 (window.VIEW) */
 window.VIEW = (function () {
-  var S = 64, M = 16, seen = null;
-  function cc(i) { return M + S * i + S / 2 }
+  var Z = 480, M = 40, seen = null;
+  function L(N) { return (Z - M * 2) / N }
+  function seg(st, E, i) { var N = st.N, g = E.geo(N), s = L(N); if (i < g.H) { var r = (i / N) | 0, c = i % N; return [M + c * s, M + r * s, M + (c + 1) * s, M + r * s] } var j = i - g.H, r2 = (j / (N + 1)) | 0, c2 = j % (N + 1); return [M + c2 * s, M + r2 * s, M + c2 * s, M + (r2 + 1) * s] }
+  function near(st, E, q, legal) {
+    var best = -1, bd = 1e9, s = L(st.N);
+    legal.forEach(function (i) { var a = seg(st, E, i), mx = (a[0] + a[2]) / 2, my = (a[1] + a[3]) / 2, d = Math.hypot(q[0] - mx, q[1] - my); if (d < bd) { bd = d; best = i } });
+    return bd < s * .55 ? best : -1;
+  }
   return {
-    side: ['흑', '백'], twoT: [0, 20, 30, 60], how: '점이 있는 곳에 놓으세요. 상대 돌을 내 돌 사이에 끼우면 뒤집혀요.',
-    size: function () { return [M * 2 + S * 8, M * 2 + S * 8] },
-    draw: function (st, ui) {
-      var anim = st !== seen, Z = M * 2 + S * 8; seen = st;
-      var h = '<rect x="0" y="0" width="' + Z + '" height="' + Z + '" rx="14" class="ot-frame"/><rect x="' + M + '" y="' + M + '" width="' + S * 8 + '" height="' + S * 8 + '" class="ot-board"/>';
-      for (var i = 0; i <= 8; i++) h += '<line x1="' + M + '" y1="' + (M + S * i) + '" x2="' + (M + S * 8) + '" y2="' + (M + S * i) + '" class="ot-ln"/><line x1="' + (M + S * i) + '" y1="' + M + '" x2="' + (M + S * i) + '" y2="' + (M + S * 8) + '" class="ot-ln"/>';
-      [[2, 2], [2, 6], [6, 2], [6, 6]].forEach(function (a) { h += '<circle cx="' + (M + S * a[0]) + '" cy="' + (M + S * a[1]) + '" r="4" class="ot-star"/>' });
-      var fl = anim && st.fl ? st.fl : [];
-      for (var p = 0; p < 64; p++) {
-        var v = st.b[p], x = cc(p & 7), y = cc(p >> 3);
-        if (v) h += '<circle cx="' + x + '" cy="' + y + '" r="' + (S * .41) + '" class="ot-d ot-p' + v + (fl.indexOf(p) >= 0 ? ' ot-flip' : anim && p === st.last ? ' ot-new' : '') + '"/>';
-        else if (ui.legal.indexOf(p) >= 0) h += '<circle cx="' + x + '" cy="' + y + '" r="' + (S * .12) + '" class="ot-can ot-c' + st.turn + '"/>';
+    side: ['파랑', '주황'], twoT: [0, 15, 30, 60], how: '두 점 사이를 눌러 선을 그어요. 상자의 네 번째 변을 그으면 그 상자를 갖고 한 번 더 해요.',
+    opts: [{ id: 'n', label: '판 크기', choices: [[3, '상자 3×3'], [4, '4×4'], [5, '5×5']], def: 1 }],
+    size: function () { return [Z, Z] },
+    draw: function (st, ui, E) {
+      var anim = st !== seen; seen = st;
+      var N = st.N, g = E.geo(N), s = L(N), h = '<rect x="0" y="0" width="' + Z + '" height="' + Z + '" rx="16" class="dt-bg"/>';
+      for (var b = 0; b < N * N; b++) if (st.bx[b]) { var x = M + (b % N) * s, y = M + ((b / N) | 0) * s; h += '<rect x="' + (x + 4) + '" y="' + (y + 4) + '" width="' + (s - 8) + '" height="' + (s - 8) + '" rx="6" class="dt-box dt-b' + st.bx[b] + (anim && g.EB[st.last] && g.EB[st.last].indexOf(b) >= 0 ? ' dt-new' : '') + '"/><text x="' + (x + s / 2) + '" y="' + (y + s / 2 + 10) + '" class="dt-bt">' + (st.bx[b] === 1 ? '파' : '주') + '</text>' }
+      for (var i = 0; i < g.E; i++) {
+        var a = seg(st, E, i);
+        if (st.e[i]) h += '<line x1="' + a[0] + '" y1="' + a[1] + '" x2="' + a[2] + '" y2="' + a[3] + '" class="dt-ln dt-l' + st.e[i] + (i === st.last ? ' dt-last' : '') + '"/>';
+        else h += '<line x1="' + a[0] + '" y1="' + a[1] + '" x2="' + a[2] + '" y2="' + a[3] + '" class="dt-empty' + (i === ui.hov ? ' dt-hov dt-h' + st.turn : '') + '"/>';
       }
-      if (st.last >= 0) h += '<circle cx="' + cc(st.last & 7) + '" cy="' + cc(st.last >> 3) + '" r="6" class="ot-last"/>';
+      for (var r = 0; r <= N; r++) for (var c = 0; c <= N; c++) h += '<circle cx="' + (M + c * s) + '" cy="' + (M + r * s) + '" r="7" class="dt-dot"/>';
       return h;
     },
-    hit: function (st, ui, q) {
-      var x = Math.floor((q[0] - M) / S), y = Math.floor((q[1] - M) / S); if (x < 0 || y < 0 || x > 7 || y > 7) return null;
-      var p = y * 8 + x; if (st.b[p]) return null;
-      if (ui.legal.indexOf(p) < 0) return { msg: '그 자리는 뒤집을 돌이 없어서 둘 수 없어요. 점이 있는 곳에 놓아요.' };
-      return { mv: p };
-    },
-    status: function (st, E) { var c = E.count(st.b); return [c[1] + '개', c[2] + '개', ''] }
+    hover: function (st, q, E) { var i = near(st, E, q, st.e.map(function (v, k) { return v ? -1 : k }).filter(function (k) { return k >= 0 })); return i < 0 ? null : i },
+    hit: function (st, ui, q, E) { var i = near(st, E, q, ui.legal); return i < 0 ? null : { mv: i } },
+    status: function (st, E) { var c = E.cnt(st); return ['상자 ' + c[1], '상자 ' + c[2], ''] },
+    note: function (st) { return st.again ? '📦 상자를 완성해서 한 번 더 해요!' : '' }
   };
 })();
 

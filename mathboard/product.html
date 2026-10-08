@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>오셀로 · 초등 수학 게임 | 초등교사 홍지희</title>
-<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/board/othello.html"><meta property="og:title" content="오셀로 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="상대 돌을 내 돌 두 개 사이에 끼우면 내 색으로 뒤집혀요. 판이 다 차거나 둘 곳이 없을 때 돌이 더 많은 쪽이 이겨요."><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="상대 돌을 내 돌 두 개 사이에 끼우면 내 색으로 뒤집혀요. 판이 다 차거나 둘 곳이 없을 때 돌이 더 많은 쪽이 이겨요.">
-<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#2E8B57;--ok:#2E9E5B;--bad:#D0453B;
+<title>곱셈 사목 · 수학 보드게임 · 초등 수학 게임 | 초등교사 홍지희</title>
+<meta property="og:type" content="website"><meta property="og:site_name" content="초등 수학 게임"><meta property="og:locale" content="ko_KR"><meta property="og:url" content="https://hongjihee1005.github.io/math-game/mathboard/product.html"><meta property="og:title" content="곱셈 사목 · 수학 보드게임 · 초등 수학 게임 | 초등교사 홍지희"><meta property="og:description" content="아래 1~9 줄의 집게 두 개 중 하나를 옮기면, 두 수의 곱 칸을 내 색으로 칠해요. 가로·세로·대각선으로 네 칸을 먼저 이으면 이겨요."><meta property="og:image" content="https://hongjihee1005.github.io/math-game/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="아래 1~9 줄의 집게 두 개 중 하나를 옮기면, 두 수의 곱 칸을 내 색으로 칠해요. 가로·세로·대각선으로 네 칸을 먼저 이으면 이겨요.">
+<style>:root{--bg:#FFF8F0;--paper:#fff;--ink:#2A221C;--soft:#5C5047;--line:#EADCCB;--acc:#7B4FB0;--ok:#2E9E5B;--bad:#D0453B;
  --display:'Jua','Apple SD Gothic Neo','Malgun Gothic',sans-serif;--body:'Gowun Dodum','Apple SD Gothic Neo','Malgun Gothic',sans-serif;box-sizing:border-box}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37}}
 :root[data-theme="dark"]{--bg:#1E1A17;--paper:#2A2420;--ink:#F4ECE3;--soft:#CDBFB1;--line:#4A3F37}
@@ -123,6 +123,49 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(21px,2.4vw,26px);m
 .jg-lastm{fill:none;stroke:#E0A21A;stroke-width:3;pointer-events:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .jg-wood{fill:#C9A060}}
 :root[data-theme="dark"] .jg-wood{fill:#C9A060}
+/* 수학 보드게임 (pm- 곱셈 사목 · ft- 15 만들기 · dt- 점 잇기 상자) */
+.bd-bwrap.pg-product{width:min(500px,100%,calc((100vh - 230px) * .82))}
+.bd-bwrap.pg-fifteen{width:min(600px,100%)}
+.bd-bwrap.pg-dots{width:min(560px,100%,calc(100vh - 230px))}
+.pc-product1,.pc-fifteen1,.pc-dots1{background:#2B6FB8;border-color:#1B4D85}
+.pc-product2,.pc-fifteen2,.pc-dots2{background:#E07B1A;border-color:#A3560D}
+.pm-frame{fill:color-mix(in srgb,var(--acc) 12%,var(--paper))}
+.pm-cell{fill:var(--paper);stroke:var(--line);stroke-width:2}
+.pm-cell.pm-p1{fill:#2B6FB8;stroke:#1B4D85}.pm-cell.pm-p2{fill:#E07B1A;stroke:#A3560D}
+.pm-cell.pm-can{stroke:#2E9E5B;stroke-width:3.5;stroke-dasharray:7 4}
+.pm-num{text-anchor:middle;font-size:26px;font-weight:800;fill:var(--ink);pointer-events:none}.pm-num.pm-on{fill:#fff}
+.pm-new{animation:pmnew .3s ease-out;transform-box:fill-box;transform-origin:center}
+@keyframes pmnew{from{transform:scale(.6)}to{transform:none}}
+.pm-last{fill:none;stroke:#E0A21A;stroke-width:4;pointer-events:none}
+.pm-win{fill:#fff;pointer-events:none}
+.pm-lab{font-size:15px;font-weight:700;fill:var(--soft)}
+.pm-key{fill:var(--paper);stroke:var(--line);stroke-width:2}.pm-key.pm-keyon{fill:color-mix(in srgb,#7B4FB0 14%,var(--paper));stroke:#7B4FB0}
+.pm-knum{text-anchor:middle;font-size:26px;font-weight:800;fill:var(--ink);pointer-events:none}
+.pm-clip path{fill:#7B4FB0;stroke:#4E2F75;stroke-width:1.5}.pm-clip text{text-anchor:middle;font-size:14px;font-weight:800;fill:#fff;pointer-events:none}
+.pm-c1 path{fill:#2F8F8F;stroke:#1C5E5E}
+.pm-csel path{stroke:#E0A21A;stroke-width:5}
+.ft-card rect{fill:var(--paper);stroke:var(--line);stroke-width:2.5}
+.ft-card text{text-anchor:middle;font-size:34px;font-weight:800;fill:var(--ink);pointer-events:none}
+.ft-card.ft-can rect{stroke:var(--acc)}
+.ft-card.ft-p1 rect{fill:#2B6FB8;stroke:#1B4D85}.ft-card.ft-p2 rect{fill:#E07B1A;stroke:#A3560D}
+.ft-card.ft-p1 text,.ft-card.ft-p2 text{fill:#fff}
+.ft-card.ft-win rect,.ft-sq.ft-win{stroke:#E0A21A;stroke-width:6}
+.ft-new{animation:pmnew .3s ease-out;transform-box:fill-box;transform-origin:center}
+.ft-lst{font-size:24px;font-weight:700;fill:var(--ink)}
+.ft-dot.ft-d1{fill:#2B6FB8}.ft-dot.ft-d2{fill:#E07B1A}
+.ft-cap{text-anchor:middle;font-size:17px;font-weight:700;fill:var(--soft)}.ft-cap.ft-sm{font-size:15px;font-weight:400}
+.ft-lock{fill:none;stroke:var(--line);stroke-width:2.5;stroke-dasharray:8 6}
+.ft-sq{fill:var(--paper);stroke:var(--line);stroke-width:2}.ft-sq.ft-s1{fill:#2B6FB8}.ft-sq.ft-s2{fill:#E07B1A}
+.ft-sqn{text-anchor:middle;font-size:26px;font-weight:800;fill:var(--ink)}.ft-sqn.ft-on{fill:#fff}
+.dt-bg{fill:color-mix(in srgb,var(--acc) 8%,var(--paper))}
+.dt-dot{fill:var(--ink)}
+.dt-empty{stroke:var(--line);stroke-width:5;stroke-dasharray:3 9;stroke-linecap:round}
+.dt-hov{stroke-dasharray:none;stroke-width:8;opacity:.6}.dt-hov.dt-h1{stroke:#2B6FB8}.dt-hov.dt-h2{stroke:#E07B1A}
+.dt-ln{stroke-width:8;stroke-linecap:round}.dt-l1{stroke:#2B6FB8}.dt-l2{stroke:#E07B1A}
+.dt-last{stroke-width:11}
+.dt-box.dt-b1{fill:color-mix(in srgb,#2B6FB8 30%,var(--paper))}.dt-box.dt-b2{fill:color-mix(in srgb,#E07B1A 30%,var(--paper))}
+.dt-bt{text-anchor:middle;font-size:26px;font-weight:800;fill:var(--ink);opacity:.65;pointer-events:none}
+.dt-new{animation:pmnew .3s ease-out;transform-box:fill-box;transform-origin:center}
 
 </style><style id="hj-contact-css">.hj-contact{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:8px 0 0;padding:0}.hj-contact a{display:inline-flex;align-items:center;gap:6px;color:var(--ink,#1F2A44);text-decoration:none;font-size:15px;line-height:1.2;background:var(--paper,#fff);border:2px solid var(--line,#CAD6E4);border-radius:999px;padding:5px 12px;white-space:nowrap}.hj-contact a:hover,.hj-contact a:focus-visible{border-color:var(--ink,#1F2A44);outline:0}.hj-contact svg{flex:none}#ovNavMade+.hj-contact{margin:0 0 0 8px;flex:none;flex-wrap:nowrap;gap:6px}#ovNavMade+.hj-contact a{font-size:13px;padding:3px 9px}@media print{.hj-contact a{border:0;padding:0}}</style><style id="hjfoot-css">.hjfoot{display:block;width:100%;flex-basis:100%;margin:40px 0 0;padding:16px 0 4px;border:0;border-top:3px solid var(--line,#CAD6E4);text-align:center;color:var(--soft,#4F5B75);font-family:var(--body,inherit);font-size:17px;line-height:1.7;word-break:keep-all;opacity:1}.hjfoot p{margin:2px 0;padding:0;border:0;background:none;font-size:inherit;color:inherit;text-align:center}</style>
 <!--hj-ctheme--><style id="hj-ctheme">/* hj-ctheme · 수업 자료 페이지 공통: 글꼴을 Pretendard로, 바탕·글자색을 메뉴와 같은 밝고 따뜻한 톤으로 */
@@ -802,90 +845,89 @@ html body:not(.mix) .hj-contact,html body:not(.mix) .hj-contact.hj-cvc{display:n
 html body .frameline{display:flex!important;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.3em;row-gap:.2em}html body .frameline input{max-width:100%;text-align:center}
 </style><!--/hj-ctheme--></head><body>
 <main>
-<nav class="tl-gnav" aria-label="다른 판 놀이"><a href="omok.html">⚫ 오목</a><a href="baduk.html">⚪ 바둑</a><a href="connect4.html">🔴 사목</a><a href="othello.html" aria-current="page">🔘 오셀로</a><a href="janggi.html">🐎 장기</a></nav>
-<header class="tl-head"><span class="tl-ico" aria-hidden="true">🔘</span><div><h1>오셀로</h1><p class="tl-desc">상대 돌을 내 돌 두 개 사이에 끼우면 내 색으로 뒤집혀요. 판이 다 차거나 둘 곳이 없을 때 돌이 더 많은 쪽이 이겨요.</p><p class="tl-rec">모든 학년 · 인공지능과 10단계 · 친구와 둘이</p></div></header>
-<section class="tl-stage" id="tlStage" aria-label="오셀로">
+<nav class="tl-gnav" aria-label="다른 수학 보드게임"><a href="product.html" aria-current="page">✖️ 곱셈 사목</a><a href="fifteen.html">🔢 15 만들기</a><a href="dots.html">⬜ 점 잇기 상자</a></nav>
+<header class="tl-head"><span class="tl-ico" aria-hidden="true">✖️</span><div><h1>곱셈 사목</h1><p class="tl-desc">아래 1~9 줄의 집게 두 개 중 하나를 옮기면, 두 수의 곱 칸을 내 색으로 칠해요. 가로·세로·대각선으로 네 칸을 먼저 이으면 이겨요.</p><p class="tl-rec">추천 2~4학년 · 곱셈구구, 약수(곱이 같은 두 수)</p></div></header>
+<section class="tl-stage" id="tlStage" aria-label="곱셈 사목">
 <div class="tl-bar"><span class="tl-bt" id="tlBarT"></span><span class="tl-sp"></span><button type="button" class="tl-btn" id="tlFull">⛶ 크게 보기</button></div>
 <div class="tl-host" id="tlHost"></div>
 </section>
-<details class="tl-how" open><summary>쓰는 법</summary><ul><li>돌은 상대 돌을 하나 이상 뒤집을 수 있는 자리에만 놓아요(화면에 점으로 보여 줘요). 가로·세로·대각선 모두 뒤집혀요.</li><li>둘 곳이 없으면 차례가 저절로 넘어가요. 둘 다 둘 곳이 없으면 끝나고, 돌이 많은 쪽이 이겨요.</li><li>🤖 인공지능과: 나는 흑(먼저), 인공지능은 백. 한 수 시간(30초 → 20초), 시간이 다 되면 그 판은 져요. 이기면 다음 단계가 열려요.</li><li>👫 친구와 둘이: 한 화면에서 번갈아 두고, 한 수 시간(없음·20·30·60초)과 무르기가 있어요.</li></ul></details>
-<section class="tl-ideas"><h2>💡 수업에서 이렇게 써 보세요</h2><ul><li>모서리(네 귀퉁이)를 차지하면 왜 좋은지 이야기해 보기 — 모서리 돌은 다시 뒤집히지 않아요.</li><li>끝났을 때 돌 수를 세고 둘의 차이를 식으로 써 보기.</li></ul></section>
-<div class="creditbar"><a class="tolist" href="index.html">📋 자료 목록으로</a><footer class="hjfoot"><p>쉬는 시간에 인공지능이나 친구와 함께 즐기는 판 놀이(오목·바둑·사목·오셀로·장기) 자료입니다.</p><p>만든 사람: 초등교사 홍지희</p><p class="hj-contact"><a href="mailto:hongjihee1005@gmail.com" aria-label="이메일 보내기: hongjihee1005@gmail.com"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>hongjihee1005@gmail.com</span></a><a href="https://www.youtube.com/@hongjihee1005" target="_blank" rel="noopener" aria-label="유튜브 채널 열기: @hongjihee1005"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E5484D"/><path d="M10 8.2v7.6l6.2-3.8z" fill="#fff"/></svg><span>유튜브 @hongjihee1005</span></a></p></footer></div>
+<details class="tl-how" open><summary>쓰는 법</summary><ul><li>판에는 1~9 두 수의 곱 36가지가 작은 수부터 놓여 있어요. 아래 1~9 줄에는 집게 ㄱ(위)·ㄴ(아래)이 있어요.</li><li>맨 처음 사람은 집게 ㄱ만 놓아요(칠하지 않아요). 다음 사람이 집게 ㄴ을 놓으면 두 수의 곱 칸을 칠해요.</li><li>그다음부터는 차례마다 집게 하나만 다른 수로 옮기고, 두 집게의 곱 칸을 칠해요. 이미 칠한 칸이 되는 곳으로는 옮길 수 없어요. 두 집게가 같은 수에 있어도 돼요(예: 7 × 7 = 49).</li><li>누르는 법: 옮길 집게(ㄱ·ㄴ)를 누르고 아래 수를 누르거나, 칠할 칸을 바로 눌러요(점선 칸 = 지금 칠할 수 있는 칸).</li><li>🤖 인공지능과: 나는 파랑(먼저), 인공지능은 주황. 한 수 시간(30초 → 20초), 시간이 다 되면 그 판은 져요. 이기면 다음 단계가 열려요.</li><li>👫 친구와 둘이: 한 화면에서 번갈아, 한 수 시간(없음·20·30·60초)과 무르기.</li></ul></details>
+<section class="tl-ideas"><h2>💡 수업에서 이렇게 써 보세요</h2><ul><li>내가 칠하고 싶은 칸(예: 24)을 만들려면 집게를 어디로 옮겨야 하는지 — 24의 약수 짝(3×8, 4×6) 찾기.</li><li>상대 집게를 옮겨 놓은 자리 때문에 상대가 칠하게 되는 칸도 생각하기 — 한 수 앞 내다보기.</li></ul></section>
+<div class="creditbar"><a class="tolist" href="index.html">📋 자료 목록으로</a><footer class="hjfoot"><p>인공지능이나 친구와 겨루며 수학을 익히는 보드게임 자료입니다.</p><p>만든 사람: 초등교사 홍지희</p><p class="hj-contact"><a href="mailto:hongjihee1005@gmail.com" aria-label="이메일 보내기: hongjihee1005@gmail.com"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>hongjihee1005@gmail.com</span></a><a href="https://www.youtube.com/@hongjihee1005" target="_blank" rel="noopener" aria-label="유튜브 채널 열기: @hongjihee1005"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#E5484D"/><path d="M10 8.2v7.6l6.2-3.8z" fill="#fff"/></svg><span>유튜브 @hongjihee1005</span></a></p></footer></div>
 </main>
 
-<script>window.TL={"id": "othello", "game": "othello", "levels": [{"name": "새싹", "info": "아무 데나 둬요", "t": 30}, {"name": "떡잎", "info": "좋은 자리를 조금 알아요", "t": 30}, {"name": "꽃봉오리", "info": "모서리를 좋아해요", "t": 30}, {"name": "꽃", "info": "두 수 앞을 봐요", "t": 25}, {"name": "열매", "info": "세 수 앞 · 끝 6칸은 정확히", "t": 25}, {"name": "나무", "info": "네 수 앞 · 끝 8칸은 정확히", "t": 25}, {"name": "숲", "info": "여섯 수 앞 · 끝 12칸은 정확히", "t": 20}, {"name": "산", "info": "일곱 수 앞 · 끝 14칸", "t": 20}, {"name": "하늘", "info": "여덟 수 앞 · 끝 16칸", "t": 20}, {"name": "별", "info": "가장 강한 단계", "t": 20}], "make": "makeOthello"};
-/* 오셀로(리버시) 규칙·인공지능. 8×8, 칸 번호 = 줄 × 8 + 칸. 0 빈칸 · 1 흑(먼저) · 2 백.
-   makeOthello()은 화면과 워커(Worker) 둘 다에서 씀. 수 = 칸 번호, -1 = 넘기기(둘 곳이 없을 때) */
-function makeOthello() {
-  var D8 = [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [0, 1], [1, 1]];
-  var WT = [100, -20, 10, 5, 5, 10, -20, 100, -20, -50, -2, -2, -2, -2, -50, -20, 10, -2, 1, 1, 1, 1, -2, 10, 5, -2, 1, 0, 0, 1, -2, 5,
-            5, -2, 1, 0, 0, 1, -2, 5, 10, -2, 1, 1, 1, 1, -2, 10, -20, -50, -2, -2, -2, -2, -50, -20, 100, -20, 10, 5, 5, 10, -20, 100];
-  var ORDER = []; for (var i = 0; i < 64; i++) ORDER.push(i); ORDER.sort(function (a, b) { return WT[b] - WT[a] });
-  function init() { var b = []; for (var i = 0; i < 64; i++) b.push(0); b[27] = 2; b[36] = 2; b[28] = 1; b[35] = 1; return { b: b, turn: 1, last: -1, pass: 0, n: 0 } }
-  function flips(b, p, me) {
-    if (b[p]) return []; var op = 3 - me, x = p & 7, y = p >> 3, out = [];
-    for (var d = 0; d < 8; d++) {
-      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;
-      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }
-      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) for (var j = 1; j <= k; j++) out.push((y + j * dy) * 8 + x + j * dx);
-    }
-    return out;
+<script>window.TL={"id": "product", "game": "product", "levels": [{"name": "새싹", "info": "아무 데나 칠해요", "t": 30}, {"name": "떡잎", "info": "이기는 칸은 꼭 칠해요", "t": 30}, {"name": "꽃봉오리", "info": "내가 이기려는 칸을 막아요", "t": 30}, {"name": "꽃", "info": "두 수 앞을 봐요", "t": 25}, {"name": "열매", "info": "세 수 앞을 봐요", "t": 25}, {"name": "나무", "info": "네 수 앞을 봐요", "t": 25}, {"name": "숲", "info": "다섯 수 앞을 봐요", "t": 20}, {"name": "산", "info": "여섯 수 앞을 봐요", "t": 20}, {"name": "하늘", "info": "일곱 수 앞을 봐요", "t": 20}, {"name": "별", "info": "가장 멀리 읽어요", "t": 20}], "make": "makeProduct"};
+/* 곱셈 사목 규칙·인공지능. 6×6 판에 1~9 두 수의 곱 36가지(작은 수부터), 아래 1~9 줄에 집게 ㄱ·ㄴ.
+   차례마다 집게 하나를 옮기고, 두 집게가 가리키는 수의 곱 칸을 내 색으로 칠함(이미 칠한 칸이 되는 수는 못 둠). 네 칸을 한 줄로 이으면 승리.
+   맨 처음 사람은 집게 ㄱ만 놓음(칠하지 않음). 수 = 집게(0 ㄱ, 1 ㄴ) × 10 + 옮길 수(1~9), -1 = 넘기기. makeProduct()은 화면과 워커 둘 다에서 씀 */
+function makeProduct() {
+  var P = [], IDX = {}, N = 6, WIN = [], DIR = [[1, 0], [0, 1], [1, 1], [1, -1]], seen = {};
+  for (var a = 1; a <= 9; a++) for (var b = a; b <= 9; b++) if (!seen[a * b]) { seen[a * b] = 1; P.push(a * b) }
+  P.sort(function (x, y) { return x - y }); P.forEach(function (v, i) { IDX[v] = i });
+  for (var y = 0; y < N; y++) for (var x = 0; x < N; x++) for (var d = 0; d < 4; d++) {
+    var ex = x + 3 * DIR[d][0], ey = y + 3 * DIR[d][1];
+    if (ex >= 0 && ex < N && ey >= 0 && ey < N) WIN.push([0, 1, 2, 3].map(function (k) { return (y + k * DIR[d][1]) * N + x + k * DIR[d][0] }));
   }
-  function canPlay(b, p, me) {
-    if (b[p]) return false; var op = 3 - me, x = p & 7, y = p >> 3;
-    for (var d = 0; d < 8; d++) {
-      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;
-      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }
-      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) return true;
-    }
-    return false;
-  }
-  function legal(b, me) { var o = []; for (var i = 0; i < 64; i++) { var p = ORDER[i]; if (canPlay(b, p, me)) o.push(p) } return o }
-  function count(b) { var c = [0, 0, 0]; for (var i = 0; i < 64; i++) c[b[i]]++; return c }
+  var BY = []; for (var i = 0; i < 36; i++) BY.push([]); WIN.forEach(function (w, k) { w.forEach(function (p) { BY[p].push(k) }) });
+  function init() { var b = []; for (var i = 0; i < 36; i++) b.push(0); return { b: b, c: [0, 0], turn: 1, n: 0, last: -1, pass: 0 } }
+  function four(b, p) { var v = b[p]; for (var i = 0; i < BY[p].length; i++) { var w = WIN[BY[p][i]]; if (b[w[0]] === v && b[w[1]] === v && b[w[2]] === v && b[w[3]] === v) return w } return null }
   function over(st) {
-    if (legal(st.b, 1).length || legal(st.b, 2).length) return null;
-    var c = count(st.b); return { w: c[1] > c[2] ? 1 : c[2] > c[1] ? 2 : 0, why: '더 둘 곳이 없어요. 흑 ' + c[1] + ' · 백 ' + c[2] };
+    if (st.last >= 0) { var w = four(st.b, st.last); if (w) return { w: st.b[st.last], why: '네 칸을 한 줄로 이었어요.', line: w } }
+    if (st.pass >= 2) return { w: 0, why: '둘 다 칠할 수 있는 칸이 없어요.' };
+    for (var i = 0; i < 36; i++) if (!st.b[i]) return null;
+    return { w: 0, why: '판이 꽉 찼어요.' };
   }
-  function moves(st) { return legal(st.b, st.turn) }
-  function play(st, p) {
-    var b = st.b.slice();
-    if (p < 0) return { b: b, turn: 3 - st.turn, last: -1, pass: st.pass + 1, n: st.n, fl: [] };
-    var f = flips(b, p, st.turn); b[p] = st.turn; for (var i = 0; i < f.length; i++) b[f[i]] = st.turn;
-    return { b: b, turn: 3 - st.turn, last: p, pass: 0, n: st.n + 1, fl: f };
+  function gen(b, c) {
+    var o = [], v;
+    if (!c[0]) { for (v = 1; v <= 9; v++) o.push(v); return o }
+    if (!c[1]) { for (v = 1; v <= 9; v++) if (!b[IDX[c[0] * v]]) o.push(10 + v); return o }
+    for (var w = 0; w < 2; w++) for (v = 1; v <= 9; v++) if (v !== c[w] && !b[IDX[c[1 - w] * v]]) o.push(w * 10 + v);
+    return o;
   }
-  /* 점수: 자리 값(모서리 큼, 모서리 옆 위험 — 모서리를 차지하면 옆도 괜찮음) + 둘 수 있는 곳 수 */
-  var CORN = [[0, [1, 8, 9]], [7, [6, 15, 14]], [56, [57, 48, 49]], [63, [62, 55, 54]]];
-  function evalB(b, me, myMob) {
-    var op = 3 - me, s = 0;
-    for (var i = 0; i < 64; i++) { var v = b[i]; if (v === me) s += WT[i]; else if (v === op) s -= WT[i] }
-    for (var k = 0; k < 4; k++) if (b[CORN[k][0]]) CORN[k][1].forEach(function (q) { var v = b[q]; if (v === me) s -= WT[q]; else if (v === op) s += WT[q] });
-    return s + 6 * (myMob - legal(b, op).length);
+  function moves(st) { if (over(st)) return []; return gen(st.b, st.c) }
+  function cellOf(c, m) { var w = (m / 10) | 0, v = m % 10, o = w ? c[0] : c[1]; return o ? IDX[o * v] : -1 }
+  function play(st, m) {
+    if (m < 0) return { b: st.b.slice(), c: st.c.slice(), turn: 3 - st.turn, n: st.n + 1, last: -1, pass: st.pass + 1 };
+    var c = st.c.slice(), b = st.b.slice(), w = (m / 10) | 0; c[w] = m % 10; var last = -1;
+    if (c[0] && c[1]) { last = IDX[c[0] * c[1]]; b[last] = st.turn }
+    return { b: b, c: c, turn: 3 - st.turn, n: st.n + 1, last: last, pass: 0 };
   }
-  function final(b, me) { var c = count(b), d = c[me] - c[3 - me]; return d * 1000 + (d > 0 ? 50000 : d < 0 ? -50000 : 0) }
-  var stop = 0, nodes = 0;
-  function nega(b, me, depth, a, bt, passed, exact) {
+  function evalB(b, me) {
+    var s = 0, op = 3 - me;
+    for (var i = 0; i < WIN.length; i++) {
+      var w = WIN[i], m = 0, o = 0;
+      for (var k = 0; k < 4; k++) { var v = b[w[k]]; if (v === me) m++; else if (v === op) o++ }
+      if (m && o) continue;
+      if (m === 3) s += 6; else if (m === 2) s += 2; else if (m === 1) s += .3;
+      if (o === 3) s -= 6; else if (o === 2) s -= 2; else if (o === 1) s -= .3;
+    }
+    return s;
+  }
+  var stop = 0, nodes = 0, BIG = 1e6;
+  function nega(b, c, me, depth, a, bt, ply, passed) {
     if ((++nodes & 1023) === 0 && stop && Date.now() > stop) throw 'time';
-    var ms = legal(b, me);
-    if (!ms.length) { if (passed) return final(b, me); return -nega(b, 3 - me, depth, -bt, -a, true, exact) }
-    if (depth <= 0 && !exact) return evalB(b, me, ms.length);
-    for (var i = 0; i < ms.length; i++) {
-      var p = ms[i], f = flips(b, p, me); b[p] = me; for (var j = 0; j < f.length; j++) b[f[j]] = me;
-      var v = -nega(b, 3 - me, depth - 1, -bt, -a, false, exact);
-      b[p] = 0; for (j = 0; j < f.length; j++) b[f[j]] = 3 - me;
+    if (depth === 0) return evalB(b, me);
+    var ms = gen(b, c);
+    if (!ms.length) return passed ? 0 : -nega(b, c, 3 - me, depth - 1, -bt, -a, ply + 1, true);
+    for (var i = 0; i < ms.length; i++) { var p = cellOf(c, ms[i]); if (p >= 0) { b[p] = me; var f = four(b, p); b[p] = 0; if (f) return BIG - ply } }
+    for (i = 0; i < ms.length; i++) {
+      var m = ms[i], w = (m / 10) | 0, old = c[w]; p = cellOf(c, m); c[w] = m % 10; if (p >= 0) b[p] = me;
+      var v = -nega(b, c, 3 - me, depth - 1, -bt, -a, ply + 1, false);
+      c[w] = old; if (p >= 0) b[p] = 0;
       if (v > a) { a = v; if (a >= bt) break }
     }
     return a;
   }
-  function rootScores(st, depth, exact) {
-    var b = st.b.slice(), me = st.turn;
-    return legal(b, me).map(function (p) {
-      var f = flips(b, p, me); b[p] = me; f.forEach(function (q) { b[q] = me });
-      var v = -nega(b, 3 - me, depth - 1, -1e9, 1e9, false, exact);
-      b[p] = 0; f.forEach(function (q) { b[q] = 3 - me }); return { c: p, v: v };
+  function rootScores(st, depth) {
+    var b = st.b.slice(), c = st.c.slice(), me = st.turn;
+    return gen(b, c).map(function (m) {
+      var w = (m / 10) | 0, old = c[w], p = cellOf(c, m), v; c[w] = m % 10; if (p >= 0) b[p] = me;
+      if (p >= 0 && four(b, p)) v = BIG; else v = -nega(b, c, 3 - me, depth - 1, -BIG - 1, BIG + 1, 1, false);
+      c[w] = old; if (p >= 0) b[p] = 0; return { c: m, v: v };
     });
   }
-  /* 단계: 1 아무 데나(가끔 많이 뒤집기) · 2 가장 많이 뒤집기 · 3~10 자리 값을 보며 더 멀리 읽기, 끝이 가까우면 끝까지 정확히 */
-  var LV = [null, { rnd: 1 }, { d: 1, noise: 120 }, { d: 1, noise: 30 }, { d: 2, noise: 10 }, { d: 3, ex: 6 }, { d: 4, ex: 8 }, { d: 6, ex: 12, ms: 3000 }, { d: 7, ex: 14, ms: 3500 }, { d: 8, ex: 16, ms: 4000 }, { d: 10, ex: 18, ms: 4500 }];
+  /* 단계: 1 아무 데나 · 2 이기는 칸만 봄 · 3~10 상대가 이기는 칸을 막고, 몇 수 앞까지 읽기(높은 단계는 시간 안에서) */
+  var LV = [null, { d: 0 }, { d: 1, noise: 5 }, { d: 2, noise: 4 }, { d: 2, noise: 1 }, { d: 3 }, { d: 4 }, { d: 5, ms: 3000 }, { d: 6, ms: 3500 }, { d: 7, ms: 4000 }, { d: 9, ms: 4500 }];
   function pick(L, noise) {
     var best = -Infinity, bs = [];
     L.forEach(function (o) { var v = o.v + (noise ? Math.random() * noise : 0); if (v > best + 1e-9) { best = v; bs = [o.c] } else if (Math.abs(v - best) < 1e-9) bs.push(o.c) });
@@ -894,52 +936,68 @@ function makeOthello() {
   function ai(st, level) {
     var C = LV[level], ms = moves(st);
     if (!ms.length) return -1;
-    if (C.rnd != null || C.greedy) {
-      if (C.rnd && Math.random() < C.rnd) return ms[(Math.random() * ms.length) | 0];
-      return pick(ms.map(function (p) { return { c: p, v: flips(st.b, p, st.turn).length } }), 0);
-    }
-    var empt = count(st.b)[0], best = null;
-    stop = C.ms ? Date.now() + C.ms : 0; nodes = 0;
-    try {
-      for (var d = C.ms ? 1 : C.d; d <= C.d; d++) best = rootScores(st, d, false);
-      if (C.ex && empt <= C.ex) best = rootScores(st, 99, true);
-    } catch (e) { if (e !== 'time') throw e }
-    stop = 0;
-    if (!best) best = rootScores(st, 1, false);
+    if (!C.d) { var w = rootScores(st, 1).filter(function (o) { return o.v >= BIG }); if (w.length && Math.random() < .5) return w[0].c; return ms[(Math.random() * ms.length) | 0] }
+    stop = C.ms ? Date.now() + C.ms : 0; nodes = 0; var best = null;
+    try { for (var d = C.ms ? 1 : C.d; d <= C.d; d++) { best = rootScores(st, d); if (best.some(function (o) { return o.v >= BIG - 50 })) break } } catch (e) { if (e !== 'time') throw e }
+    stop = 0; if (!best) best = rootScores(st, 1);
     return pick(best, C.noise);
   }
-  return { init: init, moves: moves, play: play, over: over, ai: ai, count: count, flips: flips, LV: LV };
+  return { P: P, IDX: IDX, init: init, moves: moves, play: play, over: over, ai: ai, cellOf: cellOf, LV: LV };
 }
 
-window.ENG_SRC="/* 오셀로(리버시) 규칙·인공지능. 8×8, 칸 번호 = 줄 × 8 + 칸. 0 빈칸 · 1 흑(먼저) · 2 백.\n   makeOthello()은 화면과 워커(Worker) 둘 다에서 씀. 수 = 칸 번호, -1 = 넘기기(둘 곳이 없을 때) */\nfunction makeOthello() {\n  var D8 = [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [0, 1], [1, 1]];\n  var WT = [100, -20, 10, 5, 5, 10, -20, 100, -20, -50, -2, -2, -2, -2, -50, -20, 10, -2, 1, 1, 1, 1, -2, 10, 5, -2, 1, 0, 0, 1, -2, 5,\n            5, -2, 1, 0, 0, 1, -2, 5, 10, -2, 1, 1, 1, 1, -2, 10, -20, -50, -2, -2, -2, -2, -50, -20, 100, -20, 10, 5, 5, 10, -20, 100];\n  var ORDER = []; for (var i = 0; i < 64; i++) ORDER.push(i); ORDER.sort(function (a, b) { return WT[b] - WT[a] });\n  function init() { var b = []; for (var i = 0; i < 64; i++) b.push(0); b[27] = 2; b[36] = 2; b[28] = 1; b[35] = 1; return { b: b, turn: 1, last: -1, pass: 0, n: 0 } }\n  function flips(b, p, me) {\n    if (b[p]) return []; var op = 3 - me, x = p & 7, y = p >> 3, out = [];\n    for (var d = 0; d < 8; d++) {\n      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;\n      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }\n      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) for (var j = 1; j <= k; j++) out.push((y + j * dy) * 8 + x + j * dx);\n    }\n    return out;\n  }\n  function canPlay(b, p, me) {\n    if (b[p]) return false; var op = 3 - me, x = p & 7, y = p >> 3;\n    for (var d = 0; d < 8; d++) {\n      var dx = D8[d][0], dy = D8[d][1], xx = x + dx, yy = y + dy, k = 0;\n      while (xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === op) { xx += dx; yy += dy; k++ }\n      if (k && xx >= 0 && yy >= 0 && xx < 8 && yy < 8 && b[yy * 8 + xx] === me) return true;\n    }\n    return false;\n  }\n  function legal(b, me) { var o = []; for (var i = 0; i < 64; i++) { var p = ORDER[i]; if (canPlay(b, p, me)) o.push(p) } return o }\n  function count(b) { var c = [0, 0, 0]; for (var i = 0; i < 64; i++) c[b[i]]++; return c }\n  function over(st) {\n    if (legal(st.b, 1).length || legal(st.b, 2).length) return null;\n    var c = count(st.b); return { w: c[1] > c[2] ? 1 : c[2] > c[1] ? 2 : 0, why: '더 둘 곳이 없어요. 흑 ' + c[1] + ' · 백 ' + c[2] };\n  }\n  function moves(st) { return legal(st.b, st.turn) }\n  function play(st, p) {\n    var b = st.b.slice();\n    if (p < 0) return { b: b, turn: 3 - st.turn, last: -1, pass: st.pass + 1, n: st.n, fl: [] };\n    var f = flips(b, p, st.turn); b[p] = st.turn; for (var i = 0; i < f.length; i++) b[f[i]] = st.turn;\n    return { b: b, turn: 3 - st.turn, last: p, pass: 0, n: st.n + 1, fl: f };\n  }\n  /* 점수: 자리 값(모서리 큼, 모서리 옆 위험 — 모서리를 차지하면 옆도 괜찮음) + 둘 수 있는 곳 수 */\n  var CORN = [[0, [1, 8, 9]], [7, [6, 15, 14]], [56, [57, 48, 49]], [63, [62, 55, 54]]];\n  function evalB(b, me, myMob) {\n    var op = 3 - me, s = 0;\n    for (var i = 0; i < 64; i++) { var v = b[i]; if (v === me) s += WT[i]; else if (v === op) s -= WT[i] }\n    for (var k = 0; k < 4; k++) if (b[CORN[k][0]]) CORN[k][1].forEach(function (q) { var v = b[q]; if (v === me) s -= WT[q]; else if (v === op) s += WT[q] });\n    return s + 6 * (myMob - legal(b, op).length);\n  }\n  function final(b, me) { var c = count(b), d = c[me] - c[3 - me]; return d * 1000 + (d > 0 ? 50000 : d < 0 ? -50000 : 0) }\n  var stop = 0, nodes = 0;\n  function nega(b, me, depth, a, bt, passed, exact) {\n    if ((++nodes & 1023) === 0 && stop && Date.now() > stop) throw 'time';\n    var ms = legal(b, me);\n    if (!ms.length) { if (passed) return final(b, me); return -nega(b, 3 - me, depth, -bt, -a, true, exact) }\n    if (depth <= 0 && !exact) return evalB(b, me, ms.length);\n    for (var i = 0; i < ms.length; i++) {\n      var p = ms[i], f = flips(b, p, me); b[p] = me; for (var j = 0; j < f.length; j++) b[f[j]] = me;\n      var v = -nega(b, 3 - me, depth - 1, -bt, -a, false, exact);\n      b[p] = 0; for (j = 0; j < f.length; j++) b[f[j]] = 3 - me;\n      if (v > a) { a = v; if (a >= bt) break }\n    }\n    return a;\n  }\n  function rootScores(st, depth, exact) {\n    var b = st.b.slice(), me = st.turn;\n    return legal(b, me).map(function (p) {\n      var f = flips(b, p, me); b[p] = me; f.forEach(function (q) { b[q] = me });\n      var v = -nega(b, 3 - me, depth - 1, -1e9, 1e9, false, exact);\n      b[p] = 0; f.forEach(function (q) { b[q] = 3 - me }); return { c: p, v: v };\n    });\n  }\n  /* 단계: 1 아무 데나(가끔 많이 뒤집기) · 2 가장 많이 뒤집기 · 3~10 자리 값을 보며 더 멀리 읽기, 끝이 가까우면 끝까지 정확히 */\n  var LV = [null, { rnd: 1 }, { d: 1, noise: 120 }, { d: 1, noise: 30 }, { d: 2, noise: 10 }, { d: 3, ex: 6 }, { d: 4, ex: 8 }, { d: 6, ex: 12, ms: 3000 }, { d: 7, ex: 14, ms: 3500 }, { d: 8, ex: 16, ms: 4000 }, { d: 10, ex: 18, ms: 4500 }];\n  function pick(L, noise) {\n    var best = -Infinity, bs = [];\n    L.forEach(function (o) { var v = o.v + (noise ? Math.random() * noise : 0); if (v > best + 1e-9) { best = v; bs = [o.c] } else if (Math.abs(v - best) < 1e-9) bs.push(o.c) });\n    return bs[(Math.random() * bs.length) | 0];\n  }\n  function ai(st, level) {\n    var C = LV[level], ms = moves(st);\n    if (!ms.length) return -1;\n    if (C.rnd != null || C.greedy) {\n      if (C.rnd && Math.random() < C.rnd) return ms[(Math.random() * ms.length) | 0];\n      return pick(ms.map(function (p) { return { c: p, v: flips(st.b, p, st.turn).length } }), 0);\n    }\n    var empt = count(st.b)[0], best = null;\n    stop = C.ms ? Date.now() + C.ms : 0; nodes = 0;\n    try {\n      for (var d = C.ms ? 1 : C.d; d <= C.d; d++) best = rootScores(st, d, false);\n      if (C.ex && empt <= C.ex) best = rootScores(st, 99, true);\n    } catch (e) { if (e !== 'time') throw e }\n    stop = 0;\n    if (!best) best = rootScores(st, 1, false);\n    return pick(best, C.noise);\n  }\n  return { init: init, moves: moves, play: play, over: over, ai: ai, count: count, flips: flips, LV: LV };\n}\n";
-/* 오셀로 판 그리기·누르기 (window.VIEW) */
+window.ENG_SRC="/* 곱셈 사목 규칙·인공지능. 6×6 판에 1~9 두 수의 곱 36가지(작은 수부터), 아래 1~9 줄에 집게 ㄱ·ㄴ.\n   차례마다 집게 하나를 옮기고, 두 집게가 가리키는 수의 곱 칸을 내 색으로 칠함(이미 칠한 칸이 되는 수는 못 둠). 네 칸을 한 줄로 이으면 승리.\n   맨 처음 사람은 집게 ㄱ만 놓음(칠하지 않음). 수 = 집게(0 ㄱ, 1 ㄴ) × 10 + 옮길 수(1~9), -1 = 넘기기. makeProduct()은 화면과 워커 둘 다에서 씀 */\nfunction makeProduct() {\n  var P = [], IDX = {}, N = 6, WIN = [], DIR = [[1, 0], [0, 1], [1, 1], [1, -1]], seen = {};\n  for (var a = 1; a <= 9; a++) for (var b = a; b <= 9; b++) if (!seen[a * b]) { seen[a * b] = 1; P.push(a * b) }\n  P.sort(function (x, y) { return x - y }); P.forEach(function (v, i) { IDX[v] = i });\n  for (var y = 0; y < N; y++) for (var x = 0; x < N; x++) for (var d = 0; d < 4; d++) {\n    var ex = x + 3 * DIR[d][0], ey = y + 3 * DIR[d][1];\n    if (ex >= 0 && ex < N && ey >= 0 && ey < N) WIN.push([0, 1, 2, 3].map(function (k) { return (y + k * DIR[d][1]) * N + x + k * DIR[d][0] }));\n  }\n  var BY = []; for (var i = 0; i < 36; i++) BY.push([]); WIN.forEach(function (w, k) { w.forEach(function (p) { BY[p].push(k) }) });\n  function init() { var b = []; for (var i = 0; i < 36; i++) b.push(0); return { b: b, c: [0, 0], turn: 1, n: 0, last: -1, pass: 0 } }\n  function four(b, p) { var v = b[p]; for (var i = 0; i < BY[p].length; i++) { var w = WIN[BY[p][i]]; if (b[w[0]] === v && b[w[1]] === v && b[w[2]] === v && b[w[3]] === v) return w } return null }\n  function over(st) {\n    if (st.last >= 0) { var w = four(st.b, st.last); if (w) return { w: st.b[st.last], why: '네 칸을 한 줄로 이었어요.', line: w } }\n    if (st.pass >= 2) return { w: 0, why: '둘 다 칠할 수 있는 칸이 없어요.' };\n    for (var i = 0; i < 36; i++) if (!st.b[i]) return null;\n    return { w: 0, why: '판이 꽉 찼어요.' };\n  }\n  function gen(b, c) {\n    var o = [], v;\n    if (!c[0]) { for (v = 1; v <= 9; v++) o.push(v); return o }\n    if (!c[1]) { for (v = 1; v <= 9; v++) if (!b[IDX[c[0] * v]]) o.push(10 + v); return o }\n    for (var w = 0; w < 2; w++) for (v = 1; v <= 9; v++) if (v !== c[w] && !b[IDX[c[1 - w] * v]]) o.push(w * 10 + v);\n    return o;\n  }\n  function moves(st) { if (over(st)) return []; return gen(st.b, st.c) }\n  function cellOf(c, m) { var w = (m / 10) | 0, v = m % 10, o = w ? c[0] : c[1]; return o ? IDX[o * v] : -1 }\n  function play(st, m) {\n    if (m < 0) return { b: st.b.slice(), c: st.c.slice(), turn: 3 - st.turn, n: st.n + 1, last: -1, pass: st.pass + 1 };\n    var c = st.c.slice(), b = st.b.slice(), w = (m / 10) | 0; c[w] = m % 10; var last = -1;\n    if (c[0] && c[1]) { last = IDX[c[0] * c[1]]; b[last] = st.turn }\n    return { b: b, c: c, turn: 3 - st.turn, n: st.n + 1, last: last, pass: 0 };\n  }\n  function evalB(b, me) {\n    var s = 0, op = 3 - me;\n    for (var i = 0; i < WIN.length; i++) {\n      var w = WIN[i], m = 0, o = 0;\n      for (var k = 0; k < 4; k++) { var v = b[w[k]]; if (v === me) m++; else if (v === op) o++ }\n      if (m && o) continue;\n      if (m === 3) s += 6; else if (m === 2) s += 2; else if (m === 1) s += .3;\n      if (o === 3) s -= 6; else if (o === 2) s -= 2; else if (o === 1) s -= .3;\n    }\n    return s;\n  }\n  var stop = 0, nodes = 0, BIG = 1e6;\n  function nega(b, c, me, depth, a, bt, ply, passed) {\n    if ((++nodes & 1023) === 0 && stop && Date.now() > stop) throw 'time';\n    if (depth === 0) return evalB(b, me);\n    var ms = gen(b, c);\n    if (!ms.length) return passed ? 0 : -nega(b, c, 3 - me, depth - 1, -bt, -a, ply + 1, true);\n    for (var i = 0; i < ms.length; i++) { var p = cellOf(c, ms[i]); if (p >= 0) { b[p] = me; var f = four(b, p); b[p] = 0; if (f) return BIG - ply } }\n    for (i = 0; i < ms.length; i++) {\n      var m = ms[i], w = (m / 10) | 0, old = c[w]; p = cellOf(c, m); c[w] = m % 10; if (p >= 0) b[p] = me;\n      var v = -nega(b, c, 3 - me, depth - 1, -bt, -a, ply + 1, false);\n      c[w] = old; if (p >= 0) b[p] = 0;\n      if (v > a) { a = v; if (a >= bt) break }\n    }\n    return a;\n  }\n  function rootScores(st, depth) {\n    var b = st.b.slice(), c = st.c.slice(), me = st.turn;\n    return gen(b, c).map(function (m) {\n      var w = (m / 10) | 0, old = c[w], p = cellOf(c, m), v; c[w] = m % 10; if (p >= 0) b[p] = me;\n      if (p >= 0 && four(b, p)) v = BIG; else v = -nega(b, c, 3 - me, depth - 1, -BIG - 1, BIG + 1, 1, false);\n      c[w] = old; if (p >= 0) b[p] = 0; return { c: m, v: v };\n    });\n  }\n  /* 단계: 1 아무 데나 · 2 이기는 칸만 봄 · 3~10 상대가 이기는 칸을 막고, 몇 수 앞까지 읽기(높은 단계는 시간 안에서) */\n  var LV = [null, { d: 0 }, { d: 1, noise: 5 }, { d: 2, noise: 4 }, { d: 2, noise: 1 }, { d: 3 }, { d: 4 }, { d: 5, ms: 3000 }, { d: 6, ms: 3500 }, { d: 7, ms: 4000 }, { d: 9, ms: 4500 }];\n  function pick(L, noise) {\n    var best = -Infinity, bs = [];\n    L.forEach(function (o) { var v = o.v + (noise ? Math.random() * noise : 0); if (v > best + 1e-9) { best = v; bs = [o.c] } else if (Math.abs(v - best) < 1e-9) bs.push(o.c) });\n    return bs[(Math.random() * bs.length) | 0];\n  }\n  function ai(st, level) {\n    var C = LV[level], ms = moves(st);\n    if (!ms.length) return -1;\n    if (!C.d) { var w = rootScores(st, 1).filter(function (o) { return o.v >= BIG }); if (w.length && Math.random() < .5) return w[0].c; return ms[(Math.random() * ms.length) | 0] }\n    stop = C.ms ? Date.now() + C.ms : 0; nodes = 0; var best = null;\n    try { for (var d = C.ms ? 1 : C.d; d <= C.d; d++) { best = rootScores(st, d); if (best.some(function (o) { return o.v >= BIG - 50 })) break } } catch (e) { if (e !== 'time') throw e }\n    stop = 0; if (!best) best = rootScores(st, 1);\n    return pick(best, C.noise);\n  }\n  return { P: P, IDX: IDX, init: init, moves: moves, play: play, over: over, ai: ai, cellOf: cellOf, LV: LV };\n}\n";
+/* 곱셈 사목 판 그리기·누르기 (window.VIEW). 위 6×6 곱 판, 아래 1~9 줄과 집게 ㄱ(위)·ㄴ(아래) */
 window.VIEW = (function () {
-  var S = 64, M = 16, seen = null;
-  function cc(i) { return M + S * i + S / 2 }
+  var S = 70, BX = 30, BY = 14, SW = 48, SX = 24, SY = 486, SH = 56, W = 480, seen = null, CL = ['ㄱ', 'ㄴ'];
+  function sx(v) { return SX + SW * (v - 1) }
+  function reach(st, E, legal, sel) { var o = {}; legal.forEach(function (m) { if (sel != null && ((m / 10) | 0) !== sel) return; var p = E.cellOf(st.c, m); if (p >= 0) o[p] = 1 }); return o }
   return {
-    side: ['흑', '백'], twoT: [0, 20, 30, 60], how: '점이 있는 곳에 놓으세요. 상대 돌을 내 돌 사이에 끼우면 뒤집혀요.',
-    size: function () { return [M * 2 + S * 8, M * 2 + S * 8] },
-    draw: function (st, ui) {
-      var anim = st !== seen, Z = M * 2 + S * 8; seen = st;
-      var h = '<rect x="0" y="0" width="' + Z + '" height="' + Z + '" rx="14" class="ot-frame"/><rect x="' + M + '" y="' + M + '" width="' + S * 8 + '" height="' + S * 8 + '" class="ot-board"/>';
-      for (var i = 0; i <= 8; i++) h += '<line x1="' + M + '" y1="' + (M + S * i) + '" x2="' + (M + S * 8) + '" y2="' + (M + S * i) + '" class="ot-ln"/><line x1="' + (M + S * i) + '" y1="' + M + '" x2="' + (M + S * i) + '" y2="' + (M + S * 8) + '" class="ot-ln"/>';
-      [[2, 2], [2, 6], [6, 2], [6, 6]].forEach(function (a) { h += '<circle cx="' + (M + S * a[0]) + '" cy="' + (M + S * a[1]) + '" r="4" class="ot-star"/>' });
-      var fl = anim && st.fl ? st.fl : [];
-      for (var p = 0; p < 64; p++) {
-        var v = st.b[p], x = cc(p & 7), y = cc(p >> 3);
-        if (v) h += '<circle cx="' + x + '" cy="' + y + '" r="' + (S * .41) + '" class="ot-d ot-p' + v + (fl.indexOf(p) >= 0 ? ' ot-flip' : anim && p === st.last ? ' ot-new' : '') + '"/>';
-        else if (ui.legal.indexOf(p) >= 0) h += '<circle cx="' + x + '" cy="' + y + '" r="' + (S * .12) + '" class="ot-can ot-c' + st.turn + '"/>';
+    side: ['파랑', '주황'], twoT: [0, 20, 30, 60], how: '옮길 집게(ㄱ·ㄴ)를 누르고 아래 수를 누르거나, 칠할 곱 칸을 바로 누르세요.',
+    size: function () { return [W, SY + SH + 46] },
+    draw: function (st, ui, E) {
+      var anim = st !== seen; seen = st;
+      var h = '<rect x="' + (BX - 8) + '" y="' + (BY - 8) + '" width="' + (S * 6 + 16) + '" height="' + (S * 6 + 16) + '" rx="14" class="pm-frame"/>';
+      var line = ui.over && ui.over.line || [], rc = ui.human ? reach(st, E, ui.legal, ui.sel) : {};
+      for (var i = 0; i < 36; i++) {
+        var x = BX + S * (i % 6), y = BY + S * ((i / 6) | 0), v = st.b[i];
+        h += '<rect x="' + (x + 3) + '" y="' + (y + 3) + '" width="' + (S - 6) + '" height="' + (S - 6) + '" rx="10" class="pm-cell' + (v ? ' pm-p' + v : '') + (rc[i] ? ' pm-can' : '') + (anim && i === st.last ? ' pm-new' : '') + '"/>';
+        h += '<text x="' + (x + S / 2) + '" y="' + (y + S / 2 + 9) + '" class="pm-num' + (v ? ' pm-on' : '') + '">' + E.P[i] + '</text>';
+        if (line.indexOf(i) >= 0) h += '<circle cx="' + (x + S / 2) + '" cy="' + (y + S - 12) + '" r="5" class="pm-win"/>';
       }
-      if (st.last >= 0) h += '<circle cx="' + cc(st.last & 7) + '" cy="' + cc(st.last >> 3) + '" r="6" class="ot-last"/>';
+      if (st.last >= 0 && !line.length) h += '<rect x="' + (BX + S * (st.last % 6) + 2) + '" y="' + (BY + S * ((st.last / 6) | 0) + 2) + '" width="' + (S - 4) + '" height="' + (S - 4) + '" rx="11" class="pm-last"/>';
+      /* 아래 1~9 줄과 집게 */
+      h += '<text x="' + (SX - 6) + '" y="' + (SY - 18) + '" class="pm-lab" text-anchor="start">집게 ㄱ ▼</text><text x="' + (SX - 6) + '" y="' + (SY + SH + 34) + '" class="pm-lab" text-anchor="start">집게 ㄴ ▲</text>';
+      for (var v2 = 1; v2 <= 9; v2++) h += '<rect x="' + (sx(v2) + 2) + '" y="' + SY + '" width="' + (SW - 4) + '" height="' + SH + '" rx="9" class="pm-key' + (st.c[0] === v2 || st.c[1] === v2 ? ' pm-keyon' : '') + '"/><text x="' + (sx(v2) + SW / 2) + '" y="' + (SY + SH / 2 + 10) + '" class="pm-knum">' + v2 + '</text>';
+      [0, 1].forEach(function (w) {
+        var v = st.c[w]; if (!v) return;
+        var cx = sx(v) + SW / 2, y0 = w ? SY + SH + 4 : SY - 4, d = w ? 1 : -1, cls = 'pm-clip pm-c' + w + (ui.sel === w ? ' pm-csel' : '');
+        h += '<g class="' + cls + '"><path d="M' + (cx - 15) + ' ' + (y0 + d * 24) + 'L' + (cx + 15) + ' ' + (y0 + d * 24) + 'L' + cx + ' ' + y0 + 'Z"/><text x="' + cx + '" y="' + (y0 + d * 15 + 5) + '">' + CL[w] + '</text></g>';
+      });
       return h;
     },
-    hit: function (st, ui, q) {
-      var x = Math.floor((q[0] - M) / S), y = Math.floor((q[1] - M) / S); if (x < 0 || y < 0 || x > 7 || y > 7) return null;
-      var p = y * 8 + x; if (st.b[p]) return null;
-      if (ui.legal.indexOf(p) < 0) return { msg: '그 자리는 뒤집을 돌이 없어서 둘 수 없어요. 점이 있는 곳에 놓아요.' };
-      return { mv: p };
+    hit: function (st, ui, q, E) {
+      var x = q[0], y = q[1];
+      if (y > SY - 46 && y < SY && x > SX && x < SX + SW * 9) return st.c[0] ? { sel: ui.sel === 0 ? null : 0 } : null;          // 집게 ㄱ 줄
+      if (y > SY + SH && y < SY + SH + 46 && x > SX && x < SX + SW * 9) return st.c[1] ? { sel: ui.sel === 1 ? null : 1 } : null;   // 집게 ㄴ 줄
+      if (y >= SY && y <= SY + SH) {
+        var v = Math.floor((x - SX) / SW) + 1; if (v < 1 || v > 9) return null;
+        var w = !st.c[0] ? 0 : !st.c[1] ? 1 : ui.sel;
+        if (w == null) return { msg: '먼저 옮길 집게(ㄱ 또는 ㄴ)를 누르세요.' };
+        var m = w * 10 + v; if (ui.legal.indexOf(m) >= 0) return { mv: m };
+        if (st.c[w] === v) return { msg: '집게는 지금 자리와 다른 수로 옮겨야 해요.' };
+        return { msg: '⚠️ ' + st.c[1 - w] + ' × ' + v + ' = ' + st.c[1 - w] * v + ' 칸은 이미 칠해져 있어요. 다른 수를 골라요.' };
+      }
+      var c = Math.floor((x - BX) / S), r = Math.floor((y - BY) / S); if (c < 0 || r < 0 || c > 5 || r > 5) return null;
+      var p = r * 6 + c;
+      if (!st.c[0] || !st.c[1]) return { msg: !st.c[0] ? '처음에는 아래 1~9 줄에서 집게 ㄱ을 놓을 수를 눌러요.' : '아래 1~9 줄에서 집게 ㄴ을 놓을 수를 눌러요.' };
+      if (st.b[p]) return { msg: '이미 칠해진 칸이에요.' };
+      var ok = ui.legal.filter(function (m) { return E.cellOf(st.c, m) === p && (ui.sel == null || ((m / 10) | 0) === ui.sel) });
+      if (ok.length === 1) return { mv: ok[0] };
+      if (ok.length > 1) return { msg: '집게 ㄱ, ㄴ 어느 것을 옮겨도 ' + E.P[p] + '이(가) 돼요. 옮길 집게를 먼저 누르세요.' };
+      return { msg: '⚠️ 집게 하나만 옮겨서는 ' + E.P[p] + '을(를) 만들 수 없어요. 지금 집게는 ' + st.c[0] + '와(과) ' + st.c[1] + '이에요.' };
     },
-    status: function (st, E) { var c = E.count(st.b); return [c[1] + '개', c[2] + '개', ''] }
+    status: function (st) { return ['', '', st.c[0] && st.c[1] ? '집게 ' + st.c[0] + ' × ' + st.c[1] + ' = ' + st.c[0] * st.c[1] : ''] },
+    note: function (st) { return st.n === 0 ? '처음 사람은 집게 ㄱ만 놓아요(칸은 칠하지 않아요).' : st.n === 1 ? '집게 ㄴ을 놓으면 두 수의 곱 칸을 칠해요.' : '' }
   };
 })();
 
