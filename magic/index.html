@@ -587,7 +587,7 @@ html .hj-hero h1{font-size:clamp(30px,3.4vw,42px)!important;gap:0}
 html .hj-hero h1 .h-ico{display:none}
 html .hj-hero:has(.today-strip) h1{gap:14px}
 html .hj-hero:has(.today-strip) h1 .h-ico{display:inline-grid}
-html .hj-hero .sub{font-size:clamp(17px,1.5vw,19px);margin-top:10px;max-width:40em}
+html .hj-hero .sub{font-size:clamp(17px,1.5vw,19px);margin-top:10px;max-width:none}
 /* 오늘의 한 줄: 상자 없이 */
 html .hj-hero .ts-main{background:none!important;border:0!important;padding:0 0 0 18px;border-left:2px solid rgba(255,255,255,.28)!important;border-radius:0}
 html .hj-hero .ts-q{font-size:clamp(20px,2vw,24px)}
@@ -792,10 +792,17 @@ html main .hj-bento .grid a.room::before,html main .hj-bento .grid a.room::after
 html main .hj-ghub{margin-top:0}
 @media (min-width:1100px){html main .hj-bento .bn-a .grid.grid.grid,html main .hj-bento .bn-d .grid.grid.grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 @media (max-width:560px){html main .hj-bento .grid.grid.grid{grid-template-columns:1fr!important}}
+
+/* 메뉴 항목 옆 짧은 표시(추천 학년 · 쓰는 방식) — 2026-10-29 */
+html .card.room .hj-mt{font-size:14px;font-weight:600;color:var(--soft,#5B6474);margin-left:10px;white-space:nowrap}
+@media (max-width:600px){html .card.room:has(.hj-mt){display:grid!important;grid-template-columns:auto minmax(0,1fr);column-gap:14px;row-gap:0;align-items:center;align-content:center}html .card.room:has(.hj-mt) .ico{grid-row:1/3}html .card.room:has(.hj-mt) .nm{align-self:end}html .card.room .hj-mt{grid-column:2;align-self:start;margin:1px 0 0;font-size:12.5px}}
+/* 메뉴 제목 띠 소개 글: 마지막 줄이 짧지 않게(2026-10-29) */
+html .hj-hero .sub{text-wrap:pretty}
+html .hj-hero h1,html main h2{text-wrap:balance}
 </style><!--/hj-theme--></head><body><main>
 <!--hj-hero--><div class="hj-hero"><div class="hj-hero-in"><nav class="crumb" aria-label="현재 위치"><a class="c-link c-home" href="../index.html"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5 12 3.8l8.5 6.7"/><path d="M5.5 9.2V20h13V9.2"/><path d="M10 20v-5.5h4V20"/></svg><span>홈</span></a></nav>
 <h1><span class="h-ico" aria-hidden="true">🎩</span>수학 마술</h1>
-<p class="sub">신기한 수 마술 <b>8가지</b>예요. 먼저 🎩 마술을 해 보고 → 🤔 비밀을 생각해 보고 → 🔑 비밀 풀이로 까닭을 확인한 뒤 → 🎭 친구에게 직접 해 보세요. 마술 카드도 인쇄할 수 있어요.</p></div></div><!--/hj-hero-->
+<p class="sub">신기한 수 마술 8가지예요. 마술을 해 보고, 비밀을 찾고, 친구에게 해 보세요.</p></div></div><!--/hj-hero-->
 <div class="grid g3 three">
 <a class="card room" style="--acc:#C2571A" href="n1089.html"><span class="ico">✉️</span><span class="nm">마법의 수 1089</span><small>세 자리 수를 거꾸로 써서 빼고, 또 거꾸로 써서 더하면… 봉투 속 예언과 같아져요! · 추천 4~6학년 · 세 자리 수의 덧셈과 뺄셈, 자릿값</small></a>
 <a class="card room" style="--acc:#3B6FD6" href="cards.html"><span class="ico">🃏</span><span class="nm">생각한 수 맞히기 카드</span><small>1부터 31까지 생각한 수가 어느 카드에 있는지만 들으면, 마술사가 그 수를 맞혀요. · 추천 3~6학년 · 덧셈, 수의 규칙(2진법 맛보기)</small></a>
